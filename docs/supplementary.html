@@ -165,9 +165,9 @@
       align-items: flex-start;
     }
     .error-card img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
+      width: 140px;
+      height: auto;
+      object-fit: contain;
       border-radius: 0.4rem;
       flex-shrink: 0;
     }
@@ -404,7 +404,7 @@ Respond with ONLY the category name (one of: pest, weed_invasive, pathogen, host
   <h2>D. Resolution Analysis</h2>
   <p>We examined whether image resolution correlates with recognition accuracy. Images in the 0.5&ndash;1 MP range have the lowest mean accuracy (3.24 models correct out of 14), while images above 4 MP achieve the highest (3.66 models correct). However, this effect is substantially weaker than the Wikipedia popularity effect (which shows a 2&times; gap), suggesting that <em>resolution alone does not guarantee recognition success</em>&mdash;the model must also have learned about the species during training.</p>
   <div class="figure">
-    <img src="figures/resolution_accuracy_bar.png" alt="Image resolution vs. recognition accuracy">
+    <img src="figures/resolution_vs_accuracy.png" alt="Image resolution vs. recognition accuracy">
     <figcaption>Image resolution vs. recognition accuracy. Higher resolution shows modest improvement, but the effect is much weaker than species popularity.</figcaption>
   </div>
 </section>
