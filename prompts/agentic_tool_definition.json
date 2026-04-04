@@ -1,0 +1,37 @@
+{
+  "name": "image_crop",
+  "description": "Crop a specific region of the image for closer inspection. Use this tool when you need to examine fine details like: leaf patterns, textures, or venation; insect body parts (antennae, legs, wings); animal markings or features; small text or labels in the image.",
+  "parameters": {
+    "type": "object",
+    "required": ["x1", "y1", "x2", "y2"],
+    "properties": {
+      "x1": {
+        "type": "number",
+        "description": "Left boundary (0-1, where 0 is left edge)"
+      },
+      "y1": {
+        "type": "number",
+        "description": "Top boundary (0-1, where 0 is top edge)"
+      },
+      "x2": {
+        "type": "number",
+        "description": "Right boundary (0-1, where 1 is right edge)"
+      },
+      "y2": {
+        "type": "number",
+        "description": "Bottom boundary (0-1, where 1 is bottom edge)"
+      }
+    }
+  },
+  "processing": {
+    "steps": [
+      "Convert normalized coordinates to pixels: px_i = x_i * W, py_i = y_i * H",
+      "Compute center and size: cx = (px1+px2)/2, cy = (py1+py2)/2, s = max(px2-px1, py2-py1)",
+      "Make square and expand: s' = s * 1.5",
+      "Enforce minimum size: s' = max(s', 224)",
+      "Compute crop region centered at (cx, cy) with side length s'",
+      "Shift into bounds if crop exceeds image boundaries",
+      "Crop and resize to 448x448 using LANCZOS"
+    ]
+  }
+}

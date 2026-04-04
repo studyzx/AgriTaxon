@@ -3,35 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgriTaxon – Open-World Taxonomic Naming Benchmark</title>
+  <title>AgriTaxon – Can Large Multimodal Models Identify What They See in Agriculture?</title>
+  <meta name="description" content="AgriTaxon: the first benchmark for open-ended taxonomic naming in agriculture, spanning 7,432 species across crops, livestock, pests, and weeds.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --green: #4CAF50;
+      --green-dark: #2e7d32;
+      --green-darker: #1b5e20;
       --orange: #FF9800;
       --red: #F44336;
       --purple: #9C27B0;
+      --bg: #fafafa;
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --card-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #1a1a1a;
-      background: #fafafa;
-      line-height: 1.6;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
     }
+
+    /* ── Hero ── */
     .hero {
-      background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
-      color: white;
+      background: white;
+      color: var(--text);
       text-align: center;
-      padding: 5rem 2rem 4rem;
+      padding: 3.5rem 2rem 0;
+      border-bottom: 1px solid #eee;
     }
-    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto 2rem; }
-    .badges { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.02em;
+      color: var(--green-dark);
+    }
+    .hero .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0.5rem auto 0.3rem;
+      font-weight: 400;
+    }
+    .hero .authors {
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 0.2rem;
+      font-weight: 400;
+    }
+    .hero .venue {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .badges { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
     .badge {
       display: inline-block;
-      padding: 0.4rem 1rem;
+      padding: 0.35rem 0.9rem;
       border-radius: 2rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: white;
     }
@@ -39,57 +76,197 @@
     .badge.livestock { background: var(--orange); }
     .badge.pests { background: var(--red); }
     .badge.weeds { background: var(--purple); }
-    .container { max-width: 860px; margin: 0 auto; padding: 3rem 2rem; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #2e7d32; }
-    p, li { font-size: 1.05rem; margin-bottom: 0.75rem; }
-    ul { padding-left: 1.5rem; }
-    a { color: #2e7d32; text-decoration: none; font-weight: 500; }
-    a:hover { text-decoration: underline; }
-    .links {
-      display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;
-    }
+    .links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
     .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.65rem 1.3rem;
       border-radius: 0.5rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       text-decoration: none;
-      transition: transform 0.15s;
+      transition: transform 0.15s, box-shadow 0.15s;
     }
-    .btn:hover { transform: translateY(-2px); text-decoration: none; }
-    .btn-primary { background: white; color: #2e7d32; }
-    .btn-outline { border: 2px solid white; color: white; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-decoration: none; }
+    .btn-primary { background: var(--green-dark); color: white; }
+    .btn-outline { border: 2px solid #ddd; color: var(--text-secondary); }
+
+    /* ── Teaser ── */
+    .teaser {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 0;
+    }
+    .teaser img {
+      width: 100%;
+      border-radius: 0.5rem;
+      display: block;
+    }
+
+    /* ── Container & sections ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem; }
+    section { margin-bottom: 2.5rem; }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h2 .icon { font-size: 1.2rem; }
+    p, li { font-size: 1.02rem; margin-bottom: 0.6rem; color: var(--text-secondary); }
+    ul { padding-left: 1.4rem; }
+    li { margin-bottom: 0.5rem; }
+    a { color: var(--green-dark); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Stats grid ── */
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.2rem;
+      margin: 1.5rem 0;
     }
     .stat-card {
       background: white;
-      border-radius: 1rem;
-      padding: 1.5rem;
+      border-radius: 0.75rem;
+      padding: 1.3rem 1rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: var(--card-shadow);
     }
-    .stat-card .number { font-size: 2rem; font-weight: 700; color: #2e7d32; }
-    .stat-card .label { font-size: 0.9rem; color: #666; margin-top: 0.25rem; }
+    .stat-card .number { font-size: 1.9rem; font-weight: 800; color: var(--green-dark); }
+    .stat-card .label { font-size: 0.85rem; color: #888; margin-top: 0.15rem; font-weight: 500; }
+
+    /* ── Table ── */
+    .table-wrapper { overflow-x: auto; margin: 1rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      background: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+    th {
+      background: var(--green-dark);
+      color: white;
+      padding: 0.55rem 0.5rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.45rem 0.5rem;
+      border-bottom: 1px solid #f0f0f0;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.8rem;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fdf8; }
+    .model-name {
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+    }
+    .model-name img.logo {
+      height: 14px;
+      width: 14px;
+      object-fit: contain;
+      vertical-align: -2px;
+      margin-right: 4px;
+    }
+    .date {
+      color: #999;
+      font-size: 0.75rem;
+    }
+    .best { font-weight: 700; color: var(--green-dark); }
+    .block-header {
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-align: center !important;
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      color: #555;
+      padding: 0.4rem 0.5rem;
+    }
+    .block-header.proprietary { background: #e3f2fd; }
+    .block-header.opensource { background: #fffde7; }
+
+    /* ── Insights list ── */
+    .insights {
+      list-style: none;
+      padding: 0;
+    }
+    .insights li {
+      padding: 0.8rem 1rem 0.8rem 2.5rem;
+      margin-bottom: 0.5rem;
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+    .insights li::before {
+      content: attr(data-icon);
+      position: absolute;
+      left: 0.8rem;
+      top: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    /* ── Code / citation ── */
+    pre {
+      background: #f5f5f5;
+      padding: 1rem 1.2rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    }
+    code {
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      background: #f0f0f0;
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      font-size: 0.9em;
+    }
+
+    /* ── Footer ── */
     footer {
       text-align: center;
       padding: 2rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #999;
       border-top: 1px solid #eee;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero .subtitle { font-size: 1rem; }
+      .teaser { padding: 1rem 1rem 0; }
+      .container { padding: 2rem 1.2rem; }
     }
   </style>
 </head>
 <body>
 
+<!-- ════════ Hero ════════ -->
 <div class="hero">
-  <h1>🌾 AgriTaxon</h1>
-  <p>The first benchmark for <strong>open-world taxonomic naming</strong> in agriculture.<br>
-  Can your model name what it sees?</p>
+  <h1>AgriTaxon</h1>
+  <p class="subtitle">Can Large Multimodal Models Identify What They See in Agriculture?</p>
+  <p class="authors">Xin Zeng, Benfeng Xu, Shancheng Fang, Huarui Wu</p>
+  <p class="venue">Under Review</p>
   <div class="badges">
     <span class="badge crops">Crops 1,971</span>
     <span class="badge livestock">Livestock 178</span>
@@ -98,55 +275,275 @@
   </div>
   <div class="links">
     <a class="btn btn-primary" href="https://huggingface.co/datasets/Xin1818/AgriTaxon">📦 Dataset</a>
-    <a class="btn btn-outline" href="https://github.com/studyzx/AgriTaxon">💻 Code</a>
+    <a class="btn btn-outline" href="https://github.com/studyzx/AgriTaxon">🔗 GitHub</a>
+    <a class="btn btn-outline" href="supplementary.html">📎 Supplementary</a>
+  </div>
+  <div class="teaser">
+    <img src="teaser.png" alt="AgriTaxon overview: 7,432 species across crops, livestock, pests, and weeds with evaluation results showing a seeing-without-naming gap.">
   </div>
 </div>
 
+<!-- ════════ Main Content ════════ -->
 <div class="container">
-  <h2>Overview</h2>
-  <p>
-    Correctly naming a species from its image is the starting point for intelligent agriculture—from choosing a pesticide to enforcing quarantine.
-    <strong>AgriTaxon</strong> tests whether Large Multimodal Models can perform this task in the open world, without predefined label sets.
-  </p>
 
-  <div class="stats">
-    <div class="stat-card">
-      <div class="number">7,432</div>
-      <div class="label">Species</div>
+  <!-- Overview -->
+  <section>
+    <h2><span class="icon">🔬</span> Overview</h2>
+    <p>
+      In agriculture, correctly naming a species from its image&mdash;what we call <strong>open-ended taxonomic naming</strong>&mdash;is the starting point for intelligent agriculture, from choosing a pesticide to enforcing quarantine.
+      Yet no existing benchmark directly tests whether Large Multimodal Models (LMMs) can perform this task.
+      Existing agricultural datasets each cover a single domain (8&ndash;102 classes), lack links to standard databases, and evaluate only closed-set classification&mdash;leaving untested whether models can actually <em>name</em> what they see.
+    </p>
+    <p>
+      <strong>AgriTaxon</strong> fills this gap by unifying four agricultural domains&mdash;Crops, Livestock, Pests, and Weeds&mdash;into a single benchmark with 7,432 species, each linked to authoritative FAO and EPPO databases via Wikidata.
+      We evaluate 14 LMMs under both multiple-choice (with semantically hard negatives) and open-ended naming, and introduce an LLM-as-a-Judge scoring protocol that achieves 98% agreement with domain experts.
+    </p>
+    <div class="stats">
+      <div class="stat-card">
+        <div class="number">7,432</div>
+        <div class="label">Species</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">4</div>
+        <div class="label">Domains</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">14</div>
+        <div class="label">LMMs Evaluated</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">98%</div>
+        <div class="label">Expert Agreement</div>
+      </div>
     </div>
-    <div class="stat-card">
-      <div class="number">4</div>
-      <div class="label">Domains</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">14</div>
-      <div class="label">LMMs Evaluated</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">98%</div>
-      <div class="label">Expert Agreement</div>
-    </div>
-  </div>
+  </section>
 
-  <h2>Key Findings</h2>
-  <ul>
-    <li>The best model reaches <strong>83% on multiple-choice</strong> but drops to <strong>33%</strong> when naming species freely—a <em>seeing-without-naming</em> gap.</li>
-    <li>Pest naming accuracy falls as low as <strong>4%</strong> under open-ended evaluation.</li>
-    <li>Models perform <strong>2× better</strong> on popular species than on obscure ones.</li>
-    <li>An agentic cropping tool <strong>more than doubles</strong> accuracy by letting models zoom into diagnostic details.</li>
-  </ul>
+  <!-- Main Results -->
+  <section>
+    <h2><span class="icon">🏆</span> Main Results</h2>
+    <p>
+      Accuracy (%) on AgriTaxon for 14 LMMs, ranked by open-ended Acc within each block. Open-ended reports both EM (exact match) and Acc (with LLM-as-a-Judge alias validation). <strong>Bold</strong> = best per column.
+    </p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Model</th>
+            <th rowspan="2">Release</th>
+            <th rowspan="2">Hard</th>
+            <th colspan="5" style="text-align:center; border-left: 2px solid rgba(255,255,255,0.3);">Multi-Choice</th>
+            <th colspan="6" style="text-align:center; border-left: 2px solid rgba(255,255,255,0.3);">Open-Ended</th>
+          </tr>
+          <tr>
+            <th style="border-left: 2px solid rgba(255,255,255,0.3);">Crop</th>
+            <th>Live.</th>
+            <th>Pest</th>
+            <th>Weed</th>
+            <th>Mean</th>
+            <th style="border-left: 2px solid rgba(255,255,255,0.3);">Crop</th>
+            <th>Live.</th>
+            <th>Pest</th>
+            <th>Weed</th>
+            <th>EM</th>
+            <th>Acc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="14" class="block-header proprietary">Proprietary Models</td></tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/gemini.png" alt="">gemini-3-pro-preview</td>
+            <td class="date">2025.11</td>
+            <td>9.0</td>
+            <td>83.7</td><td class="best">95.5</td><td>72.5</td><td>78.1</td><td>82.5</td>
+            <td>43.6</td><td class="best">49.4</td><td>30.0</td><td>53.0</td><td>44.0</td><td class="best">51.2</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/seed-logo.png" alt="">doubao-seed-2-0-pro</td>
+            <td class="date">2026.02</td>
+            <td>6.0</td>
+            <td>81.3</td><td>88.8</td><td>70.9</td><td>76.6</td><td>79.4</td>
+            <td class="best">45.3</td><td>34.8</td><td class="best">39.6</td><td class="best">56.6</td><td class="best">44.1</td><td>48.6</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/gemini.png" alt="">gemini-3-flash-preview</td>
+            <td class="date">2025.12</td>
+            <td>8.7</td>
+            <td class="best">84.9</td><td>95.1</td><td class="best">72.7</td><td class="best">79.1</td><td class="best">83.0</td>
+            <td>22.4</td><td>37.6</td><td>22.9</td><td>50.4</td><td>33.4</td><td>48.1</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/seed-logo.png" alt="">doubao-seed-2-0-lite</td>
+            <td class="date">2026.02</td>
+            <td>5.6</td>
+            <td>78.1</td><td>87.6</td><td>70.1</td><td>74.7</td><td>77.6</td>
+            <td>37.3</td><td>33.7</td><td>30.5</td><td>48.8</td><td>37.6</td><td>44.0</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/openai.png" alt="">gpt-5</td>
+            <td class="date">2025.08</td>
+            <td>8.4</td>
+            <td>79.1</td><td>92.9</td><td>68.8</td><td>73.3</td><td>78.6</td>
+            <td>30.6</td><td>34.3</td><td>17.2</td><td>36.2</td><td>29.6</td><td>37.6</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/openai.png" alt="">gpt-5-mini</td>
+            <td class="date">2025.08</td>
+            <td>7.7</td>
+            <td>71.6</td><td>87.5</td><td>62.7</td><td>64.6</td><td>71.6</td>
+            <td>28.4</td><td>26.4</td><td>9.8</td><td>23.6</td><td>22.0</td><td>27.4</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/anthropic.png" alt="">claude-haiku-4-5</td>
+            <td class="date">2025.10</td>
+            <td>4.7</td>
+            <td>58.1</td><td>74.5</td><td>52.9</td><td>56.2</td><td>60.4</td>
+            <td>12.5</td><td>19.7</td><td>4.0</td><td>8.6</td><td>11.2</td><td>14.7</td>
+          </tr>
+          <tr><td colspan="14" class="block-header opensource">Open-Source Models</td></tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/Kimi-logo-2025.png" alt="">kimi-k2.5</td>
+            <td class="date">2026.01</td>
+            <td>2.1</td>
+            <td>75.0</td><td>86.0</td><td>65.8</td><td>68.0</td><td>73.7</td>
+            <td>29.8</td><td>31.0</td><td>20.0</td><td>39.2</td><td>30.0</td><td>38.0</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/zai.png" alt="">glm-4.6v</td>
+            <td class="date">2025.12</td>
+            <td>6.2</td>
+            <td>66.7</td><td>77.0</td><td>57.9</td><td>58.6</td><td>65.1</td>
+            <td>33.2</td><td>20.7</td><td>10.4</td><td>26.6</td><td>22.7</td><td>30.1</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/Qwen-Ai-Logo-PNG-Vector.png" alt="">qwen3-vl-235b-a22b</td>
+            <td class="date">2025.09</td>
+            <td>2.2</td>
+            <td>66.4</td><td>81.5</td><td>63.2</td><td>62.5</td><td>68.4</td>
+            <td>23.5</td><td>23.9</td><td>13.5</td><td>25.8</td><td>21.7</td><td>27.5</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/Qwen-Ai-Logo-PNG-Vector.png" alt="">qwen3.5-397b-a17b</td>
+            <td class="date">2026.02</td>
+            <td class="best">9.2</td>
+            <td>70.5</td><td>85.4</td><td>65.8</td><td>65.8</td><td>71.9</td>
+            <td>25.3</td><td>22.8</td><td>13.8</td><td>24.8</td><td>21.7</td><td>26.8</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/Qwen-Ai-Logo-PNG-Vector.png" alt="">qwen3-vl-30b-a3b</td>
+            <td class="date">2025.10</td>
+            <td>2.2</td>
+            <td>59.2</td><td>70.1</td><td>55.9</td><td>54.6</td><td>59.9</td>
+            <td>19.9</td><td>24.2</td><td>5.3</td><td>14.6</td><td>16.0</td><td>22.5</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/zai.png" alt="">glm-4.6v-flashx</td>
+            <td class="date">2025.12</td>
+            <td>5.8</td>
+            <td>59.3</td><td>71.3</td><td>55.4</td><td>55.1</td><td>60.3</td>
+            <td>21.6</td><td>20.7</td><td>5.7</td><td>12.7</td><td>15.2</td><td>19.6</td>
+          </tr>
+          <tr>
+            <td class="model-name"><img class="logo" src="figures/logo/Qwen-Ai-Logo-PNG-Vector.png" alt="">qwen3.5-35b-a3b</td>
+            <td class="date">2026.02</td>
+            <td>4.2</td>
+            <td>67.1</td><td>80.9</td><td>61.4</td><td>61.7</td><td>67.8</td>
+            <td>11.3</td><td>17.4</td><td>3.9</td><td>12.6</td><td>11.3</td><td>17.4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85rem; color:#aaa; margin-top:0.5rem;">
+      Hard = AgriTaxon-Hard subset (&le;2 models correct, 1,052 samples). EM = exact match after normalization. Acc = LLM-as-a-Judge alias validation (98% expert agreement).
+    </p>
+  </section>
 
-  <h2>Citation</h2>
-  <pre style="background:#f5f5f5; padding:1rem; border-radius:0.5rem; overflow-x:auto; font-size:0.9rem;">@inproceedings{agritaxon2025,
-  title     = {AgriTaxon: A Benchmark for Open-World Taxonomic Naming in Agriculture},
-  author    = {TODO},
-  booktitle = {TODO},
-  year      = {2025}
+  <!-- Key Findings -->
+  <section>
+    <h2><span class="icon">💡</span> Key Findings</h2>
+    <ul class="insights">
+      <li data-icon="🔍"><strong>Taxonomic confusion dominates errors (63%)</strong> &mdash; models identify the correct biological family but fail at genus- or species-level discrimination.</li>
+      <li data-icon="📊"><strong>2&times; popularity-driven gap</strong> &mdash; popular species (>10K monthly Wikipedia views) are recognized 2.2&times; more accurately than obscure ones (&le;100 views).</li>
+      <li data-icon="🔧"><strong>Agentic cropping more than doubles accuracy</strong> &mdash; equipping a model with a simple image-crop tool lets it zoom into diagnostic regions, boosting accuracy on the hardest samples from 4.7% to 10.4%.</li>
+      <li data-icon="🎯"><strong>Text-semantic distractors are hardest</strong> &mdash; taxonomically similar distractors drop accuracy from 99% (random) to 9%, confirming that label-space plausibility governs difficulty more than visual similarity.</li>
+    </ul>
+  </section>
+
+  <!-- How It Works -->
+  <section>
+    <h2><span class="icon">⚙️</span> How AgriTaxon Works</h2>
+    <p>
+      <strong>1. Authority-grounded data collection.</strong>
+      We query Wikidata for species that carry both an authoritative database identifier (FAO Ecocrop, FAO DAD-IS, or EPPO) and a Wikimedia Commons image, forming a traceable authority chain for every label.
+    </p>
+    <p>
+      <strong>2. Cross-domain coverage.</strong>
+      The 48,950+ EPPO entries&mdash;mixing pests, weeds, pathogens, and host plants&mdash;are classified via LLM into pest and weed tracks.
+      All images undergo resolution filtering (&ge;224px) and visual content validation.
+    </p>
+    <p>
+      <strong>3. Dual evaluation protocols.</strong>
+      <em>Multiple-choice</em> uses semantically hard negatives (top-3 similar species by text embedding); <em>open-ended</em> requires free-form species name production. An LLM-as-a-Judge protocol handles alias matching (scientific names, common names, synonyms) with 98% expert agreement.
+    </p>
+  </section>
+
+  <!-- Potential Applications -->
+  <section>
+    <h2><span class="icon">🎯</span> Potential Applications</h2>
+    <p>AgriTaxon is designed to support a broad range of research directions across the multimodal AI and agricultural informatics communities:</p>
+    <ul>
+      <li><strong>Open-ended visual recognition.</strong> A testbed for developing and evaluating models that must produce free-form species names rather than selecting from a fixed label set&mdash;closer to real-world deployment where label spaces are open.</li>
+      <li><strong>Long-tail and rare-entity understanding.</strong> With popularity metadata (Wikipedia pageviews) for every species, AgriTaxon enables controlled study of how model accuracy degrades for rare, economically important organisms underrepresented in pretraining data.</li>
+      <li><strong>Retrieval-augmented generation (RAG) for domain knowledge.</strong> The authority-grounded labels (FAO, EPPO, Wikidata QIDs) provide natural retrieval anchors for augmenting LMMs with external agricultural knowledge bases.</li>
+      <li><strong>Agentic and tool-augmented reasoning.</strong> Our agentic baseline demonstrates that tool use (e.g., image cropping) significantly boosts accuracy, motivating research on system-level augmentation for fine-grained visual tasks.</li>
+      <li><strong>Agricultural AI deployment.</strong> Pest surveillance, quarantine enforcement, crop variety verification, and livestock breed identification all require the ability to name species from images&mdash;AgriTaxon directly benchmarks this capability.</li>
+      <li><strong>Fine-grained visual classification (FGVC).</strong> The semantically hard negatives and cross-domain coverage make AgriTaxon a challenging benchmark for advancing fine-grained discrimination in vision-language models.</li>
+    </ul>
+  </section>
+
+  <!-- Licensing & Access -->
+  <section>
+    <h2><span class="icon">📜</span> Licensing &amp; Access</h2>
+    <p>
+      AgriTaxon is publicly available and free for academic and research use.
+    </p>
+    <ul>
+      <li><strong>Source code, prompt templates &amp; documentation</strong> (this repository): <a href="https://github.com/studyzx/AgriTaxon/blob/main/LICENSE">MIT License</a>.</li>
+      <li><strong>Benchmark metadata &amp; annotations</strong> (species labels, evaluation splits, distractor sets): released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+      <li><strong>Images</strong>: sourced from <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> under their respective Creative Commons licenses (predominantly CC BY and CC BY-SA). Each image retains its original license as specified on Commons.</li>
+      <li><strong>Authority identifiers</strong>: Wikidata QIDs are available under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>; FAO and EPPO identifiers are used for reference linking only.</li>
+    </ul>
+    <p>
+      The dataset is hosted on Hugging Face at <a href="https://huggingface.co/datasets/Xin1818/AgriTaxon">Xin1818/AgriTaxon</a> and can be downloaded freely without registration.
+      We encourage use in both academic research and non-commercial applications. If you use AgriTaxon, please cite our paper (see below).
+    </p>
+  </section>
+
+  <!-- Getting Started -->
+  <section>
+    <h2><span class="icon">🚀</span> Getting Started</h2>
+    <pre>
+# Download the dataset from Hugging Face
+pip install huggingface_hub
+huggingface-cli download Xin1818/AgriTaxon --repo-type dataset --local-dir dataset</pre>
+  </section>
+
+  <!-- Citation -->
+  <section>
+    <h2><span class="icon">📝</span> Citation</h2>
+    <pre>
+@article{agritaxon2026,
+  title   = {AgriTaxon: Can Large Multimodal Models Identify
+             What They See in Agriculture?},
+  author  = {Xin Zeng and Benfeng Xu and Shancheng Fang and Huarui Wu},
+  year    = {2026},
+  note    = {Under review}
 }</pre>
+  </section>
+
 </div>
 
 <footer>
-  AgriTaxon &copy; 2025
+  AgriTaxon &copy; 2026
 </footer>
 
 </body>

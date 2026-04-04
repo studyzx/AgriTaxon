@@ -1,0 +1,20 @@
+You are doing agricultural species recognition (AgriTaxon).
+Track type: {track}
+
+Scope definition:
+{scope}
+
+Task: Identify the entity shown in the image within the scope above.
+
+Options:
+A. {option_a}
+B. {option_b}
+C. {option_c}
+D. {option_d}
+
+OUTPUT CONSTRAINT:
+- You may think or write analysis before the final answer.
+- Output the answer in the end of your response as:
+
+detailed thinking and analysis ...
+answer: A/B/C/D

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriTaxon – Supplementary Material</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #4CAF50;
+      --green-dark: #2e7d32;
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --bg: #fafafa;
+      --card-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: white;
+      border-bottom: 1px solid #eee;
+      padding: 2rem 2rem 1.5rem;
+      text-align: center;
+    }
+    .header h1 { font-size: 2.2rem; font-weight: 800; color: var(--green-dark); margin-bottom: 0.2rem; }
+    .header p { color: var(--text-secondary); font-size: 1rem; }
+    .header .back { display: inline-block; margin-top: 0.8rem; font-size: 0.9rem; color: var(--green-dark); text-decoration: none; }
+    .header .back:hover { text-decoration: underline; }
+
+    /* ── TOC ── */
+    .toc {
+      max-width: 860px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+    }
+    .toc h2 { font-size: 1.1rem; font-weight: 700; color: var(--green-dark); margin-bottom: 0.5rem; }
+    .toc ol { padding-left: 1.2rem; }
+    .toc li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .toc a { color: var(--green-dark); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── Container ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 2rem 3rem; }
+    section { margin-bottom: 3rem; }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #e8f5e9;
+    }
+    h3 { font-size: 1.1rem; font-weight: 600; color: var(--text); margin: 1.2rem 0 0.5rem; }
+    p, li { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-secondary); }
+    ul, ol { padding-left: 1.4rem; }
+    a { color: var(--green-dark); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Prompt box ── */
+    .prompt-box {
+      background: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      border-left: 4px solid var(--green);
+      border-radius: 0.4rem;
+      padding: 1rem 1.2rem;
+      margin: 0.8rem 0 1.2rem;
+      overflow-x: auto;
+    }
+    .prompt-box .prompt-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+    .prompt-box pre {
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+      color: #333;
+    }
+    .prompt-box.blue { border-left-color: #2196F3; }
+    .prompt-box.blue .prompt-title { color: #1565C0; }
+    .prompt-box.teal { border-left-color: #009688; }
+    .prompt-box.teal .prompt-title { color: #00695C; }
+    .prompt-box.violet { border-left-color: #7B1FA2; }
+    .prompt-box.violet .prompt-title { color: #6A1B9A; }
+    .prompt-box.orange { border-left-color: #FF9800; }
+    .prompt-box.orange .prompt-title { color: #E65100; }
+
+    /* ── Table ── */
+    .table-wrapper { overflow-x: auto; margin: 1rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      background: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+    th {
+      background: var(--green-dark);
+      color: white;
+      padding: 0.6rem 0.7rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+    td { padding: 0.5rem 0.7rem; border-bottom: 1px solid #f0f0f0; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fdf8; }
+    .model-id { font-family: 'SF Mono', monospace; font-size: 0.8rem; white-space: nowrap; }
+    td.num { text-align: right; font-family: 'SF Mono', monospace; font-size: 0.82rem; }
+
+    /* ── Figure ── */
+    .figure {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .figure img {
+      max-width: 100%;
+      border-radius: 0.4rem;
+      box-shadow: var(--card-shadow);
+    }
+    .figure figcaption {
+      font-size: 0.88rem;
+      color: #888;
+      margin-top: 0.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Error examples ── */
+    .error-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+    .error-card {
+      display: flex;
+      gap: 1.2rem;
+      background: white;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      box-shadow: var(--card-shadow);
+      align-items: flex-start;
+    }
+    .error-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 0.4rem;
+      flex-shrink: 0;
+    }
+    .error-card .info { flex: 1; }
+    .error-card .error-type {
+      font-weight: 700;
+      color: var(--green-dark);
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+    .error-card .labels {
+      font-size: 0.88rem;
+      margin-bottom: 0.3rem;
+    }
+    .error-card .labels span { font-weight: 600; }
+    .error-card .rationale {
+      font-size: 0.88rem;
+      color: #777;
+    }
+
+    /* ── Algorithm ── */
+    .algorithm {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 0.5rem;
+      padding: 1.2rem 1.5rem;
+      margin: 1rem 0;
+      box-shadow: var(--card-shadow);
+    }
+    .algorithm .algo-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+    .algorithm pre {
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.84rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      margin: 0;
+      color: #333;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #999;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.6rem; }
+      .container { padding: 1.5rem 1.2rem; }
+      .error-card { flex-direction: column; }
+      .error-card img { width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AgriTaxon &mdash; Supplementary Material</h1>
+  <p>Prompt templates, cost analysis, additional experiments, and error examples</p>
+  <a class="back" href="index.html">&larr; Back to project homepage</a>
+</div>
+
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#prompts">Prompt Templates</a></li>
+    <li><a href="#eppo">EPPO Entity Classification Prompt</a></li>
+    <li><a href="#costs">API Cost Breakdown</a></li>
+    <li><a href="#resolution">Resolution Analysis</a></li>
+    <li><a href="#agentic">Agentic Baseline: Tool &amp; Prompt Details</a></li>
+    <li><a href="#errors">Error Type Examples</a></li>
+  </ol>
+</div>
+
+<div class="container">
+
+<!-- ══════════ A. Prompt Templates ══════════ -->
+<section id="prompts">
+  <h2>A. Prompt Templates</h2>
+  <p>All prompts are designed for rigorous, reproducible evaluation. Each explicitly defines the task scope to prevent ambiguity.
+    Raw files are available in the <a href="https://github.com/studyzx/AgriTaxon/tree/main/prompts"><code>prompts/</code></a> directory.</p>
+
+  <h3>System Prompt</h3>
+  <div class="prompt-box blue">
+    <div class="prompt-title">System Prompt</div>
+    <pre>You are an expert in agricultural species identification.</pre>
+  </div>
+
+  <h3>Track-Specific Scope Definitions</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Track</th><th>Scope Definition</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Crop</strong></td><td>Agricultural CROP (cultivated plant used for food, feed, fiber, oil, etc.)</td></tr>
+        <tr><td><strong>Livestock</strong></td><td>LIVESTOCK (domesticated farm animal); label may be a species or a breed</td></tr>
+        <tr><td><strong>Pest</strong></td><td>Agricultural PEST (typically an arthropod such as insect/mite, or a nematode) harmful to crops</td></tr>
+        <tr><td><strong>Weed</strong></td><td>WEED or INVASIVE PLANT (unwanted plant species in agricultural/managed environments)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Open-Ended Prompt Template</h3>
+  <div class="prompt-box teal">
+    <div class="prompt-title">Open-Ended Prompt</div>
+    <pre>You are doing agricultural species recognition (AgriTaxon).
+Track type: {track}
+
+Scope definition:
+{scope}
+
+Task: Identify the entity shown in the image within the scope above.
+
+OUTPUT CONSTRAINT (EXACT-MATCH):
+- You may think or write analysis before the final answer.
+- Output the answer in the end of your response as:
+
+detailed thinking and analysis ...
+answer: &lt;CANONICAL_NAME&gt;</pre>
+  </div>
+
+  <h3>Multi-Choice Prompt Template</h3>
+  <div class="prompt-box teal">
+    <div class="prompt-title">Multi-Choice Prompt</div>
+    <pre>You are doing agricultural species recognition (AgriTaxon).
+Track type: {track}
+
+Scope definition:
+{scope}
+
+Task: Identify the entity shown in the image within the scope above.
+
+Options:
+A. {option_a}
+B. {option_b}
+C. {option_c}
+D. {option_d}
+
+OUTPUT CONSTRAINT:
+- You may think or write analysis before the final answer.
+- Output the answer in the end of your response as:
+
+detailed thinking and analysis ...
+answer: A/B/C/D</pre>
+  </div>
+
+  <h3>Design Rationale</h3>
+  <p>Our prompt design ensures fair evaluation through three principles:
+    <strong>(1) Scope-constrained canonical naming</strong> &mdash; each track defines the entity category and requires the canonical scientific or common name;
+    <strong>(2) Structured output</strong> &mdash; the <code>answer:</code> format enables reliable extraction and exact-match scoring;
+    <strong>(3) Thinking allowance</strong> &mdash; models are explicitly permitted to reason before answering, leveraging chain-of-thought capabilities.
+  </p>
+</section>
+
+<!-- ══════════ B. EPPO Classification ══════════ -->
+<section id="eppo">
+  <h2>B. EPPO Entity Classification Prompt</h2>
+  <p>To classify EPPO database entities into pest vs. weed categories (Section 3.1 of the main paper), we use GPT-5 Mini with the following system prompt.
+    For each entity, the Wikipedia content is provided in the user message, and the model outputs one of: <code>pest</code>, <code>weed_invasive</code>, <code>pathogen</code>, <code>host_or_crop</code>, or <code>other</code>.</p>
+  <div class="prompt-box violet">
+    <div class="prompt-title">Classification Prompt</div>
+    <pre>You are an expert agricultural taxonomist. Your task is to classify organisms into one of the following categories based on their Wikipedia description.
+
+## Classification Categories
+
+### pest (Agricultural Pest)
+An Agricultural Pest is an animal organism that causes direct damage to crops, forest trees, pasture, stored products, or other cultivated plants through feeding or other destructive behavior. Typical examples include insects, mites, nematodes, molluscs (such as snails and slugs), and in some cases vertebrates such as rodents or birds when they are recognized as agricultural pests.
+
+### weed_invasive (Weed and Invasive Plant)
+A Weed and Invasive Plant is a plant species that plays a harmful role in agricultural fields, pastures, orchards, forests, or natural ecosystems by growing where it is not desired and competing with crops or native vegetation.
+
+### pathogen (Plant Pathogen)
+A Plant Pathogen is a microorganism or microbe-like organism that primarily causes disease in plants, leading to symptoms such as leaf spots, blights, wilting, rots, galls, or other pathological changes.
+
+### host_or_crop (Host or Crop Plant)
+A Host or Crop Plant is a plant species that is primarily cultivated, managed, or studied as a useful plant in agriculture, forestry, horticulture, or landscaping.
+
+### other (Other or Unclear)
+Other or Unclear is a catch-all category for entities that cannot be reliably assigned to the above categories.
+
+## Output Format
+Respond with ONLY the category name (one of: pest, weed_invasive, pathogen, host_or_crop, other). Do not include any explanation.</pre>
+  </div>
+</section>
+
+<!-- ══════════ C. API Costs ══════════ -->
+<section id="costs">
+  <h2>C. API Cost Breakdown</h2>
+  <p>Total benchmark cost across all 14 models: <strong>$1,554.70 USD</strong> (including $88.50 for LLM-as-a-Judge alias validation via GPT-5 Mini). Prices without official USD listing (GLM, Doubao) are converted from CNY at 1 USD = 6.91 CNY.</p>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>In ($/1M)</th>
+          <th>Out ($/1M)</th>
+          <th>MC Cost</th>
+          <th>OE Cost</th>
+          <th>Judge</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="7" style="background:#e3f2fd; font-weight:600; font-size:0.8rem; text-align:center;">Proprietary Models</td></tr>
+        <tr><td class="model-id">gemini-3-pro-preview</td><td class="num">2.00</td><td class="num">12.00</td><td class="num">$224.0</td><td class="num">$400.1</td><td class="num">$4.8</td><td class="num"><strong>$629.0</strong></td></tr>
+        <tr><td class="model-id">gemini-3-flash-preview</td><td class="num">0.50</td><td class="num">3.00</td><td class="num">$32.6</td><td class="num">$66.4</td><td class="num">$5.8</td><td class="num"><strong>$104.8</strong></td></tr>
+        <tr><td class="model-id">gpt-5</td><td class="num">1.25</td><td class="num">10.00</td><td class="num">$72.1</td><td class="num">$119.8</td><td class="num">$5.8</td><td class="num"><strong>$197.7</strong></td></tr>
+        <tr><td class="model-id">gpt-5-mini</td><td class="num">0.25</td><td class="num">2.00</td><td class="num">$20.5</td><td class="num">$20.9</td><td class="num">$6.7</td><td class="num"><strong>$48.1</strong></td></tr>
+        <tr><td class="model-id">claude-haiku-4-5</td><td class="num">1.00</td><td class="num">5.00</td><td class="num">$48.9</td><td class="num">$51.4</td><td class="num">$7.7</td><td class="num"><strong>$108.0</strong></td></tr>
+        <tr><td class="model-id">doubao-seed-2-0-pro</td><td class="num">0.46</td><td class="num">2.31</td><td class="num">$22.1</td><td class="num">$30.3</td><td class="num">$4.6</td><td class="num"><strong>$57.0</strong></td></tr>
+        <tr><td class="model-id">doubao-seed-2-0-lite</td><td class="num">0.09</td><td class="num">0.52</td><td class="num">$4.1</td><td class="num">$4.4</td><td class="num">$5.2</td><td class="num"><strong>$13.7</strong></td></tr>
+        <tr><td colspan="7" style="background:#fff9c4; font-weight:600; font-size:0.8rem; text-align:center;">Open-Source Models</td></tr>
+        <tr><td class="model-id">kimi-k2.5</td><td class="num">0.60</td><td class="num">3.00</td><td class="num">$44.2</td><td class="num">$64.4</td><td class="num">$5.9</td><td class="num"><strong>$114.6</strong></td></tr>
+        <tr><td class="model-id">glm-4.6v</td><td class="num">0.14</td><td class="num">0.43</td><td class="num">$2.9</td><td class="num">$4.4</td><td class="num">$6.5</td><td class="num"><strong>$13.8</strong></td></tr>
+        <tr><td class="model-id">qwen3-vl-235b-a22b</td><td class="num">0.40</td><td class="num">1.60</td><td class="num">$13.7</td><td class="num">$15.2</td><td class="num">$6.6</td><td class="num"><strong>$35.5</strong></td></tr>
+        <tr><td class="model-id">qwen3.5-397b-a17b</td><td class="num">0.60</td><td class="num">3.60</td><td class="num">$16.6</td><td class="num">$17.2</td><td class="num">$6.6</td><td class="num"><strong>$40.4</strong></td></tr>
+        <tr><td class="model-id">qwen3-vl-30b-a3b</td><td class="num">0.20</td><td class="num">0.80</td><td class="num">$7.7</td><td class="num">$8.6</td><td class="num">$7.3</td><td class="num"><strong>$23.6</strong></td></tr>
+        <tr><td class="model-id">glm-4.6v-flashx</td><td class="num">0.02</td><td class="num">0.22</td><td class="num">$1.1</td><td class="num">$3.0</td><td class="num">$7.4</td><td class="num"><strong>$11.5</strong></td></tr>
+        <tr><td class="model-id">qwen3.5-35b-a3b</td><td class="num">0.25</td><td class="num">2.00</td><td class="num">$45.1</td><td class="num">$104.3</td><td class="num">$7.6</td><td class="num"><strong>$157.0</strong></td></tr>
+        <tr style="background:#f5f5f5;"><td colspan="3" style="text-align:right; font-weight:700;">Total Benchmark Cost</td><td colspan="3" style="text-align:right; font-weight:700;">Judge: $88.5</td><td class="num" style="font-weight:700;">$1,554.7</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ D. Resolution Analysis ══════════ -->
+<section id="resolution">
+  <h2>D. Resolution Analysis</h2>
+  <p>We examined whether image resolution correlates with recognition accuracy. Images in the 0.5&ndash;1 MP range have the lowest mean accuracy (3.24 models correct out of 14), while images above 4 MP achieve the highest (3.66 models correct). However, this effect is substantially weaker than the Wikipedia popularity effect (which shows a 2&times; gap), suggesting that <em>resolution alone does not guarantee recognition success</em>&mdash;the model must also have learned about the species during training.</p>
+  <div class="figure">
+    <img src="figures/resolution_accuracy_bar.png" alt="Image resolution vs. recognition accuracy">
+    <figcaption>Image resolution vs. recognition accuracy. Higher resolution shows modest improvement, but the effect is much weaker than species popularity.</figcaption>
+  </div>
+</section>
+
+<!-- ══════════ E. Agentic Baseline ══════════ -->
+<section id="agentic">
+  <h2>E. Agentic Baseline: Tool &amp; Prompt Details</h2>
+  <p>Complete specification of the image cropping tool and prompts used in the agentic baseline.
+    Raw files are available at <a href="https://github.com/studyzx/AgriTaxon/tree/main/prompts"><code>prompts/agentic_*</code></a>.</p>
+
+  <h3>Tool Definition</h3>
+  <div class="prompt-box orange">
+    <div class="prompt-title">image_crop Tool</div>
+    <pre>image_crop: Crop a specific region of the image for closer inspection.
+
+Use this tool when you need to examine fine details like:
+- Leaf patterns, textures, or venation
+- Insect body parts (antennae, legs, wings)
+- Animal markings or features
+
+Input: A bounding box with normalized coordinates (0-1):
+  x1 (float): Left boundary   y1 (float): Top boundary
+  x2 (float): Right boundary  y2 (float): Bottom boundary
+
+Output: A cropped 448×448 view of the specified region.</pre>
+  </div>
+
+  <h3>Processing Algorithm</h3>
+  <div class="algorithm">
+    <div class="algo-title">Crop Tool Processing Steps</div>
+    <pre>Given bounding box [x1, y1, x2, y2] and image size (W, H):
+
+1. Convert to pixels: px_i = x_i × W,  py_i = y_i × H
+2. Compute center and size:
+     cx = (px1 + px2) / 2,  cy = (py1 + py2) / 2
+     s  = max(px2 - px1, py2 - py1)
+3. Make square and expand: s' = s × 1.5
+4. Enforce minimum size:   s' = max(s', 224)
+5. Compute crop region centered at (cx, cy) with side s'
+6. Shift into bounds if crop exceeds image boundaries
+7. Crop and resize to 448 × 448 using LANCZOS</pre>
+  </div>
+
+  <h3>Agentic System Prompt</h3>
+  <div class="prompt-box blue">
+    <div class="prompt-title">System Prompt (Agentic)</div>
+    <pre>You are an expert in agricultural species identification.
+
+You have access to a tool called `image_crop` that allows you to crop and zoom into specific regions of the image for closer inspection.
+
+Guidelines:
+1. First, examine the full image to get an overall understanding.
+2. If you're uncertain or need to see fine details (leaf patterns, insect parts, animal markings), use the image_crop tool to zoom in.
+3. You can use the tool up to 2 times per image.
+4. After examining all necessary details, provide your final answer.
+
+Remember: The crop tool returns a zoomed view of the specified region, allowing you to see details that might not be visible in the full image.</pre>
+  </div>
+
+  <h3>Agentic User Prompt</h3>
+  <div class="prompt-box teal">
+    <div class="prompt-title">User Prompt (Agentic Multi-Choice)</div>
+    <pre>You are doing agricultural species recognition (AgriTaxon).
+Track type: {track}
+
+Scope definition:
+{scope}
+
+Task: Identify the entity shown in the image within the scope above.
+
+Options:
+A. {option_a}    B. {option_b}
+C. {option_c}    D. {option_d}
+
+INSTRUCTIONS:
+1. First analyze the full image. If you can confidently identify the species, provide your answer.
+2. If you need to see more details (leaf texture, body parts, markings), use the image_crop tool to zoom into relevant regions.
+3. After your analysis, output your final answer as:
+   answer: A/B/C/D</pre>
+  </div>
+
+  <h3>Agent Loop Pseudocode</h3>
+  <div class="algorithm">
+    <div class="algo-title">Algorithm: Agent-Based Evaluation with Crop Tool</div>
+    <pre>Input:  Image I, question Q, options {A,B,C,D}, max_calls K=2
+Output: Final answer a ∈ {A,B,C,D}
+
+messages ← [SystemPrompt, (I, Q, options)]
+tool_count ← 0
+
+while tool_count &lt; K do
+    (response, tool_calls) ← LLM(messages, tools=[image_crop])
+    if tool_calls = ∅ then
+        return ExtractAnswer(response)
+    end if
+    for each call in tool_calls do
+        bbox ← call.arguments
+        I_crop ← image_crop(I, bbox)
+        Append (response, call) to messages
+        Append I_crop as tool result to messages
+        tool_count ← tool_count + 1
+    end for
+end while
+
+response ← LLM(messages, tools=∅)
+return ExtractAnswer(response)</pre>
+  </div>
+</section>
+
+<!-- ══════════ F. Error Examples ══════════ -->
+<section id="errors">
+  <h2>F. Error Type Examples</h2>
+  <p>Representative examples for each of the five error types from the human-annotated 75 Acc-error cases (Gemini 3 Pro Preview, open-ended evaluation).</p>
+
+  <div class="error-grid">
+    <div class="error-card">
+      <img src="figures/error_cases/taxonomic_confusion.png" alt="Taxonomic confusion example">
+      <div class="info">
+        <div class="error-type">Taxonomic Confusion (63%)</div>
+        <div class="labels"><span>Ground truth:</span> <em>Stylosanthes capitata</em> [Crop] &rarr; <span>Prediction:</span> <em>Stylosanthes humilis</em></div>
+        <div class="rationale">Same genus within Fabaceae. The model recognizes the correct genus from the pod morphology but confuses species-level features (capitulum density, beak shape).</div>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <img src="figures/error_cases/unrelated_prediction.jpg" alt="Unrelated prediction example">
+      <div class="info">
+        <div class="error-type">Unrelated Prediction (13%)</div>
+        <div class="labels"><span>Ground truth:</span> <em>Gleditsia triacanthos</em> [Crop] &rarr; <span>Prediction:</span> Black walnut</div>
+        <div class="rationale">Cross-family error: Fabaceae vs. Juglandaceae. Both are deciduous North American trees, but they belong to different families and are morphologically distinct.</div>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <img src="figures/error_cases/no_answer.jpg" alt="No answer example">
+      <div class="info">
+        <div class="error-type">No Answer (9%)</div>
+        <div class="labels"><span>Ground truth:</span> <em>Cydia toreuta</em> [Pest] &rarr; <span>Prediction:</span> (none)</div>
+        <div class="rationale">The model fails to produce any species name. <em>Cydia toreuta</em> is an obscure tortricid moth likely absent from the model's training data.</div>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <img src="figures/error_cases/parsing_error.jpg" alt="Parsing error example">
+      <div class="info">
+        <div class="error-type">Parsing Error (8%)</div>
+        <div class="labels"><span>Ground truth:</span> <em>Licuala ramsayi</em> [Crop] &rarr; <span>Prediction:</span> "answer"</div>
+        <div class="rationale">The model's response is truncated or malformed, outputting the literal word "answer" instead of a species name.</div>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <img src="figures/error_cases/granularity_mismatch.jpg" alt="Granularity mismatch example">
+      <div class="info">
+        <div class="error-type">Granularity Mismatch (7%)</div>
+        <div class="labels"><span>Ground truth:</span> Swiss Warmblood [Livestock] &rarr; <span>Prediction:</span> Horse</div>
+        <div class="rationale">The model correctly identifies the animal as a horse but fails to specify the breed, producing a species-level answer where a breed-level answer is required.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  AgriTaxon &copy; 2026 &middot; <a href="index.html">Project Homepage</a>
+</footer>
+
+</body>
+</html>

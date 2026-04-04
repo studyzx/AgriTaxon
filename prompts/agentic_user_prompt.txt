@@ -1,0 +1,19 @@
+You are doing agricultural species recognition (AgriTaxon).
+Track type: {track}
+
+Scope definition:
+{scope}
+
+Task: Identify the entity shown in the image within the scope above.
+
+Options:
+A. {option_a}
+B. {option_b}
+C. {option_c}
+D. {option_d}
+
+INSTRUCTIONS:
+1. First analyze the full image. If you can confidently identify the species, provide your answer.
+2. If you need to see more details (leaf texture, body parts, markings), use the image_crop tool to zoom into relevant regions.
+3. After your analysis, output your final answer as:
+   answer: A/B/C/D

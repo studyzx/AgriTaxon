@@ -1,0 +1,6 @@
+{
+  "crop": "Agricultural CROP (cultivated plant used for food, feed, fiber, oil, etc.)",
+  "livestock": "LIVESTOCK (domesticated farm animal); label may be a species or a breed",
+  "pest": "Agricultural PEST (typically an arthropod such as insect/mite, or a nematode) harmful to crops",
+  "weed": "WEED or INVASIVE PLANT (unwanted plant species in agricultural/managed environments)"
+}
