@@ -5,7 +5,7 @@
 *Xin Zeng, Benfeng Xu, Shancheng Fang, Huarui Wu*
 
 <p align="center">
-  <img src="docs/teaser.png" width="100%" alt="AgriTaxon overview">
+  <img src="docs/teaser.jpg" width="100%" alt="AgriTaxon overview">
 </p>
 
 **AgriTaxon** is the first benchmark for **open-ended taxonomic naming** in agriculture. It tests whether Large Multimodal Models (LMMs) can correctly name a species from its image—without predefined options.
