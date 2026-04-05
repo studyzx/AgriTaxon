@@ -60,14 +60,3 @@ AgriTaxon is publicly available and free for academic and research use.
 
 The dataset is hosted on Hugging Face at [Xin1818/AgriTaxon](https://huggingface.co/datasets/Xin1818/AgriTaxon) and can be downloaded freely without registration.
 
-## Citation
-
-```bibtex
-@article{agritaxon2026,
-  title   = {AgriTaxon: Can Large Multimodal Models Identify
-             What They See in Agriculture?},
-  author  = {Xin Zeng and Benfeng Xu and Shancheng Fang and Huarui Wu},
-  year    = {2026},
-  note    = {Under review}
-}
-```
