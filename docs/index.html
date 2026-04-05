@@ -7,255 +7,577 @@
   <meta name="description" content="AgriTaxon: the first benchmark for open-ended taxonomic naming in agriculture, spanning 7,432 species across crops, livestock, pests, and weeds.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --green: #4CAF50;
-      --green-dark: #2e7d32;
-      --green-darker: #1b5e20;
-      --orange: #FF9800;
-      --red: #F44336;
-      --purple: #9C27B0;
-      --bg: #fafafa;
-      --text: #1a1a1a;
-      --text-secondary: #555;
-      --card-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --forest: #1a3a2a;
+      --forest-mid: #2d5a3f;
+      --sage: #5a7a6a;
+      --sage-light: #8aaa9a;
+      --amber: #c8943e;
+      --amber-light: #e8c96e;
+      --cream: #faf8f3;
+      --cream-dark: #f0ede4;
+      --text: #1c1c1a;
+      --text-secondary: #4a4a46;
+      --text-muted: #8a8a84;
+      --card-bg: #ffffff;
+      --card-shadow: 0 1px 3px rgba(26,58,42,0.06), 0 6px 24px rgba(26,58,42,0.04);
+      --card-shadow-hover: 0 4px 12px rgba(26,58,42,0.1), 0 12px 36px rgba(26,58,42,0.06);
+      --radius: 0.75rem;
+      --radius-lg: 1.25rem;
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
+      background: var(--cream);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Grain overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    /* ── Scroll animations ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ── Hero ── */
     .hero {
-      background: white;
-      color: var(--text);
+      position: relative;
+      background: linear-gradient(170deg, var(--forest) 0%, #224a35 55%, var(--forest-mid) 100%);
+      color: #fff;
       text-align: center;
-      padding: 3.5rem 2rem 0;
-      border-bottom: 1px solid #eee;
+      padding: 5rem 2rem 0;
+      overflow: hidden;
     }
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      margin-bottom: 0.3rem;
-      letter-spacing: -0.02em;
-      color: var(--green-dark);
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(200,148,62,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(138,170,154,0.15) 0%, transparent 50%);
+      pointer-events: none;
     }
-    .hero .subtitle {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      max-width: 700px;
-      margin: 0.5rem auto 0.3rem;
-      font-weight: 400;
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to top, var(--cream), transparent);
+      pointer-events: none;
     }
-    .hero .authors {
-      font-size: 0.95rem;
-      color: #888;
-      margin-bottom: 0.2rem;
-      font-weight: 400;
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    .hero .venue {
-      font-size: 0.9rem;
-      color: #aaa;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-    }
-    .badges { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
-    .badge {
-      display: inline-block;
-      padding: 0.35rem 0.9rem;
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 1rem;
       border-radius: 2rem;
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      color: white;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      color: var(--amber-light);
+      margin-bottom: 1.8rem;
+      animation: fadeDown 0.8s cubic-bezier(0.22,1,0.36,1) both;
     }
-    .badge.crops { background: var(--green); }
-    .badge.livestock { background: var(--orange); }
-    .badge.pests { background: var(--red); }
-    .badge.weeds { background: var(--purple); }
-    .links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+      font-optical-sizing: auto;
+      animation: fadeDown 0.8s 0.1s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    .hero .subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      margin: 0 auto 1.2rem;
+      font-weight: 400;
+      line-height: 1.6;
+      animation: fadeDown 0.8s 0.2s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    .hero .venue {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      animation: fadeDown 0.8s 0.25s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    /* ── Domain badges ── */
+    .domain-badges {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      animation: fadeDown 0.8s 0.3s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .domain-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #fff;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .domain-badge.crops    { background: rgba(76,175,80,0.25); }
+    .domain-badge.livestock { background: rgba(255,152,0,0.25); }
+    .domain-badge.pests    { background: rgba(244,67,54,0.25); }
+    .domain-badge.weeds    { background: rgba(156,39,176,0.25); }
+    .domain-badge .count {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+    }
+
+    /* ── Action buttons ── */
+    .actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeDown 0.8s 0.35s cubic-bezier(0.22,1,0.36,1) both;
+    }
     .btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.65rem 1.3rem;
-      border-radius: 0.5rem;
-      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 0.6rem;
+      font-size: 0.9rem;
       font-weight: 600;
       text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
+      transition: all 0.25s cubic-bezier(0.22,1,0.36,1);
+      font-family: 'DM Sans', sans-serif;
     }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-decoration: none; }
-    .btn-primary { background: var(--green-dark); color: white; }
-    .btn-outline { border: 2px solid #ddd; color: var(--text-secondary); }
+    .btn:hover { text-decoration: none; }
+    .btn-primary {
+      background: var(--amber);
+      color: var(--forest);
+      box-shadow: 0 2px 12px rgba(200,148,62,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(200,148,62,0.35);
+    }
+    .btn-ghost {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      transform: translateY(-2px);
+    }
 
     /* ── Teaser ── */
     .teaser {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.5rem 2rem 0;
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
+      margin: 2.5rem auto 0;
+      animation: fadeUp 1s 0.5s cubic-bezier(0.22,1,0.36,1) both;
     }
     .teaser img {
       width: 100%;
-      border-radius: 0.5rem;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
       display: block;
     }
 
-    /* ── Container & sections ── */
-    .container { max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem; }
-    section { margin-bottom: 2.5rem; }
-    h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: var(--green-dark);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    /* ── Container ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
     }
-    h2 .icon { font-size: 1.2rem; }
-    p, li { font-size: 1.02rem; margin-bottom: 0.6rem; color: var(--text-secondary); }
-    ul { padding-left: 1.4rem; }
-    li { margin-bottom: 0.5rem; }
-    a { color: var(--green-dark); text-decoration: none; font-weight: 500; }
-    a:hover { text-decoration: underline; }
 
-    /* ── Stats grid ── */
+    /* ── Section ── */
+    section {
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 1.02rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    a {
+      color: var(--forest-mid);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(45,90,63,0.2);
+      transition: border-color 0.2s;
+    }
+    a:hover { border-color: var(--forest-mid); }
+
+    /* ── Stats ── */
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.2rem;
-      margin: 1.5rem 0;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
     }
     .stat-card {
-      background: white;
-      border-radius: 0.75rem;
-      padding: 1.3rem 1rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.5rem 1rem;
       text-align: center;
       box-shadow: var(--card-shadow);
+      border: 1px solid rgba(26,58,42,0.04);
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
     }
-    .stat-card .number { font-size: 1.9rem; font-weight: 800; color: var(--green-dark); }
-    .stat-card .label { font-size: 0.85rem; color: #888; margin-top: 0.15rem; font-weight: 500; }
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .stat-card .number {
+      font-family: 'Fraunces', serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--forest);
+      line-height: 1;
+    }
+    .stat-card .label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
 
     /* ── Table ── */
-    .table-wrapper { overflow-x: auto; margin: 1rem 0; }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(26,58,42,0.06);
+    }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.82rem;
-      background: white;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
+      background: var(--card-bg);
     }
-    th {
-      background: var(--green-dark);
-      color: white;
-      padding: 0.55rem 0.5rem;
+    thead th {
+      background: var(--forest);
+      color: #fff;
+      padding: 0.65rem 0.55rem;
       text-align: center;
       font-weight: 600;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
       white-space: nowrap;
+      font-family: 'DM Sans', sans-serif;
     }
     td {
-      padding: 0.45rem 0.5rem;
-      border-bottom: 1px solid #f0f0f0;
+      padding: 0.5rem 0.55rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
       text-align: center;
       font-variant-numeric: tabular-nums;
-      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-      font-size: 0.8rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
     }
     tr:last-child td { border-bottom: none; }
-    tr:hover td { background: #f8fdf8; }
+    tr:hover td { background: rgba(26,58,42,0.02); }
     .model-name {
       font-weight: 600;
       color: var(--text);
       white-space: nowrap;
       text-align: left;
-      font-family: 'Inter', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.82rem;
     }
     .model-name img.logo {
-      height: 14px;
-      width: 14px;
+      height: 15px;
+      width: 15px;
       object-fit: contain;
       vertical-align: -2px;
-      margin-right: 4px;
+      margin-right: 5px;
+      border-radius: 2px;
     }
     .date {
-      color: #999;
-      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.74rem;
     }
-    .best { font-weight: 700; color: var(--green-dark); }
+    .best {
+      font-weight: 700;
+      color: var(--forest);
+    }
     .block-header {
       font-weight: 600;
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       text-align: center !important;
-      font-family: 'Inter', sans-serif;
-      font-style: italic;
-      color: #555;
-      padding: 0.4rem 0.5rem;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      padding: 0.5rem 0.55rem;
     }
-    .block-header.proprietary { background: #e3f2fd; }
-    .block-header.opensource { background: #fffde7; }
+    .block-header.proprietary {
+      background: linear-gradient(90deg, rgba(26,58,42,0.05) 0%, rgba(26,58,42,0.02) 100%);
+    }
+    .block-header.opensource {
+      background: linear-gradient(90deg, rgba(200,148,62,0.08) 0%, rgba(200,148,62,0.02) 100%);
+    }
+    .table-footnote {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+      padding-left: 0.25rem;
+    }
 
-    /* ── Insights list ── */
+    /* ── Insights ── */
     .insights {
       list-style: none;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
     .insights li {
-      padding: 0.8rem 1rem 0.8rem 2.5rem;
-      margin-bottom: 0.5rem;
-      background: white;
-      border-radius: 0.5rem;
+      padding: 1rem 1.2rem 1rem 3rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
       box-shadow: var(--card-shadow);
+      border: 1px solid rgba(26,58,42,0.04);
       position: relative;
+      transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s;
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+    }
+    .insights li:hover {
+      transform: translateX(4px);
+      box-shadow: var(--card-shadow-hover);
     }
     .insights li::before {
       content: attr(data-icon);
       position: absolute;
-      left: 0.8rem;
-      top: 0.8rem;
-      font-size: 1.1rem;
+      left: 0.9rem;
+      top: 1rem;
+      font-size: 1.15rem;
     }
 
-    /* ── Code / citation ── */
+    /* ── How it works ── */
+    .step {
+      margin-bottom: 1.2rem;
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: #fff;
+      font-family: 'Fraunces', serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+    .step p {
+      display: inline;
+    }
+
+    /* ── Applications grid ── */
+    .applications {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .app-card {
+      padding: 1.25rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(26,58,42,0.04);
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+    }
+    .app-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .app-card h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+    }
+    .app-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    /* ── Code block ── */
     pre {
-      background: #f5f5f5;
-      padding: 1rem 1.2rem;
-      border-radius: 0.5rem;
+      background: var(--forest);
+      color: rgba(255,255,255,0.85);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
       overflow-x: auto;
       font-size: 0.85rem;
-      line-height: 1.5;
-      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      line-height: 1.6;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+      box-shadow: var(--card-shadow);
     }
+    pre .comment { color: rgba(255,255,255,0.35); }
+    pre .cmd { color: var(--amber-light); }
     code {
       font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-      background: #f0f0f0;
-      padding: 0.15rem 0.4rem;
+      background: rgba(26,58,42,0.06);
+      padding: 0.15rem 0.45rem;
       border-radius: 0.25rem;
-      font-size: 0.9em;
+      font-size: 0.88em;
+      color: var(--forest-mid);
+    }
+
+    /* ── Licensing list ── */
+    .license-list {
+      padding-left: 0;
+      list-style: none;
+    }
+    .license-list li {
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      position: relative;
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+    }
+    .license-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.95rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sage-light);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(26,58,42,0.1), transparent);
+      margin: 3rem 0;
     }
 
     /* ── Footer ── */
     footer {
       text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
-      color: #999;
-      border-top: 1px solid #eee;
+      padding: 2.5rem 2rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(26,58,42,0.06);
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ── Responsive ── */
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2.2rem; }
-      .hero .subtitle { font-size: 1rem; }
-      .teaser { padding: 1rem 1rem 0; }
+    @media (max-width: 768px) {
+      .hero { padding: 3.5rem 1.5rem 0; }
+      .container { padding: 2.5rem 1.5rem; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .applications { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 2.5rem 1.2rem 0; }
       .container { padding: 2rem 1.2rem; }
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .stat-card { padding: 1rem 0.75rem; }
+      .stat-card .number { font-size: 1.6rem; }
+      section { margin-bottom: 2.5rem; }
     }
   </style>
 </head>
@@ -263,20 +585,22 @@
 
 <!-- ════════ Hero ════════ -->
 <div class="hero">
-  <h1>AgriTaxon</h1>
-  <p class="subtitle">Can Large Multimodal Models Identify What They See in Agriculture?</p>
-  <p class="authors"></p>
-  <p class="venue">Under Review</p>
-  <div class="badges">
-    <span class="badge crops">Crops 1,971</span>
-    <span class="badge livestock">Livestock 178</span>
-    <span class="badge pests">Pests 3,485</span>
-    <span class="badge weeds">Weeds 1,798</span>
-  </div>
-  <div class="links">
-    <a class="btn btn-primary" href="https://huggingface.co/datasets/Xin1818/AgriTaxon">📦 Dataset</a>
-    <a class="btn btn-outline" href="https://github.com/studyzx/AgriTaxon">🔗 GitHub</a>
-    <a class="btn btn-outline" href="supplementary.html">📎 Supplementary</a>
+  <div class="hero-inner">
+    <div class="hero-badge">Benchmark &middot; 7,432 Species &middot; 4 Domains</div>
+    <h1>AgriTaxon</h1>
+    <p class="subtitle">Can Large Multimodal Models Identify What They See in Agriculture?</p>
+    <p class="venue">Under Review</p>
+    <div class="domain-badges">
+      <span class="domain-badge crops"><span class="count">1,971</span> Crops</span>
+      <span class="domain-badge livestock"><span class="count">178</span> Livestock</span>
+      <span class="domain-badge pests"><span class="count">3,485</span> Pests</span>
+      <span class="domain-badge weeds"><span class="count">1,798</span> Weeds</span>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://huggingface.co/datasets/Xin1818/AgriTaxon">Dataset</a>
+      <a class="btn btn-ghost" href="https://github.com/studyzx/AgriTaxon">GitHub</a>
+      <a class="btn btn-ghost" href="supplementary.html">Supplementary</a>
+    </div>
   </div>
   <div class="teaser">
     <img src="teaser.jpg" alt="AgriTaxon overview: 7,432 species across crops, livestock, pests, and weeds with evaluation results showing a seeing-without-naming gap.">
@@ -287,8 +611,9 @@
 <div class="container">
 
   <!-- Overview -->
-  <section>
-    <h2><span class="icon">🔬</span> Overview</h2>
+  <section class="reveal">
+    <div class="section-label">Overview</div>
+    <h2>Bridging the Seeing-Without-Naming Gap</h2>
     <p>
       In agriculture, correctly naming a species from its image&mdash;what we call <strong>open-ended taxonomic naming</strong>&mdash;is the starting point for intelligent agriculture, from choosing a pesticide to enforcing quarantine.
       Yet no existing benchmark directly tests whether Large Multimodal Models (LMMs) can perform this task.
@@ -318,9 +643,12 @@
     </div>
   </section>
 
-  <!-- Main Results -->
-  <section>
-    <h2><span class="icon">🏆</span> Leaderboard</h2>
+  <div class="divider"></div>
+
+  <!-- Leaderboard -->
+  <section class="reveal">
+    <div class="section-label">Evaluation</div>
+    <h2>Leaderboard</h2>
     <p>
       Accuracy (%) on AgriTaxon for 14 LMMs, ranked by open-ended Acc within each block. Open-ended reports both EM (exact match) and Acc (with LLM-as-a-Judge alias validation). <strong>Bold</strong> = best per column.
     </p>
@@ -331,16 +659,16 @@
             <th rowspan="2">Model</th>
             <th rowspan="2">Release</th>
             <th rowspan="2">Hard</th>
-            <th colspan="5" style="text-align:center; border-left: 2px solid rgba(255,255,255,0.3);">Multi-Choice</th>
-            <th colspan="6" style="text-align:center; border-left: 2px solid rgba(255,255,255,0.3);">Open-Ended</th>
+            <th colspan="5" style="text-align:center; border-left: 2px solid rgba(255,255,255,0.2);">Multi-Choice</th>
+            <th colspan="6" style="text-align:center; border-left: 2px solid rgba(255,255,255,0.2);">Open-Ended</th>
           </tr>
           <tr>
-            <th style="border-left: 2px solid rgba(255,255,255,0.3);">Crop</th>
+            <th style="border-left: 2px solid rgba(255,255,255,0.2);">Crop</th>
             <th>Live.</th>
             <th>Pest</th>
             <th>Weed</th>
             <th>Mean</th>
-            <th style="border-left: 2px solid rgba(255,255,255,0.3);">Crop</th>
+            <th style="border-left: 2px solid rgba(255,255,255,0.2);">Crop</th>
             <th>Live.</th>
             <th>Pest</th>
             <th>Weed</th>
@@ -452,14 +780,17 @@
         </tbody>
       </table>
     </div>
-    <p style="font-size:0.85rem; color:#aaa; margin-top:0.5rem;">
+    <p class="table-footnote">
       Hard = AgriTaxon-Hard subset (&le;2 models correct, 1,052 samples). EM = exact match after normalization. Acc = LLM-as-a-Judge alias validation (98% expert agreement).
     </p>
   </section>
 
+  <div class="divider"></div>
+
   <!-- Key Findings -->
-  <section>
-    <h2><span class="icon">💡</span> Key Findings</h2>
+  <section class="reveal">
+    <div class="section-label">Insights</div>
+    <h2>Key Findings</h2>
     <ul class="insights">
       <li data-icon="🔍"><strong>Taxonomic confusion dominates errors (63%)</strong> &mdash; models identify the correct biological family but fail at genus- or species-level discrimination.</li>
       <li data-icon="📊"><strong>2&times; popularity-driven gap</strong> &mdash; popular species (>10K monthly Wikipedia views) are recognized 2.2&times; more accurately than obscure ones (&le;100 views).</li>
@@ -468,71 +799,121 @@
     </ul>
   </section>
 
+  <div class="divider"></div>
+
   <!-- How It Works -->
-  <section>
-    <h2><span class="icon">⚙️</span> How AgriTaxon Works</h2>
-    <p>
-      <strong>1. Authority-grounded data collection.</strong>
-      We query Wikidata for species that carry both an authoritative database identifier (FAO Ecocrop, FAO DAD-IS, or EPPO) and a Wikimedia Commons image, forming a traceable authority chain for every label.
-    </p>
-    <p>
-      <strong>2. Cross-domain coverage.</strong>
-      The 48,950+ EPPO entries&mdash;mixing pests, weeds, pathogens, and host plants&mdash;are classified via LLM into pest and weed tracks.
-      All images undergo resolution filtering (&ge;224px) and visual content validation.
-    </p>
-    <p>
-      <strong>3. Dual evaluation protocols.</strong>
-      <em>Multiple-choice</em> uses semantically hard negatives (top-3 similar species by text embedding); <em>open-ended</em> requires free-form species name production. An LLM-as-a-Judge protocol handles alias matching (scientific names, common names, synonyms) with 98% expert agreement.
-    </p>
+  <section class="reveal">
+    <div class="section-label">Methodology</div>
+    <h2>How AgriTaxon Works</h2>
+    <div class="step">
+      <span class="step-number">1</span>
+      <p>
+        <strong>Authority-grounded data collection.</strong>
+        We query Wikidata for species that carry both an authoritative database identifier (FAO Ecocrop, FAO DAD-IS, or EPPO) and a Wikimedia Commons image, forming a traceable authority chain for every label.
+      </p>
+    </div>
+    <div class="step">
+      <span class="step-number">2</span>
+      <p>
+        <strong>Cross-domain coverage.</strong>
+        The 48,950+ EPPO entries&mdash;mixing pests, weeds, pathogens, and host plants&mdash;are classified via LLM into pest and weed tracks.
+        All images undergo resolution filtering (&ge;224px) and visual content validation.
+      </p>
+    </div>
+    <div class="step">
+      <span class="step-number">3</span>
+      <p>
+        <strong>Dual evaluation protocols.</strong>
+        <em>Multiple-choice</em> uses semantically hard negatives (top-3 similar species by text embedding); <em>open-ended</em> requires free-form species name production. An LLM-as-a-Judge protocol handles alias matching (scientific names, common names, synonyms) with 98% expert agreement.
+      </p>
+    </div>
   </section>
 
-  <!-- Potential Applications -->
-  <section>
-    <h2><span class="icon">🎯</span> Potential Applications</h2>
-    <p>AgriTaxon is designed to support a broad range of research directions across the multimodal AI and agricultural informatics communities:</p>
-    <ul>
-      <li><strong>Open-ended visual recognition.</strong> A testbed for developing and evaluating models that must produce free-form species names rather than selecting from a fixed label set&mdash;closer to real-world deployment where label spaces are open.</li>
-      <li><strong>Long-tail and rare-entity understanding.</strong> With popularity metadata (Wikipedia pageviews) for every species, AgriTaxon enables controlled study of how model accuracy degrades for rare, economically important organisms underrepresented in pretraining data.</li>
-      <li><strong>Retrieval-augmented generation (RAG) for domain knowledge.</strong> The authority-grounded labels (FAO, EPPO, Wikidata QIDs) provide natural retrieval anchors for augmenting LMMs with external agricultural knowledge bases.</li>
-      <li><strong>Agentic and tool-augmented reasoning.</strong> Our agentic baseline demonstrates that tool use (e.g., image cropping) significantly boosts accuracy, motivating research on system-level augmentation for fine-grained visual tasks.</li>
-      <li><strong>Agricultural AI deployment.</strong> Pest surveillance, quarantine enforcement, crop variety verification, and livestock breed identification all require the ability to name species from images&mdash;AgriTaxon directly benchmarks this capability.</li>
-      <li><strong>Fine-grained visual classification (FGVC).</strong> The semantically hard negatives and cross-domain coverage make AgriTaxon a challenging benchmark for advancing fine-grained discrimination in vision-language models.</li>
-    </ul>
+  <div class="divider"></div>
+
+  <!-- Applications -->
+  <section class="reveal">
+    <div class="section-label">Impact</div>
+    <h2>Potential Applications</h2>
+    <p>AgriTaxon is designed to support a broad range of research directions across the multimodal AI and agricultural informatics communities.</p>
+    <div class="applications">
+      <div class="app-card">
+        <h4>Open-Ended Visual Recognition</h4>
+        <p>A testbed for models that must produce free-form species names rather than selecting from a fixed label set.</p>
+      </div>
+      <div class="app-card">
+        <h4>Long-Tail Understanding</h4>
+        <p>Popularity metadata enables controlled study of how accuracy degrades for rare, economically important organisms.</p>
+      </div>
+      <div class="app-card">
+        <h4>Retrieval-Augmented Generation</h4>
+        <p>Authority-grounded labels (FAO, EPPO, Wikidata QIDs) provide natural retrieval anchors for augmenting LMMs.</p>
+      </div>
+      <div class="app-card">
+        <h4>Agentic Reasoning</h4>
+        <p>Tool use (e.g., image cropping) significantly boosts accuracy, motivating system-level augmentation research.</p>
+      </div>
+      <div class="app-card">
+        <h4>Agricultural AI Deployment</h4>
+        <p>Pest surveillance, quarantine enforcement, crop variety verification, and livestock breed identification.</p>
+      </div>
+      <div class="app-card">
+        <h4>Fine-Grained Classification</h4>
+        <p>Semantically hard negatives and cross-domain coverage make a challenging FGVC benchmark.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Licensing & Access -->
-  <section>
-    <h2><span class="icon">📜</span> Licensing &amp; Access</h2>
-    <p>
-      AgriTaxon is publicly available and free for academic and research use.
-    </p>
-    <ul>
+  <div class="divider"></div>
+
+  <!-- Licensing -->
+  <section class="reveal">
+    <div class="section-label">Access</div>
+    <h2>Licensing &amp; Access</h2>
+    <p>AgriTaxon is publicly available and free for academic and research use.</p>
+    <ul class="license-list">
       <li><strong>Source code, prompt templates &amp; documentation</strong> (this repository): <a href="https://github.com/studyzx/AgriTaxon/blob/main/LICENSE">MIT License</a>.</li>
       <li><strong>Benchmark metadata &amp; annotations</strong> (species labels, evaluation splits, distractor sets): released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
-      <li><strong>Images</strong>: sourced from <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> under their respective Creative Commons licenses (predominantly CC BY and CC BY-SA). Each image retains its original license as specified on Commons.</li>
+      <li><strong>Images</strong>: sourced from <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> under their respective Creative Commons licenses (predominantly CC BY and CC BY-SA).</li>
       <li><strong>Authority identifiers</strong>: Wikidata QIDs are available under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>; FAO and EPPO identifiers are used for reference linking only.</li>
     </ul>
     <p>
       The dataset is hosted on Hugging Face at <a href="https://huggingface.co/datasets/Xin1818/AgriTaxon">Xin1818/AgriTaxon</a> and can be downloaded freely without registration.
-      We encourage use in both academic research and non-commercial applications. If you use AgriTaxon, please cite our paper (see below).
     </p>
   </section>
 
-  <!-- Getting Started -->
-  <section>
-    <h2><span class="icon">🚀</span> Getting Started</h2>
-    <pre>
-# Download the dataset from Hugging Face
-pip install huggingface_hub
-huggingface-cli download Xin1818/AgriTaxon --repo-type dataset --local-dir dataset</pre>
-  </section>
+  <div class="divider"></div>
 
+  <!-- Getting Started -->
+  <section class="reveal">
+    <div class="section-label">Quick Start</div>
+    <h2>Getting Started</h2>
+    <pre><span class="comment"># Download the dataset from Hugging Face</span>
+<span class="cmd">pip install</span> huggingface_hub
+<span class="cmd">huggingface-cli download</span> Xin1818/AgriTaxon --repo-type dataset --local-dir dataset</pre>
+  </section>
 
 </div>
 
 <footer>
   AgriTaxon &copy; 2026
 </footer>
+
+<script>
+(function() {
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  const io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { io.observe(el); });
+})();
+</script>
 
 </body>
 </html>

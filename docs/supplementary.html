@@ -6,128 +6,288 @@
   <title>AgriTaxon – Supplementary Material</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --green: #4CAF50;
-      --green-dark: #2e7d32;
-      --text: #1a1a1a;
-      --text-secondary: #555;
-      --bg: #fafafa;
-      --card-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --forest: #1a3a2a;
+      --forest-mid: #2d5a3f;
+      --sage: #5a7a6a;
+      --sage-light: #8aaa9a;
+      --amber: #c8943e;
+      --amber-light: #e8c96e;
+      --cream: #faf8f3;
+      --cream-dark: #f0ede4;
+      --text: #1c1c1a;
+      --text-secondary: #4a4a46;
+      --text-muted: #8a8a84;
+      --card-bg: #ffffff;
+      --card-shadow: 0 1px 3px rgba(26,58,42,0.06), 0 6px 24px rgba(26,58,42,0.04);
+      --card-shadow-hover: 0 4px 12px rgba(26,58,42,0.1), 0 12px 36px rgba(26,58,42,0.06);
+      --radius: 0.75rem;
+      --radius-lg: 1.25rem;
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
+      background: var(--cream);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ── Header ── */
     .header {
-      background: white;
-      border-bottom: 1px solid #eee;
-      padding: 2rem 2rem 1.5rem;
+      position: relative;
+      background: linear-gradient(170deg, var(--forest) 0%, #224a35 55%, var(--forest-mid) 100%);
+      color: #fff;
+      padding: 3.5rem 2rem 2.5rem;
       text-align: center;
+      overflow: hidden;
     }
-    .header h1 { font-size: 2.2rem; font-weight: 800; color: var(--green-dark); margin-bottom: 0.2rem; }
-    .header p { color: var(--text-secondary); font-size: 1rem; }
-    .header .back { display: inline-block; margin-top: 0.8rem; font-size: 0.9rem; color: var(--green-dark); text-decoration: none; }
-    .header .back:hover { text-decoration: underline; }
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(200,148,62,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(138,170,154,0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, var(--cream), transparent);
+      pointer-events: none;
+    }
+    .header-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+      animation: fadeDown 0.8s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .header p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      animation: fadeDown 0.8s 0.1s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .header .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      color: var(--amber-light);
+      text-decoration: none;
+      border: none;
+      font-weight: 600;
+      transition: color 0.2s;
+      animation: fadeDown 0.8s 0.2s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .header .back:hover { color: #fff; }
 
     /* ── TOC ── */
     .toc {
-      max-width: 860px;
-      margin: 2rem auto 0;
+      max-width: 900px;
+      margin: 2.5rem auto 0;
       padding: 0 2rem;
     }
-    .toc h2 { font-size: 1.1rem; font-weight: 700; color: var(--green-dark); margin-bottom: 0.5rem; }
-    .toc ol { padding-left: 1.2rem; }
-    .toc li { margin-bottom: 0.3rem; font-size: 0.95rem; }
-    .toc a { color: var(--green-dark); text-decoration: none; }
-    .toc a:hover { text-decoration: underline; }
+    .toc-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 0.6rem;
+    }
+    .toc ol {
+      padding-left: 1.3rem;
+      counter-reset: toc-counter;
+    }
+    .toc li {
+      margin-bottom: 0.35rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .toc a {
+      color: var(--forest-mid);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(45,90,63,0.2);
+      transition: border-color 0.2s;
+      font-weight: 500;
+    }
+    .toc a:hover { border-color: var(--forest-mid); }
 
     /* ── Container ── */
-    .container { max-width: 860px; margin: 0 auto; padding: 2rem 2rem 3rem; }
-    section { margin-bottom: 3rem; }
-    h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--green-dark);
-      margin-bottom: 0.8rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 2px solid #e8f5e9;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 3rem;
     }
-    h3 { font-size: 1.1rem; font-weight: 600; color: var(--text); margin: 1.2rem 0 0.5rem; }
-    p, li { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-secondary); }
+
+    section { margin-bottom: 3.5rem; }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.25;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+    }
+    h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 1.5rem 0 0.6rem;
+    }
+    p, li {
+      font-size: 0.98rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
     ul, ol { padding-left: 1.4rem; }
-    a { color: var(--green-dark); text-decoration: none; font-weight: 500; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--forest-mid);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(45,90,63,0.2);
+      transition: border-color 0.2s;
+    }
+    a:hover { border-color: var(--forest-mid); }
 
     /* ── Prompt box ── */
     .prompt-box {
-      background: #f8f9fa;
-      border: 1px solid #e0e0e0;
-      border-left: 4px solid var(--green);
-      border-radius: 0.4rem;
-      padding: 1rem 1.2rem;
+      background: var(--card-bg);
+      border: 1px solid rgba(26,58,42,0.06);
+      border-left: 4px solid var(--sage);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.3rem;
       margin: 0.8rem 0 1.2rem;
       overflow-x: auto;
+      box-shadow: var(--card-shadow);
     }
     .prompt-box .prompt-title {
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--green-dark);
+      letter-spacing: 0.08em;
+      color: var(--sage);
       margin-bottom: 0.5rem;
     }
     .prompt-box pre {
       font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-      font-size: 0.85rem;
-      line-height: 1.5;
+      font-size: 0.83rem;
+      line-height: 1.55;
       white-space: pre-wrap;
       word-wrap: break-word;
       margin: 0;
-      color: #333;
+      color: var(--text-secondary);
+      background: none;
+      padding: 0;
+      box-shadow: none;
+      border-radius: 0;
     }
-    .prompt-box.blue { border-left-color: #2196F3; }
-    .prompt-box.blue .prompt-title { color: #1565C0; }
-    .prompt-box.teal { border-left-color: #009688; }
-    .prompt-box.teal .prompt-title { color: #00695C; }
-    .prompt-box.violet { border-left-color: #7B1FA2; }
-    .prompt-box.violet .prompt-title { color: #6A1B9A; }
-    .prompt-box.orange { border-left-color: #FF9800; }
-    .prompt-box.orange .prompt-title { color: #E65100; }
+    .prompt-box.blue   { border-left-color: #4a8ab5; }
+    .prompt-box.blue .prompt-title { color: #4a8ab5; }
+    .prompt-box.teal   { border-left-color: #3a9a8a; }
+    .prompt-box.teal .prompt-title { color: #3a9a8a; }
+    .prompt-box.violet  { border-left-color: #8a5ab5; }
+    .prompt-box.violet .prompt-title { color: #8a5ab5; }
+    .prompt-box.orange  { border-left-color: var(--amber); }
+    .prompt-box.orange .prompt-title { color: var(--amber); }
 
     /* ── Table ── */
-    .table-wrapper { overflow-x: auto; margin: 1rem 0; }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0;
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(26,58,42,0.06);
+    }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.85rem;
-      background: white;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
+      background: var(--card-bg);
     }
     th {
-      background: var(--green-dark);
-      color: white;
+      background: var(--forest);
+      color: #fff;
       padding: 0.6rem 0.7rem;
       text-align: left;
       font-weight: 600;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
       white-space: nowrap;
+      font-family: 'DM Sans', sans-serif;
     }
-    td { padding: 0.5rem 0.7rem; border-bottom: 1px solid #f0f0f0; }
+    td {
+      padding: 0.55rem 0.7rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      color: var(--text-secondary);
+    }
     tr:last-child td { border-bottom: none; }
-    tr:hover td { background: #f8fdf8; }
-    .model-id { font-family: 'SF Mono', monospace; font-size: 0.8rem; white-space: nowrap; }
-    td.num { text-align: right; font-family: 'SF Mono', monospace; font-size: 0.82rem; }
+    tr:hover td { background: rgba(26,58,42,0.02); }
+    .model-id {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      color: var(--text);
+    }
+    td.num {
+      text-align: right;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-variant-numeric: tabular-nums;
+    }
 
     /* ── Figure ── */
     .figure {
@@ -136,93 +296,134 @@
     }
     .figure img {
       max-width: 100%;
-      border-radius: 0.4rem;
+      border-radius: var(--radius);
       box-shadow: var(--card-shadow);
     }
     .figure figcaption {
-      font-size: 0.88rem;
-      color: #888;
-      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      font-style: italic;
     }
 
-    /* ── Error examples ── */
+    /* ── Error cards ── */
     .error-grid {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 1rem;
       margin-top: 1rem;
     }
     .error-card {
       display: flex;
       gap: 1.2rem;
-      background: white;
-      border-radius: 0.5rem;
-      padding: 1rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.1rem;
       box-shadow: var(--card-shadow);
+      border: 1px solid rgba(26,58,42,0.04);
       align-items: flex-start;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+    }
+    .error-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
     }
     .error-card img {
       width: 140px;
       height: auto;
       object-fit: contain;
-      border-radius: 0.4rem;
+      border-radius: 0.5rem;
       flex-shrink: 0;
     }
     .error-card .info { flex: 1; }
     .error-card .error-type {
+      font-family: 'Fraunces', serif;
       font-weight: 700;
-      color: var(--green-dark);
+      color: var(--forest);
       font-size: 0.95rem;
       margin-bottom: 0.3rem;
     }
     .error-card .labels {
       font-size: 0.88rem;
       margin-bottom: 0.3rem;
+      color: var(--text-secondary);
     }
-    .error-card .labels span { font-weight: 600; }
+    .error-card .labels span { font-weight: 600; color: var(--text); }
     .error-card .rationale {
-      font-size: 0.88rem;
-      color: #777;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
     /* ── Algorithm ── */
     .algorithm {
-      background: white;
-      border: 1px solid #e0e0e0;
-      border-radius: 0.5rem;
+      background: var(--card-bg);
+      border: 1px solid rgba(26,58,42,0.06);
+      border-radius: var(--radius);
       padding: 1.2rem 1.5rem;
       margin: 1rem 0;
       box-shadow: var(--card-shadow);
     }
     .algorithm .algo-title {
+      font-family: 'Fraunces', serif;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       margin-bottom: 0.8rem;
-      color: var(--text);
+      color: var(--forest);
     }
     .algorithm pre {
       font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-      font-size: 0.84rem;
+      font-size: 0.83rem;
       line-height: 1.6;
       white-space: pre-wrap;
       margin: 0;
-      color: #333;
+      color: var(--text-secondary);
+      background: none;
+      padding: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(26,58,42,0.1), transparent);
+      margin: 2.5rem 0;
+    }
+
+    code {
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      background: rgba(26,58,42,0.06);
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 0.88em;
+      color: var(--forest-mid);
     }
 
     /* ── Footer ── */
     footer {
       text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
-      color: #999;
-      border-top: 1px solid #eee;
+      padding: 2.5rem 2rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(26,58,42,0.06);
+    }
+    footer a {
+      color: var(--forest-mid);
+      border-bottom: 1px solid rgba(45,90,63,0.2);
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      .header h1 { font-size: 1.6rem; }
+      .header { padding: 2.5rem 1.5rem 2rem; }
+      .header h1 { font-size: 1.5rem; }
       .container { padding: 1.5rem 1.2rem; }
       .error-card { flex-direction: column; }
       .error-card img { width: 100%; height: auto; }
@@ -232,13 +433,15 @@
 <body>
 
 <div class="header">
-  <h1>AgriTaxon &mdash; Supplementary Material</h1>
-  <p>Prompt templates, cost analysis, additional experiments, and error examples</p>
-  <a class="back" href="index.html">&larr; Back to project homepage</a>
+  <div class="header-inner">
+    <h1>AgriTaxon &mdash; Supplementary Material</h1>
+    <p>Prompt templates, cost analysis, additional experiments, and error examples</p>
+    <a class="back" href="index.html">&larr; Back to project homepage</a>
+  </div>
 </div>
 
 <div class="toc">
-  <h2>Contents</h2>
+  <div class="toc-title">Contents</div>
   <ol>
     <li><a href="#prompts">Prompt Templates</a></li>
     <li><a href="#eppo">EPPO Entity Classification Prompt</a></li>
@@ -252,8 +455,9 @@
 <div class="container">
 
 <!-- ══════════ A. Prompt Templates ══════════ -->
-<section id="prompts">
-  <h2>A. Prompt Templates</h2>
+<section id="prompts" class="reveal">
+  <div class="section-label">Appendix A</div>
+  <h2>Prompt Templates</h2>
   <p>All prompts are designed for rigorous, reproducible evaluation. Each explicitly defines the task scope to prevent ambiguity.
     Raw files are available in the <a href="https://github.com/studyzx/AgriTaxon/tree/main/prompts"><code>prompts/</code></a> directory.</p>
 
@@ -328,9 +532,12 @@ answer: A/B/C/D</pre>
   </p>
 </section>
 
+<div class="divider"></div>
+
 <!-- ══════════ B. EPPO Classification ══════════ -->
-<section id="eppo">
-  <h2>B. EPPO Entity Classification Prompt</h2>
+<section id="eppo" class="reveal">
+  <div class="section-label">Appendix B</div>
+  <h2>EPPO Entity Classification Prompt</h2>
   <p>To classify EPPO database entities into pest vs. weed categories (Section 3.1 of the main paper), we use GPT-5 Mini with the following system prompt.
     For each entity, the Wikipedia content is provided in the user message, and the model outputs one of: <code>pest</code>, <code>weed_invasive</code>, <code>pathogen</code>, <code>host_or_crop</code>, or <code>other</code>.</p>
   <div class="prompt-box violet">
@@ -359,9 +566,12 @@ Respond with ONLY the category name (one of: pest, weed_invasive, pathogen, host
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- ══════════ C. API Costs ══════════ -->
-<section id="costs">
-  <h2>C. API Cost Breakdown</h2>
+<section id="costs" class="reveal">
+  <div class="section-label">Appendix C</div>
+  <h2>API Cost Breakdown</h2>
   <p>Total benchmark cost across all 14 models: <strong>$1,554.70 USD</strong> (including $88.50 for LLM-as-a-Judge alias validation via GPT-5 Mini). Prices without official USD listing (GLM, Doubao) are converted from CNY at 1 USD = 6.91 CNY.</p>
   <div class="table-wrapper">
     <table>
@@ -377,7 +587,7 @@ Respond with ONLY the category name (one of: pest, weed_invasive, pathogen, host
         </tr>
       </thead>
       <tbody>
-        <tr><td colspan="7" style="background:#e3f2fd; font-weight:600; font-size:0.8rem; text-align:center;">Proprietary Models</td></tr>
+        <tr><td colspan="7" style="background:rgba(26,58,42,0.04); font-weight:600; font-size:0.74rem; text-align:center; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-secondary);">Proprietary Models</td></tr>
         <tr><td class="model-id">gemini-3-pro-preview</td><td class="num">2.00</td><td class="num">12.00</td><td class="num">$224.0</td><td class="num">$400.1</td><td class="num">$4.8</td><td class="num"><strong>$629.0</strong></td></tr>
         <tr><td class="model-id">gemini-3-flash-preview</td><td class="num">0.50</td><td class="num">3.00</td><td class="num">$32.6</td><td class="num">$66.4</td><td class="num">$5.8</td><td class="num"><strong>$104.8</strong></td></tr>
         <tr><td class="model-id">gpt-5</td><td class="num">1.25</td><td class="num">10.00</td><td class="num">$72.1</td><td class="num">$119.8</td><td class="num">$5.8</td><td class="num"><strong>$197.7</strong></td></tr>
@@ -385,7 +595,7 @@ Respond with ONLY the category name (one of: pest, weed_invasive, pathogen, host
         <tr><td class="model-id">claude-haiku-4-5</td><td class="num">1.00</td><td class="num">5.00</td><td class="num">$48.9</td><td class="num">$51.4</td><td class="num">$7.7</td><td class="num"><strong>$108.0</strong></td></tr>
         <tr><td class="model-id">doubao-seed-2-0-pro</td><td class="num">0.46</td><td class="num">2.31</td><td class="num">$22.1</td><td class="num">$30.3</td><td class="num">$4.6</td><td class="num"><strong>$57.0</strong></td></tr>
         <tr><td class="model-id">doubao-seed-2-0-lite</td><td class="num">0.09</td><td class="num">0.52</td><td class="num">$4.1</td><td class="num">$4.4</td><td class="num">$5.2</td><td class="num"><strong>$13.7</strong></td></tr>
-        <tr><td colspan="7" style="background:#fff9c4; font-weight:600; font-size:0.8rem; text-align:center;">Open-Source Models</td></tr>
+        <tr><td colspan="7" style="background:rgba(200,148,62,0.06); font-weight:600; font-size:0.74rem; text-align:center; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-secondary);">Open-Source Models</td></tr>
         <tr><td class="model-id">kimi-k2.5</td><td class="num">0.60</td><td class="num">3.00</td><td class="num">$44.2</td><td class="num">$64.4</td><td class="num">$5.9</td><td class="num"><strong>$114.6</strong></td></tr>
         <tr><td class="model-id">glm-4.6v</td><td class="num">0.14</td><td class="num">0.43</td><td class="num">$2.9</td><td class="num">$4.4</td><td class="num">$6.5</td><td class="num"><strong>$13.8</strong></td></tr>
         <tr><td class="model-id">qwen3-vl-235b-a22b</td><td class="num">0.40</td><td class="num">1.60</td><td class="num">$13.7</td><td class="num">$15.2</td><td class="num">$6.6</td><td class="num"><strong>$35.5</strong></td></tr>
@@ -393,15 +603,18 @@ Respond with ONLY the category name (one of: pest, weed_invasive, pathogen, host
         <tr><td class="model-id">qwen3-vl-30b-a3b</td><td class="num">0.20</td><td class="num">0.80</td><td class="num">$7.7</td><td class="num">$8.6</td><td class="num">$7.3</td><td class="num"><strong>$23.6</strong></td></tr>
         <tr><td class="model-id">glm-4.6v-flashx</td><td class="num">0.02</td><td class="num">0.22</td><td class="num">$1.1</td><td class="num">$3.0</td><td class="num">$7.4</td><td class="num"><strong>$11.5</strong></td></tr>
         <tr><td class="model-id">qwen3.5-35b-a3b</td><td class="num">0.25</td><td class="num">2.00</td><td class="num">$45.1</td><td class="num">$104.3</td><td class="num">$7.6</td><td class="num"><strong>$157.0</strong></td></tr>
-        <tr style="background:#f5f5f5;"><td colspan="3" style="text-align:right; font-weight:700;">Total Benchmark Cost</td><td colspan="3" style="text-align:right; font-weight:700;">Judge: $88.5</td><td class="num" style="font-weight:700;">$1,554.7</td></tr>
+        <tr style="background:rgba(26,58,42,0.03);"><td colspan="3" style="text-align:right; font-weight:700;">Total Benchmark Cost</td><td colspan="3" style="text-align:right; font-weight:700;">Judge: $88.5</td><td class="num" style="font-weight:700;">$1,554.7</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- ══════════ D. Resolution Analysis ══════════ -->
-<section id="resolution">
-  <h2>D. Resolution Analysis</h2>
+<section id="resolution" class="reveal">
+  <div class="section-label">Appendix D</div>
+  <h2>Resolution Analysis</h2>
   <p>We examined whether image resolution correlates with recognition accuracy. Images in the 0.5&ndash;1 MP range have the lowest mean accuracy (3.24 models correct out of 14), while images above 4 MP achieve the highest (3.66 models correct). However, this effect is substantially weaker than the Wikipedia popularity effect (which shows a 2&times; gap), suggesting that <em>resolution alone does not guarantee recognition success</em>&mdash;the model must also have learned about the species during training.</p>
   <div class="figure">
     <img src="figures/resolution_vs_accuracy.png" alt="Image resolution vs. recognition accuracy">
@@ -409,9 +622,12 @@ Respond with ONLY the category name (one of: pest, weed_invasive, pathogen, host
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- ══════════ E. Agentic Baseline ══════════ -->
-<section id="agentic">
-  <h2>E. Agentic Baseline: Tool &amp; Prompt Details</h2>
+<section id="agentic" class="reveal">
+  <div class="section-label">Appendix E</div>
+  <h2>Agentic Baseline: Tool &amp; Prompt Details</h2>
   <p>Complete specification of the image cropping tool and prompts used in the agentic baseline.
     Raw files are available at <a href="https://github.com/studyzx/AgriTaxon/tree/main/prompts"><code>prompts/agentic_*</code></a>.</p>
 
@@ -514,9 +730,12 @@ return ExtractAnswer(response)</pre>
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- ══════════ F. Error Examples ══════════ -->
-<section id="errors">
-  <h2>F. Error Type Examples</h2>
+<section id="errors" class="reveal">
+  <div class="section-label">Appendix F</div>
+  <h2>Error Type Examples</h2>
   <p>Representative examples for each of the five error types from the human-annotated 75 Acc-error cases (Gemini 3 Pro Preview, open-ended evaluation).</p>
 
   <div class="error-grid">
@@ -572,6 +791,22 @@ return ExtractAnswer(response)</pre>
 <footer>
   AgriTaxon &copy; 2026 &middot; <a href="index.html">Project Homepage</a>
 </footer>
+
+<script>
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { io.observe(el); });
+})();
+</script>
 
 </body>
 </html>
