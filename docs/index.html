@@ -436,6 +436,55 @@
       font-size: 1.15rem;
     }
 
+    /* ── Error cards ── */
+    .error-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .error-card {
+      display: flex;
+      gap: 1.2rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(26,58,42,0.04);
+      align-items: flex-start;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+    }
+    .error-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .error-card img {
+      width: 140px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 0.5rem;
+      flex-shrink: 0;
+    }
+    .error-card .info { flex: 1; }
+    .error-card .error-type {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      color: var(--forest);
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+    .error-card .labels {
+      font-size: 0.88rem;
+      margin-bottom: 0.3rem;
+      color: var(--text-secondary);
+    }
+    .error-card .labels span { font-weight: 600; color: var(--text); }
+    .error-card .rationale {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
     /* ── How it works ── */
     .step {
       margin-bottom: 1.2rem;
@@ -570,6 +619,10 @@
       .container { padding: 2.5rem 1.5rem; }
       .stats { grid-template-columns: repeat(2, 1fr); }
       .applications { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .error-card { flex-direction: column; }
+      .error-card img { width: 100%; height: auto; }
     }
     @media (max-width: 480px) {
       .hero { padding: 2.5rem 1.2rem 0; }
@@ -797,6 +850,62 @@
       <li data-icon="🔧"><strong>Agentic cropping more than doubles accuracy</strong> &mdash; equipping a model with a simple image-crop tool lets it zoom into diagnostic regions, boosting accuracy on the hardest samples from 4.7% to 10.4%.</li>
       <li data-icon="🎯"><strong>Text-semantic distractors are hardest</strong> &mdash; taxonomically similar distractors drop accuracy from 99% (random) to 9%, confirming that label-space plausibility governs difficulty more than visual similarity.</li>
     </ul>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Error Type Examples -->
+  <section class="reveal">
+    <div class="section-label">Error Analysis</div>
+    <h2>Error Type Examples</h2>
+    <p>Representative examples for each of the five error types from the human-annotated 75 Acc-error cases (Gemini 3 Pro Preview, open-ended evaluation).</p>
+
+    <div class="error-grid">
+      <div class="error-card">
+        <img src="figures/error_cases/taxonomic_confusion.png" alt="Taxonomic confusion example">
+        <div class="info">
+          <div class="error-type">Taxonomic Confusion (63%)</div>
+          <div class="labels"><span>Ground truth:</span> <em>Stylosanthes capitata</em> [Crop] &rarr; <span>Prediction:</span> <em>Stylosanthes humilis</em></div>
+          <div class="rationale">Same genus within Fabaceae. The model recognizes the correct genus from the pod morphology but confuses species-level features (capitulum density, beak shape).</div>
+        </div>
+      </div>
+
+      <div class="error-card">
+        <img src="figures/error_cases/unrelated_prediction.jpg" alt="Unrelated prediction example">
+        <div class="info">
+          <div class="error-type">Unrelated Prediction (13%)</div>
+          <div class="labels"><span>Ground truth:</span> <em>Gleditsia triacanthos</em> [Crop] &rarr; <span>Prediction:</span> Black walnut</div>
+          <div class="rationale">Cross-family error: Fabaceae vs. Juglandaceae. Both are deciduous North American trees, but they belong to different families and are morphologically distinct.</div>
+        </div>
+      </div>
+
+      <div class="error-card">
+        <img src="figures/error_cases/no_answer.jpg" alt="No answer example">
+        <div class="info">
+          <div class="error-type">No Answer (9%)</div>
+          <div class="labels"><span>Ground truth:</span> <em>Cydia toreuta</em> [Pest] &rarr; <span>Prediction:</span> (none)</div>
+          <div class="rationale">The model fails to produce any species name. <em>Cydia toreuta</em> is an obscure tortricid moth likely absent from the model's training data.</div>
+        </div>
+      </div>
+
+      <div class="error-card">
+        <img src="figures/error_cases/parsing_error.jpg" alt="Parsing error example">
+        <div class="info">
+          <div class="error-type">Parsing Error (8%)</div>
+          <div class="labels"><span>Ground truth:</span> <em>Licuala ramsayi</em> [Crop] &rarr; <span>Prediction:</span> "answer"</div>
+          <div class="rationale">The model's response is truncated or malformed, outputting the literal word "answer" instead of a species name.</div>
+        </div>
+      </div>
+
+      <div class="error-card">
+        <img src="figures/error_cases/granularity_mismatch.jpg" alt="Granularity mismatch example">
+        <div class="info">
+          <div class="error-type">Granularity Mismatch (7%)</div>
+          <div class="labels"><span>Ground truth:</span> Swiss Warmblood [Livestock] &rarr; <span>Prediction:</span> Horse</div>
+          <div class="rationale">The model correctly identifies the animal as a horse but fails to specify the breed, producing a species-level answer where a breed-level answer is required.</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <div class="divider"></div>
