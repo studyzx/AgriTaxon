@@ -2,7 +2,6 @@
 
 **AgriTaxon: Can Large Multimodal Models Identify What They See in Agriculture?**
 
-*Xin Zeng, Benfeng Xu, Shancheng Fang, Huarui Wu*
 
 <p align="center">
   <img src="docs/teaser.jpg" width="100%" alt="AgriTaxon overview">
