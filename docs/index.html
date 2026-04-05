@@ -416,7 +416,59 @@
       transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
     }
     #teaser-lb.open .lb-card { transform: scale(1); }
-    .lb-card > img { width: 100%; display: block; max-height: 340px; object-fit: cover; }
+    .lb-img-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 200px;
+      max-height: 340px;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+    .lb-card > .lb-img-wrap > img { width: 100%; display: block; max-height: 340px; object-fit: cover; }
+    #lb-img {
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    #lb-img.loaded { opacity: 1; }
+    .lb-thumb-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(4px);
+      transform: scale(1.05);
+      z-index: 0;
+    }
+    .lb-loading {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(0,0,0,0.35);
+      transition: opacity 0.4s;
+    }
+    .lb-loading.hidden { opacity: 0; pointer-events: none; }
+    .lb-loading-spinner {
+      width: 24px;
+      height: 24px;
+      border: 2.5px solid rgba(255,255,255,0.25);
+      border-top-color: rgba(255,255,255,0.85);
+      border-radius: 50%;
+      animation: phSpin 0.8s linear infinite;
+    }
+    .lb-loading-text {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
     .lb-body { padding: 1rem 1.2rem 1.2rem; }
     .lb-badge {
       display: inline-block;
@@ -1278,7 +1330,14 @@
 <div id="teaser-lb">
   <button class="lb-x">&times;</button>
   <div class="lb-card">
-    <img id="lb-img" src="" alt="">
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+      <img id="lb-thumb" src="" alt="" class="lb-thumb-bg">
+      <div class="lb-loading" id="lb-loading">
+        <div class="lb-loading-spinner"></div>
+        <div class="lb-loading-text">Loading HD from AgriTaxon HuggingFace …</div>
+      </div>
+    </div>
     <div class="lb-body">
       <div class="lb-badge" id="lb-badge"></div>
       <h3 id="lb-name"></h3>
@@ -1462,7 +1521,7 @@
         img.alt = d[1];
         img.style.height = h + 'px';
         img.onload = function() { this.classList.add('loaded'); this.closest('.teaser-card').classList.add('done'); };
-        img.src = HF + 'images/' + d[2] + '/' + d[0] + '.jpg';
+        img.src = 'thumbnails/' + d[0] + '.jpg';
         card.appendChild(img);
 
         var lbl = document.createElement('div');
@@ -1486,7 +1545,14 @@
     var q = card.getAttribute('data-q');
     var l = card.getAttribute('data-l');
     var t = card.getAttribute('data-t');
-    document.getElementById('lb-img').src = HF + 'images/' + t + '/' + q + '.jpg';
+    var lbImg = document.getElementById('lb-img');
+    var lbThumb = document.getElementById('lb-thumb');
+    var lbLoading = document.getElementById('lb-loading');
+    lbImg.classList.remove('loaded');
+    lbLoading.classList.remove('hidden');
+    lbThumb.src = 'thumbnails/' + q + '.jpg';
+    lbImg.onload = function() { lbImg.classList.add('loaded'); lbLoading.classList.add('hidden'); };
+    lbImg.src = HF + 'images/' + t + '/' + q + '.jpg';
     document.getElementById('lb-name').textContent = l;
     var badge = document.getElementById('lb-badge');
     badge.textContent = TC[t].n;
