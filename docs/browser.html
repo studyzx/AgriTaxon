@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriTaxon — Species Embedding Browser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#f5f2eb;color:#1c1c1a;font-family:'DM Sans',sans-serif}
+
+#loading{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f5f2eb;transition:opacity .6s}
+#loading.hidden{opacity:0;pointer-events:none}
+#loading h1{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:800;color:#1a3a2a;margin-bottom:1rem}
+#loading .bar-track{width:260px;height:4px;background:#e0ddd4;border-radius:2px;overflow:hidden}
+#loading .bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#2d5a3f,#c8943e);border-radius:2px;transition:width .3s}
+#loading .status{margin-top:.8rem;font-size:.82rem;color:#8a8a84}
+
+#canvas{display:block;width:100%;height:100%;cursor:grab}
+#canvas.dragging{cursor:grabbing}
+
+.hud{position:fixed;z-index:10;pointer-events:none}
+.hud>*{pointer-events:auto}
+
+.top-bar{top:0;left:0;right:0;display:flex;align-items:center;gap:1rem;padding:.75rem 1.25rem;background:linear-gradient(180deg,rgba(245,242,235,.95) 60%,rgba(245,242,235,0) 100%)}
+.logo{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:800;color:#1a3a2a;white-space:nowrap}
+.search-box{flex:1;max-width:320px;position:relative}
+.search-box input{width:100%;padding:.5rem .9rem .5rem 2.2rem;border:1px solid #d4d0c6;border-radius:.5rem;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);color:#1c1c1a;font-size:.85rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
+.search-box input:focus{border-color:#2d5a3f}
+.search-box input::placeholder{color:#aaa89e}
+.search-box svg{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);width:15px;height:15px;color:#aaa89e}
+.search-results{position:absolute;top:calc(100% + 4px);left:0;right:0;max-height:320px;overflow-y:auto;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border:1px solid #d4d0c6;border-radius:.5rem;display:none;box-shadow:0 8px 24px rgba(26,58,42,.08)}
+.search-results.visible{display:block}
+.search-result{display:flex;align-items:center;gap:.6rem;padding:.45rem .7rem;cursor:pointer;transition:background .15s;font-size:.83rem;color:#4a4a46}
+.search-result:hover{background:rgba(45,90,63,.06)}
+.search-result img{width:30px;height:30px;border-radius:4px;object-fit:cover}
+.search-result .track-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+.filters{display:flex;gap:.35rem;flex-shrink:0}
+.filter-btn{display:flex;align-items:center;gap:.3rem;padding:.35rem .7rem;border:1px solid #d4d0c6;border-radius:2rem;background:rgba(255,255,255,.6);color:#6a6a64;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;user-select:none}
+.filter-btn .dot{width:7px;height:7px;border-radius:50%;transition:opacity .2s}
+.filter-btn.active{color:#1c1c1a;border-color:rgba(26,58,42,.2);background:rgba(255,255,255,.85)}
+.filter-btn.inactive{opacity:.4}
+.filter-btn.inactive .dot{opacity:.3}
+.filter-btn:hover{border-color:rgba(26,58,42,.3)}
+.filter-count{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:#8a8a84;margin-left:.12rem}
+
+.bottom-bar{bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:.5rem 1.25rem;font-size:.72rem;color:#aaa89e;background:linear-gradient(0deg,rgba(245,242,235,.92) 60%,rgba(245,242,235,0) 100%)}
+.zoom-info{font-family:'JetBrains Mono',monospace}
+
+#tooltip{position:fixed;z-index:100;pointer-events:none;opacity:0;transform:translateY(6px) scale(.97);transition:opacity .18s,transform .18s;max-width:300px}
+#tooltip.visible{opacity:1;transform:translateY(0) scale(1)}
+.tooltip-card{background:rgba(255,255,255,.94);backdrop-filter:blur(20px);border:1px solid rgba(26,58,42,.08);border-radius:.75rem;overflow:hidden;box-shadow:0 8px 32px rgba(26,58,42,.12)}
+.tooltip-img-wrap{position:relative;width:100%;height:150px;background:#ece9e0;overflow:hidden}
+.tooltip-img{width:100%;height:150px;object-fit:cover;display:block;background:#ece9e0}
+.tooltip-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;background:#ece9e0;opacity:0;pointer-events:none;transition:opacity .2s}
+.tooltip-loading.active{opacity:1}
+.tooltip-loading .spinner{width:20px;height:20px;border:2px solid rgba(26,58,42,.12);border-top-color:#1a3a2a;border-radius:50%;animation:tspin .7s linear infinite}
+.tooltip-loading .loading-text{font-size:.65rem;color:#8a8a84;letter-spacing:.03em}
+@keyframes tspin{to{transform:rotate(360deg)}}
+.tooltip-body{padding:.7rem .9rem}
+.tooltip-name{font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:#1a3a2a;margin-bottom:.15rem;line-height:1.3}
+.tooltip-track{display:inline-flex;align-items:center;gap:.25rem;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding:.18rem .5rem;border-radius:1rem;margin-bottom:.3rem}
+.tooltip-track.crop{background:rgba(76,175,80,.12);color:#2e7d32}
+.tooltip-track.livestock{background:rgba(255,152,0,.12);color:#e65100}
+.tooltip-track.pest{background:rgba(244,67,54,.12);color:#c62828}
+.tooltip-track.weed{background:rgba(156,39,176,.12);color:#7b1fa2}
+.tooltip-qid{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:#8a8a84}
+.tooltip-hint{font-size:.7rem;color:#aaa89e;margin-top:.3rem;border-top:1px solid rgba(26,58,42,.06);padding-top:.3rem}
+
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#d4d0c6;border-radius:2px}
+</style>
+</head>
+<body>
+
+<div id="loading">
+  <h1>AgriTaxon</h1>
+  <div class="bar-track"><div class="bar-fill" id="loadBar"></div></div>
+  <div class="status" id="loadStatus">Initializing...</div>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<div class="hud top-bar">
+  <div class="logo">AgriTaxon Browser</div>
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="searchInput" placeholder="Search species..." autocomplete="off">
+    <div class="search-results" id="searchResults"></div>
+  </div>
+  <div class="filters" id="filters"></div>
+</div>
+
+<div class="hud bottom-bar">
+  <span class="zoom-info" id="zoomInfo">Zoom: 1.0×</span>
+  <span id="entityCount"></span>
+  <span class="help-text" style="opacity:.5">Scroll to zoom · Drag to pan · Hover for details · Click to open Wikipedia</span>
+</div>
+
+<div id="tooltip">
+  <div class="tooltip-card">
+    <div class="tooltip-img-wrap">
+      <img id="tipImg" class="tooltip-img" src="" alt="">
+      <div class="tooltip-loading" id="tipLoading">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading from HuggingFace …</div>
+      </div>
+    </div>
+    <div class="tooltip-body">
+      <div class="tooltip-track" id="tipTrack"></div>
+      <div class="tooltip-name" id="tipName"></div>
+      <div class="tooltip-qid" id="tipQid"></div>
+      <div class="tooltip-hint" id="tipHint">Click to open Wikipedia →</div>
+    </div>
+  </div>
+</div>
+
+<script>
+var COLORS = {
+  crop:      {hex:'#2e7d32',r:46, g:125,b:50,  bg:'rgba(76,175,80,.12)'},
+  livestock: {hex:'#e65100',r:230,g:81, b:0,   bg:'rgba(255,152,0,.12)'},
+  pest:      {hex:'#c62828',r:198,g:40, b:40,  bg:'rgba(244,67,54,.12)'},
+  weed:      {hex:'#7b1fa2',r:123,g:31, b:162, bg:'rgba(156,39,176,.12)'},
+};
+var TRACK_LABELS = {crop:'Crops',livestock:'Livestock',pest:'Pests',weed:'Weeds'};
+var TRACKS = ['crop','livestock','pest','weed'];
+
+var DATA = [];
+var filteredIdx = [];
+var trackVisible = {crop:true,livestock:true,pest:true,weed:true};
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var W, H, dpr;
+var camX = 0.5, camY = 0.5, camZoom = 1;
+var isDragging = false, dragStartX, dragStartY, dragCamX, dragCamY;
+var hoveredIdx = -1;
+var thumbCache = {};
+var animFrame;
+
+function worldToScreen(wx, wy) {
+  var s = Math.min(W, H) * camZoom;
+  return [(wx - camX) * s + W / 2, (wy - camY) * s + H / 2];
+}
+function screenToWorld(sx, sy) {
+  var s = Math.min(W, H) * camZoom;
+  return [sx / s - W / (2 * s) + camX, sy / s - H / (2 * s) + camY];
+}
+
+function resize() {
+  dpr = window.devicePixelRatio || 1;
+  W = window.innerWidth; H = window.innerHeight;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  requestDraw();
+}
+
+var GRID_SIZE = 64, grid = {};
+function buildGrid() {
+  grid = {};
+  for (var i = 0; i < filteredIdx.length; i++) {
+    var d = DATA[filteredIdx[i]];
+    var key = Math.floor(d.x * GRID_SIZE) + ',' + Math.floor(d.y * GRID_SIZE);
+    if (!grid[key]) grid[key] = [];
+    grid[key].push(filteredIdx[i]);
+  }
+}
+function findNearest(wx, wy, radiusWorld) {
+  var gx = Math.floor(wx * GRID_SIZE), gy = Math.floor(wy * GRID_SIZE);
+  var r = Math.ceil(radiusWorld * GRID_SIZE) + 1;
+  var best = -1, bestDist = radiusWorld * radiusWorld;
+  for (var dx = -r; dx <= r; dx++) for (var dy = -r; dy <= r; dy++) {
+    var cell = grid[(gx+dx)+','+(gy+dy)];
+    if (!cell) continue;
+    for (var j = 0; j < cell.length; j++) {
+      var d = DATA[cell[j]];
+      var dist = (d.x-wx)*(d.x-wx) + (d.y-wy)*(d.y-wy);
+      if (dist < bestDist) { bestDist = dist; best = cell[j]; }
+    }
+  }
+  return best;
+}
+
+function getThumbImage(idx) {
+  if (thumbCache[idx] !== undefined) return thumbCache[idx];
+  var d = DATA[idx];
+  if (!d.img) return null;
+  var img = new Image();
+  img.src = 'data:image/jpeg;base64,' + d.img;
+  img.onload = function() { thumbCache[idx] = img; requestDraw(); };
+  thumbCache[idx] = null;
+  return null;
+}
+
+function draw() {
+  animFrame = null;
+  ctx.fillStyle = '#f5f2eb';
+  ctx.fillRect(0, 0, W, H);
+
+  var s = Math.min(W, H) * camZoom;
+  var dotBaseR = camZoom < 3 ? 3.5 : camZoom < 8 ? 4.5 : 5.5;
+  var showThumbs = camZoom > 6;
+  var thumbSize = Math.min(52, Math.max(18, camZoom * 4));
+
+  var margin = 60 / s;
+  var corners = [screenToWorld(0,0), screenToWorld(W,H)];
+  var vL = Math.min(corners[0][0],corners[1][0]) - margin;
+  var vR = Math.max(corners[0][0],corners[1][0]) + margin;
+  var vT = Math.min(corners[0][1],corners[1][1]) - margin;
+  var vB = Math.max(corners[0][1],corners[1][1]) + margin;
+
+  var drawn = 0;
+  for (var ii = 0; ii < filteredIdx.length; ii++) {
+    var i = filteredIdx[ii], d = DATA[i];
+    if (d.x < vL || d.x > vR || d.y < vT || d.y > vB) continue;
+    drawn++;
+    var sc = worldToScreen(d.x, d.y), sx = sc[0], sy = sc[1];
+    var c = COLORS[d.t];
+    var isH = i === hoveredIdx;
+
+    if (showThumbs) {
+      var img = getThumbImage(i);
+      var ts = isH ? thumbSize * 1.3 : thumbSize;
+      if (img) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.roundRect(sx-ts/2, sy-ts/2, ts, ts, 5);
+        ctx.clip();
+        ctx.drawImage(img, sx-ts/2, sy-ts/2, ts, ts);
+        ctx.restore();
+        ctx.strokeStyle = isH ? '#1a3a2a' : c.hex;
+        ctx.lineWidth = isH ? 2.5 : 1;
+        ctx.beginPath();
+        ctx.roundRect(sx-ts/2, sy-ts/2, ts, ts, 5);
+        ctx.stroke();
+      } else {
+        ctx.fillStyle = c.hex;
+        ctx.globalAlpha = .25;
+        ctx.beginPath(); ctx.roundRect(sx-ts/2, sy-ts/2, ts, ts, 5); ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    } else {
+      var r = isH ? dotBaseR * 2 : dotBaseR;
+      if (isH) {
+        ctx.globalAlpha = .1;
+        ctx.fillStyle = c.hex;
+        ctx.beginPath(); ctx.arc(sx, sy, r * 3.5, 0, Math.PI*2); ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+      ctx.globalAlpha = camZoom < 2 ? .65 : .8;
+      ctx.fillStyle = c.hex;
+      ctx.beginPath(); ctx.arc(sx, sy, r, 0, Math.PI*2); ctx.fill();
+      ctx.globalAlpha = 1;
+      if (isH) {
+        ctx.strokeStyle = '#1a3a2a';
+        ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(sx, sy, r+2.5, 0, Math.PI*2); ctx.stroke();
+      }
+    }
+  }
+  document.getElementById('zoomInfo').textContent = 'Zoom: ' + camZoom.toFixed(1) + '\u00d7';
+  document.getElementById('entityCount').textContent = drawn + ' / ' + filteredIdx.length + ' visible';
+}
+function requestDraw() { if (!animFrame) animFrame = requestAnimationFrame(draw); }
+
+canvas.addEventListener('wheel', function(e) {
+  e.preventDefault();
+  var factor = e.deltaY < 0 ? 1.12 : 1/1.12;
+  var newZoom = Math.max(.5, Math.min(200, camZoom * factor));
+  var w = screenToWorld(e.clientX, e.clientY);
+  camZoom = newZoom;
+  var sc2 = worldToScreen(w[0], w[1]);
+  var s = Math.min(W, H) * camZoom;
+  camX += (sc2[0] - e.clientX) / s;
+  camY += (sc2[1] - e.clientY) / s;
+  requestDraw();
+}, {passive:false});
+
+canvas.addEventListener('mousedown', function(e) {
+  if (e.button !== 0) return;
+  isDragging = true; dragStartX = e.clientX; dragStartY = e.clientY;
+  dragCamX = camX; dragCamY = camY;
+  canvas.classList.add('dragging');
+});
+window.addEventListener('mousemove', function(e) {
+  if (isDragging) {
+    var s = Math.min(W,H) * camZoom;
+    camX = dragCamX - (e.clientX - dragStartX)/s;
+    camY = dragCamY - (e.clientY - dragStartY)/s;
+    requestDraw(); return;
+  }
+  var w = screenToWorld(e.clientX, e.clientY);
+  var hit = 14 / (Math.min(W,H) * camZoom);
+  var idx = findNearest(w[0], w[1], hit);
+  if (idx !== hoveredIdx) { hoveredIdx = idx; updateTooltip(e.clientX, e.clientY); requestDraw(); }
+  else if (idx >= 0) positionTooltip(e.clientX, e.clientY);
+});
+window.addEventListener('mouseup', function() { if (isDragging) { isDragging = false; canvas.classList.remove('dragging'); }});
+
+canvas.addEventListener('click', function() {
+  if (hoveredIdx >= 0 && DATA[hoveredIdx].w) window.open(DATA[hoveredIdx].w, '_blank');
+});
+
+var tooltip = document.getElementById('tooltip');
+function updateTooltip(mx, my) {
+  if (hoveredIdx < 0) { tooltip.classList.remove('visible'); canvas.style.cursor = 'grab'; return; }
+  canvas.style.cursor = 'pointer';
+  var d = DATA[hoveredIdx];
+  var imgEl = document.getElementById('tipImg');
+  var loadingEl = document.getElementById('tipLoading');
+  var loadingText = loadingEl.querySelector('.loading-text');
+  var hfUrl = 'https://huggingface.co/datasets/Xin1818/AgriTaxon/resolve/main/images/' + d.t + '/' + d.q + '.jpg';
+  var localUrl = 'species_images/' + d.t + '/' + d.q + '.jpg';
+  var fallback = d.img ? 'data:image/jpeg;base64,' + d.img : '';
+  loadingEl.classList.remove('active');
+  imgEl.onload = function() { loadingEl.classList.remove('active'); };
+  imgEl.onerror = function() {
+    if (imgEl.src.indexOf('species_images') !== -1) {
+      loadingEl.classList.add('active');
+      loadingText.textContent = 'Loading from AgriTaxon HuggingFace …';
+      imgEl.onerror = function() { imgEl.onerror = null; loadingEl.classList.remove('active'); imgEl.src = fallback; };
+      imgEl.src = hfUrl;
+    } else { imgEl.onerror = null; loadingEl.classList.remove('active'); imgEl.src = fallback; }
+  };
+  imgEl.src = localUrl;
+  document.getElementById('tipName').textContent = d.l;
+  var te = document.getElementById('tipTrack');
+  te.className = 'tooltip-track ' + d.t; te.textContent = TRACK_LABELS[d.t];
+  document.getElementById('tipQid').textContent = d.q;
+  document.getElementById('tipHint').textContent = d.w ? 'Click to open Wikipedia \u2192' : 'No Wikipedia link';
+  tooltip.classList.add('visible');
+  positionTooltip(mx, my);
+}
+function positionTooltip(mx, my) {
+  var tw = 300, th = 260;
+  var tx = mx + 16, ty = my - th/2;
+  if (tx + tw > W - 16) tx = mx - tw - 16;
+  if (ty < 8) ty = 8; if (ty + th > H - 8) ty = H - th - 8;
+  tooltip.style.left = tx + 'px'; tooltip.style.top = ty + 'px';
+}
+
+var searchInput = document.getElementById('searchInput');
+var searchResults = document.getElementById('searchResults');
+var searchTimeout;
+searchInput.addEventListener('input', function() { clearTimeout(searchTimeout); searchTimeout = setTimeout(doSearch, 120); });
+searchInput.addEventListener('focus', function() { if (searchInput.value.length >= 2) doSearch(); });
+document.addEventListener('click', function(e) { if (!e.target.closest('.search-box')) searchResults.classList.remove('visible'); });
+function doSearch() {
+  var q = searchInput.value.trim().toLowerCase();
+  if (q.length < 2) { searchResults.classList.remove('visible'); return; }
+  var hits = [];
+  for (var i = 0; i < DATA.length && hits.length < 30; i++) if (DATA[i].l.toLowerCase().indexOf(q) >= 0) hits.push(i);
+  if (!hits.length) { searchResults.innerHTML = '<div style="padding:.5rem;color:#8a8a84;font-size:.8rem">No results</div>'; searchResults.classList.add('visible'); return; }
+  searchResults.innerHTML = hits.map(function(i) {
+    var d = DATA[i], src = d.img ? 'data:image/jpeg;base64,'+d.img : '';
+    return '<div class="search-result" data-idx="'+i+'">'+(src?'<img src="'+src+'">':'')+'<span class="track-dot" style="background:'+COLORS[d.t].hex+'"></span><span>'+d.l+'</span></div>';
+  }).join('');
+  searchResults.classList.add('visible');
+  searchResults.querySelectorAll('.search-result').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var idx = parseInt(el.dataset.idx);
+      flyTo(DATA[idx].x, DATA[idx].y, 12);
+      hoveredIdx = idx; requestDraw();
+      searchResults.classList.remove('visible'); searchInput.blur();
+    });
+  });
+}
+function flyTo(tx, ty, tz) {
+  var sx=camX,sy=camY,sz=camZoom,dur=600,t0=performance.now();
+  (function step(now) {
+    var p = Math.min(1,(now-t0)/dur); p = 1-Math.pow(1-p,3);
+    camX=sx+(tx-sx)*p; camY=sy+(ty-sy)*p; camZoom=sz*Math.pow(tz/sz,p);
+    requestDraw(); if (p<1) requestAnimationFrame(step);
+  })(t0);
+}
+
+function buildFilters() {
+  var counts = {}; TRACKS.forEach(function(t){counts[t]=0});
+  DATA.forEach(function(d){counts[d.t]++});
+  var ctr = document.getElementById('filters');
+  TRACKS.forEach(function(t) {
+    var btn = document.createElement('div');
+    btn.className = 'filter-btn active'; btn.dataset.track = t;
+    btn.innerHTML = '<span class="dot" style="background:'+COLORS[t].hex+'"></span>'+TRACK_LABELS[t]+'<span class="filter-count">'+counts[t]+'</span>';
+    btn.addEventListener('click', function() {
+      trackVisible[t] = !trackVisible[t];
+      btn.className = 'filter-btn ' + (trackVisible[t]?'active':'inactive');
+      updateFiltered();
+    });
+    ctr.appendChild(btn);
+  });
+}
+function updateFiltered() {
+  filteredIdx = [];
+  for (var i = 0; i < DATA.length; i++) if (trackVisible[DATA[i].t]) filteredIdx.push(i);
+  buildGrid(); requestDraw();
+}
+
+function setLoadProgress(pct, msg) {
+  document.getElementById('loadBar').style.width = pct+'%';
+  document.getElementById('loadStatus').textContent = msg;
+}
+
+async function init() {
+  setLoadProgress(10, 'Fetching entity data...');
+  var resp;
+  try { resp = await fetch('tsne_data.json'); } catch(e) {
+    setLoadProgress(0, 'Error: cannot fetch tsne_data.json'); return;
+  }
+  if (!resp.ok) { setLoadProgress(0, 'Error: tsne_data.json not found (HTTP '+resp.status+')'); return; }
+  setLoadProgress(40, 'Parsing data...');
+  DATA = await resp.json();
+  setLoadProgress(70, 'Building spatial index...');
+  filteredIdx = DATA.map(function(_,i){return i});
+  buildGrid(); buildFilters();
+  setLoadProgress(90, 'Rendering...');
+  resize(); window.addEventListener('resize', resize);
+  setLoadProgress(100, 'Done!');
+  setTimeout(function(){ document.getElementById('loading').classList.add('hidden'); }, 400);
+}
+
+if (!CanvasRenderingContext2D.prototype.roundRect) {
+  CanvasRenderingContext2D.prototype.roundRect = function(x,y,w,h,r) {
+    if (typeof r==='number') r=[r,r,r,r];
+    this.moveTo(x+r[0],y); this.lineTo(x+w-r[1],y);
+    this.quadraticCurveTo(x+w,y,x+w,y+r[1]); this.lineTo(x+w,y+h-r[2]);
+    this.quadraticCurveTo(x+w,y+h,x+w-r[2],y+h); this.lineTo(x+r[3],y+h);
+    this.quadraticCurveTo(x,y+h,x,y+h-r[3]); this.lineTo(x,y+r[0]);
+    this.quadraticCurveTo(x,y,x+r[0],y); this.closePath();
+  };
+}
+init();
+</script>
+</body>
+</html>

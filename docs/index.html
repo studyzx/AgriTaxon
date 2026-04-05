@@ -594,6 +594,47 @@
       margin: 3rem 0;
     }
 
+    /* ── Explorer section ── */
+    .explorer-wrap {
+      text-align: center;
+    }
+    .explorer-iframe-box {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(26,58,42,.08);
+      box-shadow: var(--card-shadow);
+      margin: 1.2rem 0 1rem;
+    }
+    .explorer-iframe-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .explorer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .6rem 1.4rem;
+      border-radius: .5rem;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--forest);
+      background: var(--amber);
+      border: none;
+      text-decoration: none;
+      transition: all .25s cubic-bezier(.22,1,.36,1);
+    }
+    .explorer-link:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(200,148,62,.35);
+      border: none;
+    }
+
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -853,6 +894,19 @@
   </section>
 
   <div class="divider"></div>
+
+  <!-- Embedding Explorer -->
+  <section class="reveal">
+    <div class="explorer-wrap">
+      <div class="section-label">Interactive Demo</div>
+      <h2>Explore the Embedding Space</h2>
+      <p>7,437 species embedded by Qwen3-Embedding-0.6B and projected via t-SNE. Scroll to zoom, drag to pan, hover for details, click to open Wikipedia.</p>
+      <div class="explorer-iframe-box">
+        <iframe src="browser.html" loading="lazy" title="AgriTaxon Embedding Browser" allow="fullscreen"></iframe>
+      </div>
+      <a class="explorer-link" href="browser.html" target="_blank">Open Full-Screen Browser →</a>
+    </div>
+  </section>
 
   <!-- Error Type Examples -->
   <section class="reveal">
