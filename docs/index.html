@@ -239,6 +239,229 @@
       display: block;
     }
 
+    /* ── Teaser Wall ── */
+    .teaser-wall {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      height: 420px;
+      overflow: hidden;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      background: rgba(26,58,42,0.25);
+    }
+    .teaser-col {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .teaser-col-head {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      padding: 0.4rem 0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+      z-index: 2;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .teaser-col-head img { height: 14px; width: 14px; object-fit: contain; }
+    .teaser-stream {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+    .teaser-stream::before,
+    .teaser-stream::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 45px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .teaser-stream::before { top: 0; background: linear-gradient(rgba(26,58,42,0.7), transparent); }
+    .teaser-stream::after { bottom: 0; background: linear-gradient(to top, rgba(26,58,42,0.7), transparent); }
+    .teaser-strip {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 0 2px;
+      will-change: transform;
+    }
+    .teaser-strip.up { animation: teaserUp var(--dur) linear infinite; }
+    .teaser-strip.down { animation: teaserDown var(--dur) linear infinite; }
+    .teaser-col:hover .teaser-strip { animation-play-state: paused; }
+    .teaser-card {
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+    }
+    .teaser-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      background: rgba(26,58,42,0.15);
+      border-radius: 0;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .teaser-card img.loaded { opacity: 1; }
+    .teaser-card .card-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      padding: 0.4rem;
+      text-align: center;
+      transition: opacity 0.4s;
+    }
+    .teaser-card.done .card-placeholder { opacity: 0; pointer-events: none; }
+    .teaser-card .card-placeholder .ph-icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      opacity: 0.7;
+    }
+    .teaser-card .card-placeholder .ph-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+      font-style: italic;
+      line-height: 1.25;
+      max-width: 92%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .teaser-card .card-placeholder .ph-hint {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.52rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.02em;
+    }
+    .teaser-card .card-placeholder .ph-spinner {
+      width: 10px;
+      height: 10px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-top-color: rgba(255,255,255,0.65);
+      border-radius: 50%;
+      animation: phSpin 0.8s linear infinite;
+    }
+    @keyframes phSpin { to { transform: rotate(360deg); } }
+    .teaser-card:hover {
+      transform: scale(1.2);
+      z-index: 10;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+    }
+    .teaser-card .card-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 0.3rem 0.4rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .teaser-card:hover .card-label { opacity: 1; }
+    .teaser-card .card-label span {
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: #fff;
+      font-style: italic;
+      line-height: 1.2;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+    @keyframes teaserUp { 0%{transform:translateY(0)} 100%{transform:translateY(-50%)} }
+    @keyframes teaserDown { 0%{transform:translateY(-50%)} 100%{transform:translateY(0)} }
+
+    /* ── Lightbox ── */
+    #teaser-lb {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    #teaser-lb.open { opacity: 1; pointer-events: auto; }
+    .lb-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      max-width: 440px;
+      width: 90%;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+      transform: scale(0.93);
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    #teaser-lb.open .lb-card { transform: scale(1); }
+    .lb-card > img { width: 100%; display: block; max-height: 340px; object-fit: cover; }
+    .lb-body { padding: 1rem 1.2rem 1.2rem; }
+    .lb-badge {
+      display: inline-block;
+      padding: 0.18rem 0.55rem;
+      border-radius: 1rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+    .lb-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+    .lb-body a { font-size: 0.85rem; font-weight: 600; color: var(--forest-mid); }
+    .lb-x {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .lb-x:hover { background: rgba(255,255,255,0.3); }
+
+    @media (max-width: 600px) {
+      .teaser-wall { height: 300px; }
+    }
+
     /* ── Container ── */
     .container {
       max-width: 900px;
@@ -692,13 +915,13 @@
       <span class="domain-badge weeds"><span class="count">1,798</span> Weeds</span>
     </div>
     <div class="actions">
-      <a class="btn btn-primary" href="https://huggingface.co/datasets/Xin1818/AgriTaxon">Dataset</a>
-      <a class="btn btn-ghost" href="https://github.com/studyzx/AgriTaxon">GitHub</a>
-      <a class="btn btn-ghost" href="supplementary.html">Supplementary</a>
+      <a class="btn btn-primary" href="https://huggingface.co/datasets/Xin1818/AgriTaxon">🤗 Dataset</a>
+      <a class="btn btn-ghost" href="https://github.com/studyzx/AgriTaxon"><svg style="width:16px;height:16px;vertical-align:-2px" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a>
+      <a class="btn btn-ghost" href="supplementary.html">📄 Supplementary</a>
     </div>
   </div>
   <div class="teaser">
-    <img src="teaser.jpg" alt="AgriTaxon overview: 7,432 species across crops, livestock, pests, and weeds with evaluation results showing a seeing-without-naming gap.">
+    <div id="teaser-wall" class="teaser-wall"></div>
   </div>
 </div>
 
@@ -1052,19 +1275,232 @@
   AgriTaxon &copy; 2026
 </footer>
 
+<div id="teaser-lb">
+  <button class="lb-x">&times;</button>
+  <div class="lb-card">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-body">
+      <div class="lb-badge" id="lb-badge"></div>
+      <h3 id="lb-name"></h3>
+      <a id="lb-link" href="" target="_blank">View on Wikidata &rarr;</a>
+    </div>
+  </div>
+</div>
+
 <script>
 (function() {
-  const els = document.querySelectorAll('.reveal');
-  if (!els.length) return;
-  const io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  els.forEach(function(el) { io.observe(el); });
+  var els = document.querySelectorAll('.reveal');
+  if (els.length) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el) { io.observe(el); });
+  }
+
+  var HF = 'https://huggingface.co/datasets/Xin1818/AgriTaxon/resolve/main/';
+  var TC = {
+    crop:      { c: '#4CAF50', n: 'Crop' },
+    livestock: { c: '#FF9800', n: 'Livestock' },
+    pest:      { c: '#F44336', n: 'Pest' },
+    weed:      { c: '#9C27B0', n: 'Weed' }
+  };
+  var TK = ['crop','livestock','pest','weed'];
+  var DIRS = ['up','down','up','down'];
+  var DURS = [30, 38, 26, 34];
+  var HTS = [88,118,72,132,96,122,82,142,102,76,110,94,128,86,136,80,114,100,124,108,90,130,78,140,104];
+
+  var D = [
+    ["Q3339158","Bothriochloa bladhii","crop"],
+    ["Q140957","Dipterocarpus alatus","crop"],
+    ["Q1098135","Asphodelus albus","crop"],
+    ["Q49594159","Achillea millefolium","crop"],
+    ["Q157287","Galega officinalis","crop"],
+    ["Q15537989","Sesbania formosa","crop"],
+    ["Q15507028","Pennisetum hohenackeri","crop"],
+    ["Q1478038","Ullucus tuberosus","crop"],
+    ["Q490224","Lupinus mutabilis","crop"],
+    ["Q137071","Pinus pseudostrobus","crop"],
+    ["Q385769","Diospyros digyna","crop"],
+    ["Q4953464","Brachylaena huillensis","crop"],
+    ["Q87591390","Vetiveria zizanioides","crop"],
+    ["Q2717303","Gliricidia sepium","crop"],
+    ["Q133205","Trigonella foenum-graecum","crop"],
+    ["Q3024379","Eucalyptus fraxinoides","crop"],
+    ["Q1915507","Muntingia calabura","crop"],
+    ["Q11121158","Pinus sylvestris","crop"],
+    ["Q1111359","Salvia officinalis","crop"],
+    ["Q1349014","Anisoptera scaphula","crop"],
+    ["Q15502420","Dendrocalamus merrillianus","crop"],
+    ["Q15515249","Monocymbium ceresiiforme","crop"],
+    ["Q2559111","Eucalyptus fastigata","crop"],
+    ["Q311079","Momordica cochinchinensis","crop"],
+    ["Q1101918","Hyparrhenia hirta","crop"],
+    ["Q732775","Partridge","livestock"],
+    ["Q2381430","Lundy","livestock"],
+    ["Q890298","Boer pony","livestock"],
+    ["Q71516","Camelus dromedarius","livestock"],
+    ["Q425900","Green Pheasant","livestock"],
+    ["Q2530205","Vosges cattle","livestock"],
+    ["Q4853143","Balwen Welsh Mountain","livestock"],
+    ["Q7565729","South African Merino","livestock"],
+    ["Q3028280","Cröllwitzer Turkey","livestock"],
+    ["Q1006819","Phoenix","livestock"],
+    ["Q1914208","Wild water buffalo","livestock"],
+    ["Q437118","Old English Game","livestock"],
+    ["Q3423411","Reggiana","livestock"],
+    ["Q933071","Abigar","livestock"],
+    ["Q1892822","Tibetan pony","livestock"],
+    ["Q251842","Helmeted Guineafowl","livestock"],
+    ["Q3418510","Ramo Grande","livestock"],
+    ["Q1464806","Welsummer","livestock"],
+    ["Q1368706","Swedish Red-and-White","livestock"],
+    ["Q38394","Transylvanian hound","livestock"],
+    ["Q1424315","Monterufolino","livestock"],
+    ["Q3625147","Sardinian donkey","livestock"],
+    ["Q3443171","Belmont Red","livestock"],
+    ["Q792317","Belgian Warmblood","livestock"],
+    ["Q2906537","Bleue du Nord","livestock"],
+    ["Q941160","Meriones","pest"],
+    ["Q10522913","Hesperotettix","pest"],
+    ["Q7200422","Placosternus difficilis","pest"],
+    ["Q2893450","Cadra cautella","pest"],
+    ["Q3973152","Stephanitis pyrioides","pest"],
+    ["Q1303776","Xylena exsoleta","pest"],
+    ["Q22102588","Caradrina clavipalpis","pest"],
+    ["Q1069416","Firebrat","pest"],
+    ["Q428187","Mimas tiliae","pest"],
+    ["Q16973921","Aceria tosichella","pest"],
+    ["Q5201011","Cyrtobagous salviniae","pest"],
+    ["Q515126","African Grass Rat","pest"],
+    ["Q21113","Black slug","pest"],
+    ["Q46791534","Nisotra","pest"],
+    ["Q1405900","Arion distinctus","pest"],
+    ["Q6940261","Muscina","pest"],
+    ["Q10647047","Pycnoderes","pest"],
+    ["Q1054318","Drosophilidae","pest"],
+    ["Q572525","Saperda populnea","pest"],
+    ["Q147061","Argyresthia pygmaeella","pest"],
+    ["Q7848007","Trupanea","pest"],
+    ["Q166111","Musca domestica","pest"],
+    ["Q10697379","Thyanta","pest"],
+    ["Q14799362","Cerambyx welensii","pest"],
+    ["Q1151518","Diprion pini","pest"],
+    ["Q1762112","Pennisetum","weed"],
+    ["Q1595512","Seseli libanotis","weed"],
+    ["Q2641622","Lappula","weed"],
+    ["Q4919077","Fimbristylis miliacea","weed"],
+    ["Q886492","Rivina humilis","weed"],
+    ["Q1661596","Hygrophila polysperma","weed"],
+    ["Q15450326","Phyllanthus fluitans","weed"],
+    ["Q17246569","Tetragonia echinata","weed"],
+    ["Q164132","Amaranthus blitoides","weed"],
+    ["Q156935","Hypericum","weed"],
+    ["Q5332469","Echinochloa crus-pavonis","weed"],
+    ["Q159200","Geranium pusillum","weed"],
+    ["Q5766514","Senecio madagascariensis","weed"],
+    ["Q5526851","Gastrolobium grandiflorum","weed"],
+    ["Q5131946","Clerodendrum quadriloculare","weed"],
+    ["Q134968","Carpobrotus","weed"],
+    ["Q4402757","Lemna perpusilla","weed"],
+    ["Q4918737","Dendrophthoe","weed"],
+    ["Q15505369","Juncus australis","weed"],
+    ["Q311192","Opuntia monacantha","weed"],
+    ["Q6085529","Isocoma","weed"],
+    ["Q158397","Berberis thunbergii","weed"],
+    ["Q15456760","Galium tinctorium","weed"],
+    ["Q2704494","Ageratina","weed"],
+    ["Q17601750","Ludwigia sedoides","weed"]
+  ];
+
+  var grouped = {};
+  TK.forEach(function(t) { grouped[t] = []; });
+  D.forEach(function(d) { grouped[d[2]].push(d); });
+
+  var wall = document.getElementById('teaser-wall');
+  TK.forEach(function(t, ti) {
+    var col = document.createElement('div');
+    col.className = 'teaser-col';
+
+    var head = document.createElement('div');
+    head.className = 'teaser-col-head';
+    head.style.background = TC[t].c;
+    head.innerHTML = '<img src="icons/icon_' + t + '.png" alt=""> ' + TC[t].n;
+    col.appendChild(head);
+
+    var stream = document.createElement('div');
+    stream.className = 'teaser-stream';
+
+    var strip = document.createElement('div');
+    strip.className = 'teaser-strip ' + DIRS[ti];
+    strip.style.setProperty('--dur', DURS[ti] + 's');
+
+    var items = grouped[t];
+    for (var dup = 0; dup < 2; dup++) {
+      items.forEach(function(d, i) {
+        var card = document.createElement('div');
+        card.className = 'teaser-card';
+        card.setAttribute('data-q', d[0]);
+        card.setAttribute('data-l', d[1]);
+        card.setAttribute('data-t', d[2]);
+
+        var h = HTS[i % HTS.length];
+        card.style.height = h + 'px';
+        var bgMap = {crop:'rgba(76,175,80,0.18)',livestock:'rgba(255,152,0,0.18)',pest:'rgba(244,67,54,0.18)',weed:'rgba(156,39,176,0.18)'};
+        card.style.background = bgMap[d[2]];
+
+        var ph = document.createElement('div');
+        ph.className = 'card-placeholder';
+        ph.innerHTML = '<img class="ph-icon" src="icons/icon_' + d[2] + '.png" alt="">' +
+          '<div class="ph-name">' + d[1] + '</div>' +
+          '<div class="ph-hint"><div class="ph-spinner"></div>Loading image…</div>';
+        card.appendChild(ph);
+
+        var img = document.createElement('img');
+        img.loading = 'lazy';
+        img.alt = d[1];
+        img.style.height = h + 'px';
+        img.onload = function() { this.classList.add('loaded'); this.closest('.teaser-card').classList.add('done'); };
+        img.src = HF + 'images/' + d[2] + '/' + d[0] + '.jpg';
+        card.appendChild(img);
+
+        var lbl = document.createElement('div');
+        lbl.className = 'card-label';
+        lbl.innerHTML = '<span>' + d[1] + '</span>';
+        card.appendChild(lbl);
+
+        strip.appendChild(card);
+      });
+    }
+
+    stream.appendChild(strip);
+    col.appendChild(stream);
+    wall.appendChild(col);
+  });
+
+  var lb = document.getElementById('teaser-lb');
+  wall.addEventListener('click', function(e) {
+    var card = e.target.closest('.teaser-card');
+    if (!card) return;
+    var q = card.getAttribute('data-q');
+    var l = card.getAttribute('data-l');
+    var t = card.getAttribute('data-t');
+    document.getElementById('lb-img').src = HF + 'images/' + t + '/' + q + '.jpg';
+    document.getElementById('lb-name').textContent = l;
+    var badge = document.getElementById('lb-badge');
+    badge.textContent = TC[t].n;
+    badge.style.background = TC[t].c;
+    document.getElementById('lb-link').href = 'https://www.wikidata.org/wiki/' + q;
+    lb.classList.add('open');
+  });
+
+  lb.addEventListener('click', function(e) {
+    if (e.target === lb || e.target.closest('.lb-x')) lb.classList.remove('open');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') lb.classList.remove('open');
+  });
 })();
 </script>
 
