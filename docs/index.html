@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AgriTaxon – Can Large Multimodal Models Identify What They See in Agriculture?</title>
   <meta name="description" content="AgriTaxon: the first benchmark for open-ended taxonomic naming in agriculture, spanning 7,432 species across crops, livestock, pests, and weeds.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -288,7 +289,7 @@
     /* ── Stats ── */
     .stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       margin: 2rem 0;
     }
@@ -730,10 +731,6 @@
         <div class="number">14</div>
         <div class="label">LMMs Evaluated</div>
       </div>
-      <div class="stat-card">
-        <div class="number">98%</div>
-        <div class="label">Expert Agreement</div>
-      </div>
     </div>
   </section>
 
@@ -877,6 +874,9 @@
     <p class="table-footnote">
       Hard = AgriTaxon-Hard subset (&le;2 models correct, 1,052 samples). EM = exact match after normalization. Acc = LLM-as-a-Judge alias validation (98% expert agreement).
     </p>
+    <p class="table-footnote" style="margin-top: 0.5rem; padding: 0.8rem 1rem; background: var(--card-bg); border-radius: var(--radius); border: 1px solid rgba(26,58,42,0.06); box-shadow: var(--card-shadow);">
+      📬 <strong>Submit to Leaderboard</strong> &mdash; If you would like your model or method to appear on this leaderboard, please contact us at <a href="mailto:zengx@nercita.org.cn" style="font-weight:600;">zengx@nercita.org.cn</a> with your evaluation results.
+    </p>
   </section>
 
   <div class="divider"></div>
@@ -912,7 +912,7 @@
   <section class="reveal">
     <div class="section-label">Error Analysis</div>
     <h2>Error Type Examples</h2>
-    <p>Representative examples for each of the five error types from the human-annotated 75 Acc-error cases (Gemini 3 Pro Preview, open-ended evaluation).</p>
+    <p>Representative examples from the human-annotated 75 Acc-error cases (Gemini 3 Pro Preview, open-ended evaluation).</p>
 
     <div class="error-grid">
       <div class="error-card">
@@ -934,29 +934,19 @@
       </div>
 
       <div class="error-card">
-        <img src="figures/error_cases/no_answer.jpg" alt="No answer example">
-        <div class="info">
-          <div class="error-type">No Answer (9%)</div>
-          <div class="labels"><span>Ground truth:</span> <em>Cydia toreuta</em> [Pest] &rarr; <span>Prediction:</span> (none)</div>
-          <div class="rationale">The model fails to produce any species name. <em>Cydia toreuta</em> is an obscure tortricid moth likely absent from the model's training data.</div>
-        </div>
-      </div>
-
-      <div class="error-card">
-        <img src="figures/error_cases/parsing_error.jpg" alt="Parsing error example">
-        <div class="info">
-          <div class="error-type">Parsing Error (8%)</div>
-          <div class="labels"><span>Ground truth:</span> <em>Licuala ramsayi</em> [Crop] &rarr; <span>Prediction:</span> "answer"</div>
-          <div class="rationale">The model's response is truncated or malformed, outputting the literal word "answer" instead of a species name.</div>
-        </div>
-      </div>
-
-      <div class="error-card">
         <img src="figures/error_cases/granularity_mismatch.jpg" alt="Granularity mismatch example">
         <div class="info">
           <div class="error-type">Granularity Mismatch (7%)</div>
           <div class="labels"><span>Ground truth:</span> Swiss Warmblood [Livestock] &rarr; <span>Prediction:</span> Horse</div>
           <div class="rationale">The model correctly identifies the animal as a horse but fails to specify the breed, producing a species-level answer where a breed-level answer is required.</div>
+        </div>
+      </div>
+
+      <div style="padding:0.9rem 1.1rem; background:var(--card-bg); border-radius:var(--radius); border:1px solid rgba(26,58,42,0.04); box-shadow:var(--card-shadow);">
+        <div style="font-family:'Fraunces',serif; font-weight:700; color:var(--forest); font-size:0.95rem; margin-bottom:0.4rem;">Other Errors (17%)</div>
+        <div style="font-size:0.86rem; color:var(--text-muted); line-height:1.7;">
+          <div><strong style="color:var(--text-secondary);">No Answer (9%)</strong> &mdash; the model fails to produce any species name, typically for obscure taxa absent from training data.</div>
+          <div style="margin-top:0.25rem;"><strong style="color:var(--text-secondary);">Parsing Error (8%)</strong> &mdash; the model's response is truncated or malformed, outputting non-species text instead of a valid name.</div>
         </div>
       </div>
     </div>
