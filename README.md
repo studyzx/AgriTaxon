@@ -1,61 +1,83 @@
 # AgriTaxon
 
-**AgriTaxon: Can Large Multimodal Models Identify What They See in Agriculture?**
+**AgriTaxon: Diagnosing the Long-Tail Agricultural Knowledge Gap of Large Multimodal Models**
 
+Xin Zeng, Benfeng Xu, Qian Chen, Jialin Kuai, Wentao Zhang, Liguo Lang, Shancheng Fang, Huarui Wu
 
 <p align="center">
   <img src="docs/teaser.jpg" width="100%" alt="AgriTaxon overview">
 </p>
 
-**AgriTaxon** is the first benchmark for **open-ended taxonomic naming** in agriculture. It tests whether Large Multimodal Models (LMMs) can correctly name a species from its image—without predefined options.
+Open-ended taxonomic naming is a foundational capability for intelligent agricultural decision-making. It requires a model to generate a standardized name for an organism or breed in an image without relying on a predefined label set. **AgriTaxon** is a knowledge-grounded and AI-ready benchmark suite for evaluating this capability in large multimodal models (LMMs).
 
-## Highlights
+Each core sample pairs an image with machine-readable identifiers, a canonical name, collected aliases, a domain label, and an executable evaluation protocol. Wikidata connects the samples to FAO Ecocrop, FAO DAD-IS, or the EPPO Global Database.
 
-- **7,432 species** across four domains: Crops (1,971), Livestock (178), Pests (3,485), Weeds (1,798)
-- Every label linked to **FAO / EPPO** authoritative databases via Wikidata
-- Two evaluation protocols: **multiple-choice** (with semantically hard negatives) and **open-ended naming**
-- LLM-as-a-Judge scoring with **98% expert agreement**
-- 14 LMMs benchmarked, revealing a striking *seeing-without-naming* gap
+## Benchmark Suite
+
+| Dataset | Purpose | Entities | Images |
+|---|---|---:|---:|
+| **AgriTaxon Core** | Broad agricultural entity naming | 7,432 | 7,432 |
+| **AgriTaxon-Hard** | Performance-conditioned diagnostic stress test | 1,052 | 1,052 |
+| **AgriTaxon-Wild** | In-the-wild multi-image evaluation | 2,969 | 14,845 |
+
+The core benchmark spans four agricultural domains:
+
+| Track | Entities | Authority source |
+|---|---:|---|
+| Crops | 1,971 | FAO Ecocrop |
+| Livestock | 178 | FAO DAD-IS |
+| Pests | 3,485 | EPPO Global Database |
+| Weeds | 1,798 | EPPO Global Database |
+
+AgriTaxon-Hard contains core samples answered correctly by at most two of the 14 evaluated models under the default multiple-choice protocol. It is intentionally performance-conditioned and is intended for failure analysis and tool-assisted recovery, not as an estimate of average benchmark performance.
+
+AgriTaxon-Wild aligns core entities to iNaturalist taxa strictly through Wikidata P3151, without fuzzy name matching. It provides five research-grade field photographs per aligned entity and supports multi-image evaluation with K ∈ {1, 3, 5}.
+
+## Evaluation
+
+AgriTaxon compares:
+
+- **Multiple-choice recognition:** one correct entity name and three text-semantically similar distractors.
+- **Open-ended naming:** the model produces the entity name without candidate options.
+
+Open-ended outputs are scored using strict exact match (OE-EM) and alias-aware accuracy (OE-Acc). Alias validation uses GPT-5 Mini and agrees with a domain expert on 98% of 100 sampled EM-error cases.
+
+For the core benchmark, MC accuracy, OE-EM, and OE-Acc summary scores are unweighted macro-averages across the four tracks. Each track therefore contributes equally regardless of its number of samples.
+
+Among the 14 evaluated LMMs, the best macro-averaged scores are 83.0% for multiple-choice accuracy, 44.2% for OE-EM, and 51.2% for OE-Acc. AgriTaxon-Wild shows that multiple field views improve both candidate selection and naming, while a substantial seeing-without-naming gap remains.
 
 ## Dataset
 
-The dataset is hosted on Hugging Face:
+The complete benchmark suite is hosted on Hugging Face:
 
 🔗 [Xin1818/AgriTaxon](https://huggingface.co/datasets/Xin1818/AgriTaxon)
 
-## Potential Applications
+```bash
+pip install huggingface_hub
+huggingface-cli download Xin1818/AgriTaxon --repo-type dataset --local-dir AgriTaxon
+```
 
-AgriTaxon supports a broad range of research directions:
+## Research Directions
 
-- **Open-ended visual recognition** — developing models that produce free-form species names rather than selecting from a fixed label set
-- **Long-tail and rare-entity understanding** — with popularity metadata (Wikipedia pageviews) for every species, enabling controlled study of how accuracy degrades for rare organisms
-- **Retrieval-augmented generation (RAG)** — authority-grounded labels (FAO, EPPO, Wikidata QIDs) serve as natural retrieval anchors for augmenting LMMs with external knowledge
-- **Agentic and tool-augmented reasoning** — our agentic baseline shows that tool use (e.g., image cropping) significantly boosts accuracy on hard samples
-- **Agricultural AI deployment** — pest surveillance, quarantine enforcement, crop variety verification, and livestock breed identification
-- **Fine-grained visual classification (FGVC)** — semantically hard negatives and cross-domain coverage make AgriTaxon a challenging FGVC benchmark
+- **Open-ended visual recognition** — producing agricultural entity names rather than selecting from a fixed label set.
+- **Long-tail entity understanding** — studying the association between recognition and web visibility using Wikipedia pageviews.
+- **Multi-image field recognition** — aggregating several independent iNaturalist observations of the same entity.
+- **Retrieval-augmented recognition** — using FAO, EPPO, and Wikidata identifiers as retrieval anchors.
+- **Tool-augmented reasoning** — diagnosing whether failures arise from insufficient visual detail or missing external knowledge.
+- **Agricultural AI** — pest surveillance, quarantine inspection, crop verification, and livestock breed identification.
 
 ## Supplementary Material
 
-Full prompt templates, API cost breakdown, resolution analysis, agentic baseline details, and error type examples are available on the [Supplementary Material](https://studyzx.github.io/AgriTaxon/supplementary.html) page.
+Prompt templates, API cost details, resolution analysis, tool specifications, error examples, and AgriTaxon-Wild per-track results are available on the [Supplementary Material](https://studyzx.github.io/AgriTaxon/supplementary.html) page.
 
-All evaluation prompts are also provided as raw files in the [`prompts/`](prompts/) directory for reproducibility.
+The exact evaluation prompts are provided as raw files in [`prompts/`](prompts/). These files preserve the prompts used in the reported experiments.
 
-## Getting Started
+## Licensing and Access
 
-```bash
-# Download the dataset from Hugging Face
-pip install huggingface_hub
-huggingface-cli download Xin1818/AgriTaxon --repo-type dataset --local-dir dataset
-```
+- **Source code, prompt templates, and documentation:** [MIT License](LICENSE).
+- **Benchmark annotations and metadata:** CC BY 4.0.
+- **Core images:** sourced from Wikimedia Commons and subject to their original licenses.
+- **AgriTaxon-Wild images:** sourced from iNaturalist and subject to their per-photo licenses and attribution requirements; some licenses include NonCommercial or NoDerivatives restrictions.
+- **Authority identifiers:** Wikidata QIDs are available under CC0; FAO and EPPO identifiers are used for reference linking only.
 
-## Licensing & Access
-
-AgriTaxon is publicly available and free for academic and research use.
-
-- **Source code, prompt templates & documentation** (this repository): [MIT License](LICENSE)
-- **Benchmark metadata & annotations** (species labels, evaluation splits, distractor sets): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- **Images**: sourced from [Wikimedia Commons](https://commons.wikimedia.org/) under their respective Creative Commons licenses (predominantly CC BY and CC BY-SA). Each image retains its original license.
-- **Authority identifiers**: Wikidata QIDs are available under [CC0](https://creativecommons.org/publicdomain/zero/1.0/); FAO and EPPO identifiers are used for reference linking only.
-
-The dataset is hosted on Hugging Face at [Xin1818/AgriTaxon](https://huggingface.co/datasets/Xin1818/AgriTaxon) and can be downloaded freely without registration.
-
+Users must consult the per-image license and attribution metadata distributed with the dataset before reuse.

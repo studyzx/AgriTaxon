@@ -435,7 +435,7 @@
 <div class="header">
   <div class="header-inner">
     <h1>AgriTaxon &mdash; Supplementary Material</h1>
-    <p>Prompt templates, cost analysis, additional experiments, and error examples</p>
+    <p>Prompt templates, cost analysis, tool details, error examples, and AgriTaxon-Wild results</p>
     <a class="back" href="index.html">&larr; Back to project homepage</a>
   </div>
 </div>
@@ -449,6 +449,7 @@
     <li><a href="#resolution">Resolution Analysis</a></li>
     <li><a href="#agentic">Agentic Baseline: Tool &amp; Prompt Details</a></li>
     <li><a href="#errors">Error Type Examples</a></li>
+    <li><a href="#wild">AgriTaxon-Wild Per-Track Results</a></li>
   </ol>
 </div>
 
@@ -615,10 +616,10 @@ Respond with ONLY the category name (one of: pest, weed_invasive, pathogen, host
 <section id="resolution" class="reveal">
   <div class="section-label">Appendix D</div>
   <h2>Resolution Analysis</h2>
-  <p>We examined whether image resolution correlates with recognition accuracy. Images in the 0.5&ndash;1 MP range have the lowest mean accuracy (3.24 models correct out of 14), while images above 4 MP achieve the highest (3.66 models correct). However, this effect is substantially weaker than the Wikipedia popularity effect (which shows a 2&times; gap), suggesting that <em>resolution alone does not guarantee recognition success</em>&mdash;the model must also have learned about the species during training.</p>
+  <p>We examined whether image resolution correlates with open-ended recognition accuracy. Images in the 0.5&ndash;1 MP range have the lowest mean accuracy (3.24 models correct out of 14), while images above 4 MP achieve the highest (3.66 models correct). This effect is substantially weaker than the association with Wikipedia visibility, suggesting that <em>resolution alone does not guarantee recognition success</em>&mdash;the model must also possess sufficient knowledge about the target entity.</p>
   <div class="figure">
-    <img src="figures/resolution_vs_accuracy.png" alt="Image resolution vs. recognition accuracy">
-    <figcaption>Image resolution vs. recognition accuracy. Higher resolution shows modest improvement, but the effect is much weaker than species popularity.</figcaption>
+    <img src="figures/resolution_accuracy_bar.png" alt="Image resolution vs. recognition accuracy">
+    <figcaption>Image resolution versus recognition accuracy. Higher resolution shows a modest improvement, but the effect is much weaker than the association with web visibility.</figcaption>
   </div>
 </section>
 
@@ -728,6 +729,25 @@ end while
 response ← LLM(messages, tools=∅)
 return ExtractAnswer(response)</pre>
   </div>
+
+  <h3>Controlled Web Retrieval</h3>
+  <p>
+    We also evaluate GPT-5 Mini on the fixed AgriTaxon-Hard set with two general-purpose tools: <code>web_search</code> for issuing queries and <code>read_webpage</code> for reading retrieved pages. This comparison uses the same base model with and without tools; it is separate from the Claude Haiku 4.5 cropping experiment.
+  </p>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Method</th><th>AgriTaxon-Hard MC Accuracy</th></tr></thead>
+      <tbody>
+        <tr><td>GPT-5 Mini, no tools</td><td>3.9%</td></tr>
+        <tr><td>GPT-5 Mini + web retrieval</td><td><strong>19.3%</strong></td></tr>
+        <tr><td>Claude Haiku 4.5, no tools</td><td>4.7%</td></tr>
+        <tr><td>Claude Haiku 4.5 + image crop</td><td><strong>10.4%</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Web retrieval improves GPT-5 Mini by 15.4 percentage points, or 4.9-fold. Accuracy reaches 25.2% for Crop, 18.4% for Pest, and 16.6% for Weed, with about 13 tool calls per sample. The cropping and retrieval rows use different base models and should not be interpreted as a controlled comparison with each other.
+  </p>
 </section>
 
 <div class="divider"></div>
@@ -784,6 +804,44 @@ return ExtractAnswer(response)</pre>
       </div>
     </div>
   </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════ G. AgriTaxon-Wild ══════════ -->
+<section id="wild" class="reveal">
+  <div class="section-label">Appendix G</div>
+  <h2>AgriTaxon-Wild Per-Track Results</h2>
+  <p>
+    More field images generally improve both multiple-choice recognition and open-ended naming. Livestock results should be interpreted cautiously because strict P3151 alignment leaves only 13 entities in this track.
+  </p>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Model</th><th rowspan="2">K</th>
+          <th colspan="3">Crop</th><th colspan="3">Livestock†</th><th colspan="3">Pest</th><th colspan="3">Weed</th>
+        </tr>
+        <tr>
+          <th>MC</th><th>EM</th><th>Acc</th>
+          <th>MC</th><th>EM</th><th>Acc</th>
+          <th>MC</th><th>EM</th><th>Acc</th>
+          <th>MC</th><th>EM</th><th>Acc</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="3">Doubao-Seed-2.0-Lite</td><td>1</td><td>74.8</td><td>33.6</td><td>38.6</td><td>84.6</td><td>53.8</td><td>76.9</td><td>77.0</td><td>26.2</td><td>30.5</td><td>76.3</td><td>43.6</td><td>44.9</td></tr>
+        <tr><td>3</td><td>83.5</td><td>47.8</td><td>51.1</td><td>100.0</td><td>61.5</td><td>84.6</td><td>80.5</td><td>39.8</td><td>45.7</td><td>80.2</td><td>59.8</td><td>62.1</td></tr>
+        <tr><td>5</td><td>85.9</td><td>52.2</td><td>55.9</td><td>100.0</td><td>61.5</td><td>84.6</td><td>81.3</td><td>48.7</td><td>55.6</td><td>82.7</td><td>63.7</td><td>65.9</td></tr>
+        <tr><td rowspan="3">Qwen3.5-35B-A3B</td><td>1</td><td>64.7</td><td>14.8</td><td>20.6</td><td>76.9</td><td>61.5</td><td>69.2</td><td>59.9</td><td>5.6</td><td>8.6</td><td>62.0</td><td>14.2</td><td>15.6</td></tr>
+        <tr><td>3</td><td>72.0</td><td>21.9</td><td>24.5</td><td>100.0</td><td>61.5</td><td>84.6</td><td>63.6</td><td>10.2</td><td>15.0</td><td>64.6</td><td>18.8</td><td>19.8</td></tr>
+        <tr><td>5</td><td>73.7</td><td>24.8</td><td>27.6</td><td>100.0</td><td>76.9</td><td>92.3</td><td>64.7</td><td>9.4</td><td>13.6</td><td>66.9</td><td>19.4</td><td>20.2</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="table-footnote">
+    MC = multiple-choice accuracy; EM/Acc = open-ended exact match / alias-validated accuracy. †Livestock has only 13 entities and is not statistically meaningful.
+  </p>
 </section>
 
 </div>

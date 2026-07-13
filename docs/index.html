@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgriTaxon – Can Large Multimodal Models Identify What They See in Agriculture?</title>
-  <meta name="description" content="AgriTaxon: the first benchmark for open-ended taxonomic naming in agriculture, spanning 7,432 species across crops, livestock, pests, and weeds.">
+  <title>AgriTaxon – Diagnosing the Long-Tail Agricultural Knowledge Gap of Large Multimodal Models</title>
+  <meta name="description" content="AgriTaxon is a knowledge-grounded and AI-ready benchmark suite for open-ended naming of 7,432 agricultural entities, including organisms and livestock breeds.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,6 +150,15 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       animation: fadeDown 0.8s 0.25s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    .hero .authors {
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.58);
+      max-width: 760px;
+      margin: -0.45rem auto 1.1rem;
+      line-height: 1.6;
+      animation: fadeDown 0.8s 0.23s cubic-bezier(0.22,1,0.36,1) both;
     }
 
     /* ── Domain badges ── */
@@ -564,7 +573,7 @@
     /* ── Stats ── */
     .stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
       margin: 2rem 0;
     }
@@ -679,6 +688,27 @@
       color: var(--text-muted);
       margin-top: 0.75rem;
       padding-left: 0.25rem;
+    }
+
+    .paper-figure {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(26,58,42,0.06);
+      text-align: center;
+    }
+    .paper-figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.45rem;
+    }
+    .paper-figure figcaption {
+      margin-top: 0.7rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* ── Insights ── */
@@ -956,9 +986,10 @@
 <!-- ════════ Hero ════════ -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-badge">Benchmark &middot; 7,432 Species &middot; 4 Domains</div>
+    <div class="hero-badge">Benchmark Suite &middot; 7,432 Core Entities &middot; 4 Domains</div>
     <h1>AgriTaxon</h1>
-    <p class="subtitle">Can Large Multimodal Models Identify What They See in Agriculture?</p>
+    <p class="subtitle">Diagnosing the Long-Tail Agricultural Knowledge Gap of Large Multimodal Models</p>
+    <p class="authors">Xin Zeng, Benfeng Xu, Qian Chen, Jialin Kuai, Wentao Zhang, Liguo Lang, Shancheng Fang, Huarui Wu</p>
     <p class="venue">Under Review</p>
     <div class="domain-badges">
       <span class="domain-badge crops"><span class="count">1,971</span> Crops</span>
@@ -983,24 +1014,27 @@
   <!-- Overview -->
   <section class="reveal">
     <div class="section-label">Overview</div>
-    <h2>Bridging the Seeing-Without-Naming Gap</h2>
+    <h2>Open-Ended Taxonomic Naming for Agricultural AI</h2>
     <p>
-      In agriculture, correctly naming a species from its image&mdash;what we call <strong>open-ended taxonomic naming</strong>&mdash;is the starting point for intelligent agriculture, from choosing a pesticide to enforcing quarantine.
-      Yet no existing benchmark directly tests whether Large Multimodal Models (LMMs) can perform this task.
-      Existing agricultural datasets each cover a single domain (8&ndash;102 classes), lack links to standard databases, and evaluate only closed-set classification&mdash;leaving untested whether models can actually <em>name</em> what they see.
+      <strong>Open-ended taxonomic naming</strong> is a foundational capability for intelligent agricultural decision-making. It requires a model to generate a standardized name for an organism or breed in an image without relying on a predefined label set.
+      Most agricultural vision benchmarks instead assume a fixed label set, leaving unclear whether Large Multimodal Models (LMMs) can independently produce the correct name.
     </p>
     <p>
-      <strong>AgriTaxon</strong> fills this gap by unifying four agricultural domains&mdash;Crops, Livestock, Pests, and Weeds&mdash;into a single benchmark with 7,432 species, each linked to authoritative FAO and EPPO databases via Wikidata.
-      We evaluate 14 LMMs under both multiple-choice (with semantically hard negatives) and open-ended naming, and introduce an LLM-as-a-Judge scoring protocol that achieves 98% agreement with domain experts.
+      <strong>AgriTaxon</strong> is a knowledge-grounded and AI-ready benchmark suite spanning Crops, Livestock, Pests, and Weeds. Each core entity is linked through Wikidata to FAO Ecocrop, FAO DAD-IS, or the EPPO Global Database and is paired with machine-readable identifiers, a canonical name, collected aliases, a domain label, and an executable evaluation protocol.
+      We evaluate 14 LMMs using four-option recognition and open-ended naming. Alias validation by GPT-5 Mini agrees with a domain expert on 98% of 100 sampled exact-match errors.
     </p>
     <div class="stats">
       <div class="stat-card">
         <div class="number">7,432</div>
-        <div class="label">Species</div>
+        <div class="label">Core Entities</div>
       </div>
       <div class="stat-card">
-        <div class="number">4</div>
-        <div class="label">Domains</div>
+        <div class="number">1,052</div>
+        <div class="label">Hard Cases</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">14,845</div>
+        <div class="label">Wild Images</div>
       </div>
       <div class="stat-card">
         <div class="number">14</div>
@@ -1011,12 +1045,41 @@
 
   <div class="divider"></div>
 
+  <!-- Benchmark Suite -->
+  <section class="reveal">
+    <div class="section-label">Benchmark Suite</div>
+    <h2>Core, Hard, and In-the-Wild Evaluation</h2>
+    <p>
+      The core benchmark measures broad agricultural entity naming. AgriTaxon-Hard is a performance-conditioned diagnostic subset, while AgriTaxon-Wild evaluates the same naming capability using multiple independent field observations.
+    </p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Dataset</th><th>Purpose</th><th>Entities</th><th>Images</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="model-name">AgriTaxon Core</td><td>Broad taxonomic-naming benchmark</td><td>7,432</td><td>7,432</td></tr>
+          <tr><td class="model-name">AgriTaxon-Hard</td><td>Performance-conditioned diagnostic stress test</td><td>1,052</td><td>1,052</td></tr>
+          <tr><td class="model-name">AgriTaxon-Wild</td><td>In-the-wild multi-image evaluation</td><td>2,969</td><td>14,845</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-footnote">
+      AgriTaxon-Hard contains core samples answered correctly by at most two of the 14 evaluated models under the default multiple-choice protocol. It is intended for failure analysis and tool-assisted recovery, not as an estimate of average benchmark performance.
+    </p>
+    <p>
+      AgriTaxon-Wild uses strict Wikidata P3151 alignment to iNaturalist, without fuzzy name matching. It retains 2,969 entities with five qualifying field photographs each and evaluates one, three, or five views of the same entity.
+    </p>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- Leaderboard -->
   <section class="reveal">
     <div class="section-label">Evaluation</div>
     <h2>Leaderboard</h2>
     <p>
-      Accuracy (%) on AgriTaxon for 14 LMMs, ranked by open-ended Acc within each block. Open-ended reports both EM (exact match) and Acc (with LLM-as-a-Judge alias validation). <strong>Bold</strong> = best per column.
+      Accuracy (%) on AgriTaxon for 14 LMMs, ranked by OE-Acc within each block. MC Macro, OE-EM, and OE-Acc are unweighted macro-averages across the four tracks; the four track-specific open-ended columns report EM. <strong>Bold</strong> = best per column.
     </p>
     <div class="table-wrapper">
       <table>
@@ -1033,7 +1096,7 @@
             <th>Live.</th>
             <th>Pest</th>
             <th>Weed</th>
-            <th>Mean</th>
+            <th>Macro</th>
             <th style="border-left: 2px solid rgba(255,255,255,0.2);">Crop</th>
             <th>Live.</th>
             <th>Pest</th>
@@ -1056,7 +1119,7 @@
             <td class="date">2026.02</td>
             <td>6.0</td>
             <td>81.3</td><td>88.8</td><td>70.9</td><td>76.6</td><td>79.4</td>
-            <td class="best">45.3</td><td>34.8</td><td class="best">39.6</td><td class="best">56.6</td><td class="best">44.1</td><td>48.6</td>
+            <td class="best">45.3</td><td>35.4</td><td class="best">39.6</td><td class="best">56.6</td><td class="best">44.2</td><td>48.8</td>
           </tr>
           <tr>
             <td class="model-name"><img class="logo" src="figures/logo/gemini.png" alt="">gemini-3-flash-preview</td>
@@ -1070,7 +1133,7 @@
             <td class="date">2026.02</td>
             <td>5.6</td>
             <td>78.1</td><td>87.6</td><td>70.1</td><td>74.7</td><td>77.6</td>
-            <td>37.3</td><td>33.7</td><td>30.5</td><td>48.8</td><td>37.6</td><td>44.0</td>
+            <td>37.3</td><td>34.3</td><td>30.5</td><td>48.8</td><td>37.7</td><td>44.2</td>
           </tr>
           <tr>
             <td class="model-name"><img class="logo" src="figures/logo/openai.png" alt="">gpt-5</td>
@@ -1099,28 +1162,28 @@
             <td class="date">2026.01</td>
             <td>2.1</td>
             <td>75.0</td><td>86.0</td><td>65.8</td><td>68.0</td><td>73.7</td>
-            <td>29.8</td><td>31.0</td><td>20.0</td><td>39.2</td><td>30.0</td><td>38.0</td>
+            <td>29.8</td><td>30.9</td><td>20.0</td><td>39.2</td><td>30.0</td><td>38.1</td>
           </tr>
           <tr>
             <td class="model-name"><img class="logo" src="figures/logo/zai.png" alt="">glm-4.6v</td>
             <td class="date">2025.12</td>
             <td>6.2</td>
             <td>66.7</td><td>77.0</td><td>57.9</td><td>58.6</td><td>65.1</td>
-            <td>33.2</td><td>20.7</td><td>10.4</td><td>26.6</td><td>22.7</td><td>30.1</td>
+            <td>33.2</td><td>21.3</td><td>10.4</td><td>26.6</td><td>22.9</td><td>30.5</td>
           </tr>
           <tr>
             <td class="model-name"><img class="logo" src="figures/logo/Qwen-Ai-Logo-PNG-Vector.png" alt="">qwen3-vl-235b-a22b</td>
             <td class="date">2025.09</td>
             <td>2.2</td>
             <td>66.4</td><td>81.5</td><td>63.2</td><td>62.5</td><td>68.4</td>
-            <td>23.5</td><td>23.9</td><td>13.5</td><td>25.8</td><td>21.7</td><td>27.5</td>
+            <td>23.5</td><td>24.2</td><td>13.5</td><td>25.8</td><td>21.7</td><td>27.6</td>
           </tr>
           <tr>
             <td class="model-name"><img class="logo" src="figures/logo/Qwen-Ai-Logo-PNG-Vector.png" alt="">qwen3.5-397b-a17b</td>
             <td class="date">2026.02</td>
             <td class="best">9.2</td>
             <td>70.5</td><td>85.4</td><td>65.8</td><td>65.8</td><td>71.9</td>
-            <td>25.3</td><td>22.8</td><td>13.8</td><td>24.8</td><td>21.7</td><td>26.8</td>
+            <td>25.3</td><td>23.6</td><td>13.8</td><td>24.8</td><td>21.9</td><td>27.1</td>
           </tr>
           <tr>
             <td class="model-name"><img class="logo" src="figures/logo/Qwen-Ai-Logo-PNG-Vector.png" alt="">qwen3-vl-30b-a3b</td>
@@ -1134,24 +1197,59 @@
             <td class="date">2025.12</td>
             <td>5.8</td>
             <td>59.3</td><td>71.3</td><td>55.4</td><td>55.1</td><td>60.3</td>
-            <td>21.6</td><td>20.7</td><td>5.7</td><td>12.7</td><td>15.2</td><td>19.6</td>
+            <td>21.6</td><td>21.3</td><td>5.7</td><td>12.7</td><td>15.3</td><td>19.9</td>
           </tr>
           <tr>
             <td class="model-name"><img class="logo" src="figures/logo/Qwen-Ai-Logo-PNG-Vector.png" alt="">qwen3.5-35b-a3b</td>
             <td class="date">2026.02</td>
             <td>4.2</td>
             <td>67.1</td><td>80.9</td><td>61.4</td><td>61.7</td><td>67.8</td>
-            <td>11.3</td><td>17.4</td><td>3.9</td><td>12.6</td><td>11.3</td><td>17.4</td>
+            <td>11.3</td><td>18.0</td><td>3.9</td><td>12.6</td><td>11.4</td><td>17.6</td>
           </tr>
         </tbody>
       </table>
     </div>
     <p class="table-footnote">
-      Hard = AgriTaxon-Hard subset (&le;2 models correct, 1,052 samples). EM = exact match after normalization. Acc = LLM-as-a-Judge alias validation (98% expert agreement).
+      Hard = performance-conditioned AgriTaxon-Hard accuracy (&le;2 of 14 models correct under the default MC protocol; 1,052 samples). The four OE track columns report exact match after normalization. EM and alias-aware Acc are unweighted macro-averages across the four tracks; the LLM judge agrees with a domain expert on 98% of 100 sampled EM errors.
     </p>
     <p class="table-footnote" style="margin-top: 0.5rem; padding: 0.8rem 1rem; background: var(--card-bg); border-radius: var(--radius); border: 1px solid rgba(26,58,42,0.06); box-shadow: var(--card-shadow);">
       📬 <strong>Submit to Leaderboard</strong> &mdash; If you would like your model or method to appear on this leaderboard, please contact us at <a href="mailto:zengx@nercita.org.cn" style="font-weight:600;">zengx@nercita.org.cn</a> with your evaluation results.
     </p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- AgriTaxon-Wild -->
+  <section class="reveal">
+    <div class="section-label">AgriTaxon-Wild</div>
+    <h2>Multiple Field Views Improve Recognition and Naming</h2>
+    <p>
+      AgriTaxon-Wild evaluates the same 2,969 P3151-aligned entities using one curated Commons image or one, three, and five iNaturalist field observations. Candidate names and judging procedures remain fixed, allowing a controlled comparison of image provenance and multi-view evidence.
+    </p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>Model</th><th>Setting</th><th>MC</th><th>OE-EM</th><th>OE-Acc</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="model-name" rowspan="4">Doubao-Seed-2.0-Lite</td><td><em>Curated</em></td><td><em>78.0</em></td><td><em>45.0</em></td><td><em>50.2</em></td></tr>
+          <tr><td>Wild K=1</td><td>75.6</td><td>36.2</td><td>39.9</td></tr>
+          <tr><td>Wild K=3</td><td>82.1</td><td>51.0</td><td>54.3</td></tr>
+          <tr><td>Wild K=5</td><td class="best">84.3</td><td class="best">55.7</td><td class="best">59.4</td></tr>
+          <tr><td class="model-name" rowspan="4">Qwen3.5-35B-A3B</td><td><em>Curated</em></td><td><em>66.2</em></td><td><em>12.7</em></td><td><em>19.4</em></td></tr>
+          <tr><td>Wild K=1</td><td>63.2</td><td>13.6</td><td>17.6</td></tr>
+          <tr><td>Wild K=3</td><td>68.5</td><td>19.5</td><td>22.0</td></tr>
+          <tr><td>Wild K=5</td><td class="best">70.4</td><td class="best">21.3</td><td class="best">23.6</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-footnote">
+      A single wild view is harder than the curated image for both models. By K=3, both MC and OE-Acc exceed the corresponding curated baselines, but the seeing-without-naming gap remains at K=5.
+    </p>
+    <figure class="paper-figure">
+      <img src="figures/wild_crossover.png" alt="Curated versus in-the-wild accuracy as the number of field views increases">
+      <figcaption>Curated versus in-the-wild accuracy on the same 2,969 entities. Multiple field views overtake the curated baseline by K=3 for both models and both protocols.</figcaption>
+    </figure>
   </section>
 
   <div class="divider"></div>
@@ -1161,10 +1259,11 @@
     <div class="section-label">Insights</div>
     <h2>Key Findings</h2>
     <ul class="insights">
-      <li data-icon="🔍"><strong>Taxonomic confusion dominates errors (63%)</strong> &mdash; models identify the correct biological family but fail at genus- or species-level discrimination.</li>
-      <li data-icon="📊"><strong>2&times; popularity-driven gap</strong> &mdash; popular species (>10K monthly Wikipedia views) are recognized 2.2&times; more accurately than obscure ones (&le;100 views).</li>
-      <li data-icon="🔧"><strong>Agentic cropping more than doubles accuracy</strong> &mdash; equipping a model with a simple image-crop tool lets it zoom into diagnostic regions, boosting accuracy on the hardest samples from 4.7% to 10.4%.</li>
-      <li data-icon="🎯"><strong>Text-semantic distractors are hardest</strong> &mdash; taxonomically similar distractors drop accuracy from 99% (random) to 9%, confirming that label-space plausibility governs difficulty more than visual similarity.</li>
+      <li data-icon="🔍"><strong>Related-taxon confusion dominates the sampled errors</strong> &mdash; in a track-stratified sample of 75 Gemini 3 Pro Preview outputs scored as incorrect under alias-aware Acc, 63% predict a related but incorrect taxon.</li>
+      <li data-icon="📊"><strong>Recognition increases with Wikipedia visibility</strong> &mdash; entities with at most 100 monthly pageviews are answered correctly by 3.40 models on average, compared with 7.57 models above 10,000 views. Pageviews are a proxy for web visibility, not a causal estimate of training frequency.</li>
+      <li data-icon="🔧"><strong>Cropping recovers visually underspecified hard cases</strong> &mdash; on the performance-conditioned AgriTaxon-Hard stress test, the image-crop tool raises Claude Haiku 4.5 accuracy from 4.7% to 10.4%.</li>
+      <li data-icon="🌐"><strong>Web retrieval recovers missing knowledge</strong> &mdash; in a controlled GPT-5 Mini comparison on AgriTaxon-Hard, web search and webpage reading raise accuracy from 3.9% to 19.3%, a 15.4-point or 4.9-fold gain.</li>
+      <li data-icon="🎯"><strong>Text-semantic distractors preserve the strongest challenge</strong> &mdash; for Gemini 3 Flash on the selected Hard cases, accuracy falls from 99.0% with random distractors to 8.8% with text-semantic distractors.</li>
     </ul>
   </section>
 
@@ -1175,7 +1274,7 @@
     <div class="explorer-wrap">
       <div class="section-label">Interactive Demo</div>
       <h2>Explore the Embedding Space</h2>
-      <p>7,437 species embedded by Qwen3-Embedding-0.6B and projected via t-SNE. Scroll to zoom, drag to pan, hover for details, click to open Wikipedia.</p>
+      <p>7,432 agricultural entities embedded by Qwen3-Embedding-0.6B and projected via t-SNE. Scroll to zoom, drag to pan, hover for details, click to open Wikipedia.</p>
       <div class="explorer-iframe-box">
         <iframe src="browser.html" loading="lazy" title="AgriTaxon Embedding Browser" allow="fullscreen"></iframe>
       </div>
@@ -1237,22 +1336,22 @@
       <span class="step-number">1</span>
       <p>
         <strong>Authority-grounded data collection.</strong>
-        We query Wikidata for species that carry both an authoritative database identifier (FAO Ecocrop, FAO DAD-IS, or EPPO) and a Wikimedia Commons image, forming a traceable authority chain for every label.
+        We query Wikidata for agricultural entities that carry both an authoritative database identifier (FAO Ecocrop, FAO DAD-IS, or EPPO) and a Wikimedia Commons image, forming a traceable authority chain for organisms and livestock breeds.
       </p>
     </div>
     <div class="step">
       <span class="step-number">2</span>
       <p>
         <strong>Cross-domain coverage.</strong>
-        The 48,950+ EPPO entries&mdash;mixing pests, weeds, pathogens, and host plants&mdash;are classified via LLM into pest and weed tracks.
-        All images undergo resolution filtering (&ge;224px) and visual content validation.
+        The 48,950 queried EPPO entries&mdash;mixing pests, weeds, pathogens, host plants, and other entities&mdash;are classified by GPT-5 Mini under predefined criteria; the pest and weed assignments form the corresponding tracks.
+        Resolution filtering removes 154 images whose shorter edge is below 224px. A livestock-specific content check removes six images that do not depict a valid animal instance.
       </p>
     </div>
     <div class="step">
       <span class="step-number">3</span>
       <p>
         <strong>Dual evaluation protocols.</strong>
-        <em>Multiple-choice</em> uses semantically hard negatives (top-3 similar species by text embedding); <em>open-ended</em> requires free-form species name production. An LLM-as-a-Judge protocol handles alias matching (scientific names, common names, synonyms) with 98% expert agreement.
+        <em>Multiple-choice</em> uses text-semantically similar entity names as distractors; <em>open-ended</em> requires independent entity-name production. Open-ended outputs are scored by exact match and alias-aware Acc, with core summary scores macro-averaged across the four tracks.
       </p>
     </div>
   </section>
@@ -1267,11 +1366,11 @@
     <div class="applications">
       <div class="app-card">
         <h4>Open-Ended Visual Recognition</h4>
-        <p>A testbed for models that must produce free-form species names rather than selecting from a fixed label set.</p>
+        <p>A testbed for models that must produce organism or breed names rather than selecting from a fixed label set.</p>
       </div>
       <div class="app-card">
         <h4>Long-Tail Understanding</h4>
-        <p>Popularity metadata enables controlled study of how accuracy degrades for rare, economically important organisms.</p>
+        <p>Wikipedia pageviews support analysis of the association between web visibility and recognition of rare agricultural entities.</p>
       </div>
       <div class="app-card">
         <h4>Retrieval-Augmented Generation</h4>
@@ -1279,7 +1378,7 @@
       </div>
       <div class="app-card">
         <h4>Agentic Reasoning</h4>
-        <p>Tool use (e.g., image cropping) significantly boosts accuracy, motivating system-level augmentation research.</p>
+        <p>Cropping and web retrieval target complementary visual-detail and external-knowledge bottlenecks.</p>
       </div>
       <div class="app-card">
         <h4>Agricultural AI Deployment</h4>
@@ -1298,15 +1397,16 @@
   <section class="reveal">
     <div class="section-label">Access</div>
     <h2>Licensing &amp; Access</h2>
-    <p>AgriTaxon is publicly available and free for academic and research use.</p>
+    <p>AgriTaxon is publicly accessible. Reuse of images remains subject to each image's original license and attribution requirements.</p>
     <ul class="license-list">
       <li><strong>Source code, prompt templates &amp; documentation</strong> (this repository): <a href="https://github.com/studyzx/AgriTaxon/blob/main/LICENSE">MIT License</a>.</li>
-      <li><strong>Benchmark metadata &amp; annotations</strong> (species labels, evaluation splits, distractor sets): released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
-      <li><strong>Images</strong>: sourced from <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> under their respective Creative Commons licenses (predominantly CC BY and CC BY-SA).</li>
+      <li><strong>Benchmark metadata &amp; annotations</strong> (entity labels, evaluation splits, distractor sets): released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+      <li><strong>Core images</strong>: sourced from <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> and subject to their original licenses.</li>
+      <li><strong>AgriTaxon-Wild images</strong>: sourced from <a href="https://www.inaturalist.org/">iNaturalist</a> and subject to their per-photo licenses and attribution requirements; some licenses include NonCommercial or NoDerivatives restrictions.</li>
       <li><strong>Authority identifiers</strong>: Wikidata QIDs are available under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>; FAO and EPPO identifiers are used for reference linking only.</li>
     </ul>
     <p>
-      The dataset is hosted on Hugging Face at <a href="https://huggingface.co/datasets/Xin1818/AgriTaxon">Xin1818/AgriTaxon</a> and can be downloaded freely without registration.
+      The benchmark suite is hosted on Hugging Face at <a href="https://huggingface.co/datasets/Xin1818/AgriTaxon">Xin1818/AgriTaxon</a>. Users should consult the per-image license and attribution metadata distributed with the dataset before reuse.
     </p>
   </section>
 
