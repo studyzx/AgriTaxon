@@ -1,6 +1,6 @@
 # AgriTaxon
 
-**AgriTaxon: Diagnosing the Long-Tail Agricultural Knowledge Gap of Large Multimodal Models**
+**AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with large multimodal models**
 
 Xin Zeng, Benfeng Xu, Qian Chen, Jialin Kuai, Wentao Zhang, Liguo Lang, Shancheng Fang, Huarui Wu
 
