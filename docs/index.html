@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with large multimodal models</title>
-  <meta name="description" content="AgriTaxon is a knowledge-grounded and AI-ready benchmark suite for open-ended naming of 7,432 agricultural entities, including organisms and livestock breeds.">
-  <meta name="citation_title" content="AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with large multimodal models">
-  <meta property="og:title" content="AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with large multimodal models">
-  <meta name="twitter:title" content="AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with large multimodal models">
+  <title>AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models</title>
+  <meta name="description" content="AgriTaxon evaluates whether multimodal foundation models can name 7,432 agricultural entities without a predefined label set, a foundational capability for precision and smart farming.">
+  <meta name="citation_title" content="AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models">
+  <meta property="og:title" content="AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models">
+  <meta name="twitter:title" content="AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -991,7 +991,7 @@
   <div class="hero-inner">
     <div class="hero-badge">Benchmark Suite &middot; 7,432 Core Entities &middot; 4 Domains</div>
     <h1>AgriTaxon</h1>
-    <p class="subtitle">Knowledge-grounded benchmarking of open-ended agricultural entity naming with large multimodal models</p>
+    <p class="subtitle">Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models</p>
     <p class="authors">Xin Zeng, Benfeng Xu, Qian Chen, Jialin Kuai, Wentao Zhang, Liguo Lang, Shancheng Fang, Huarui Wu</p>
     <p class="venue">Under Review</p>
     <div class="domain-badges">
@@ -1017,14 +1017,15 @@
   <!-- Overview -->
   <section class="reveal">
     <div class="section-label">Overview</div>
-    <h2>Open-Ended Taxonomic Naming for Agricultural AI</h2>
+    <h2>Naming Is the Entry Point to Precision Agriculture</h2>
     <p>
-      <strong>Open-ended taxonomic naming</strong> is a foundational capability for intelligent agricultural decision-making. It requires a model to generate a standardized name for an organism or breed in an image without relying on a predefined label set.
-      Most agricultural vision benchmarks instead assume a fixed label set, leaving unclear whether Large Multimodal Models (LMMs) can independently produce the correct name.
+      Precision and smart farming increasingly rely on image-based decision systems, and those decisions begin with correctly naming what appears in a field photograph. Farmers, breeders, and quarantine officers must identify a crop variety, livestock breed, pest insect, or invasive weed before selecting a control product, managing a breed record, enforcing quarantine, monitoring biodiversity, or forecasting yield. A wrong name can therefore send the downstream decision to the wrong organism.
     </p>
     <p>
-      <strong>AgriTaxon</strong> is a knowledge-grounded and AI-ready benchmark suite spanning Crops, Livestock, Pests, and Weeds. Each core entity is linked through Wikidata to FAO Ecocrop, FAO DAD-IS, or the EPPO Global Database and is paired with machine-readable identifiers, a canonical name, collected aliases, a domain label, and an executable evaluation protocol.
-      We evaluate 14 LMMs using four-option recognition and open-ended naming. Alias validation by GPT-5 Mini agrees with a domain expert on 98% of 100 sampled exact-match errors.
+      We call this task <strong>open-ended taxonomic naming</strong>: producing an agricultural entity name without choosing from a predefined label set. The term is used operationally here to cover recognized organism names and, for Livestock, recognized breed names. Unlike closed-set classification, it requires both visual discrimination and access to scientific names, common names, aliases, and biological relationships.
+    </p>
+    <p>
+      <strong>AgriTaxon</strong> is a knowledge-grounded and AI-ready benchmark suite spanning Crops, Livestock, Pests, and Weeds. Each core entity is linked through Wikidata to FAO Ecocrop, FAO DAD-IS, or the EPPO Global Database and paired with machine-readable identifiers, a canonical name, collected aliases, a domain label, and an executable evaluation protocol. We evaluate 14 multimodal foundation models using four-option recognition and open-ended naming; the alias-aware LLM judge agrees with a domain expert on 98% of 100 audited exact-match errors.
     </p>
     <div class="stats">
       <div class="stat-card">
@@ -1041,7 +1042,7 @@
       </div>
       <div class="stat-card">
         <div class="number">14</div>
-        <div class="label">LMMs Evaluated</div>
+        <div class="label">Foundation Models</div>
       </div>
     </div>
   </section>
@@ -1063,7 +1064,7 @@
         <tbody>
           <tr><td class="model-name">AgriTaxon Core</td><td>Broad taxonomic-naming benchmark</td><td>7,432</td><td>7,432</td></tr>
           <tr><td class="model-name">AgriTaxon-Hard</td><td>Performance-conditioned diagnostic stress test</td><td>1,052</td><td>1,052</td></tr>
-          <tr><td class="model-name">AgriTaxon-Wild</td><td>In-the-wild multi-image evaluation</td><td>2,969</td><td>14,845</td></tr>
+          <tr><td class="model-name">AgriTaxon-Wild</td><td>Field-condition evaluation</td><td>2,969</td><td>14,845</td></tr>
         </tbody>
       </table>
     </div>
@@ -1225,9 +1226,9 @@
   <!-- AgriTaxon-Wild -->
   <section class="reveal">
     <div class="section-label">AgriTaxon-Wild</div>
-    <h2>Multiple Field Views Improve Recognition and Naming</h2>
+    <h2>Multiple Field Views Strengthen Recognition in Field Conditions</h2>
     <p>
-      AgriTaxon-Wild evaluates the same 2,969 P3151-aligned entities using one curated Commons image or one, three, and five iNaturalist field observations. Candidate names and judging procedures remain fixed, allowing a controlled comparison of image provenance and multi-view evidence.
+      Field photographs vary in viewpoint, background, illumination, life stage, and image quality. AgriTaxon-Wild evaluates the same 2,969 P3151-aligned entities using one curated Commons image or one, three, and five iNaturalist field observations. Candidate names and judging procedures remain fixed, allowing a controlled test of whether corroborating field views improve recognition and naming.
     </p>
     <div class="table-wrapper">
       <table>
@@ -1262,11 +1263,12 @@
     <div class="section-label">Insights</div>
     <h2>Key Findings</h2>
     <ul class="insights">
-      <li data-icon="🔍"><strong>Related-taxon confusion dominates the sampled errors</strong> &mdash; in a track-stratified sample of 75 Gemini 3 Pro Preview outputs scored as incorrect under alias-aware Acc, 63% predict a related but incorrect taxon.</li>
-      <li data-icon="📊"><strong>Recognition increases with Wikipedia visibility</strong> &mdash; entities with at most 100 monthly pageviews are answered correctly by 3.40 models on average, compared with 7.57 models above 10,000 views. Pageviews are a proxy for web visibility, not a causal estimate of training frequency.</li>
-      <li data-icon="🔧"><strong>Cropping recovers visually underspecified hard cases</strong> &mdash; on the performance-conditioned AgriTaxon-Hard stress test, the image-crop tool raises Claude Haiku 4.5 accuracy from 4.7% to 10.4%.</li>
-      <li data-icon="🌐"><strong>Web retrieval recovers missing knowledge</strong> &mdash; in a controlled GPT-5 Mini comparison on AgriTaxon-Hard, web search and webpage reading raise accuracy from 3.9% to 19.3%, a 15.4-point or 4.9-fold gain.</li>
-      <li data-icon="🎯"><strong>Text-semantic distractors preserve the strongest challenge</strong> &mdash; for Gemini 3 Flash on the selected Hard cases, accuracy falls from 99.0% with random distractors to 8.8% with text-semantic distractors.</li>
+      <li data-icon="🌾"><strong>The benchmark is not saturated</strong> &mdash; the best macro-averaged scores are 83.0% for multiple-choice recognition and 51.2% for alias-aware open-ended naming, while no unaided model exceeds 10% on the performance-conditioned AgriTaxon-Hard stress test.</li>
+      <li data-icon="🏷️"><strong>Seeing does not guarantee naming</strong> &mdash; the model scoring 83.0% in multiple-choice recognition reaches only 33.4% OE-EM and 48.1% OE-Acc when candidate names are removed. Every evaluated model retains a gap after valid aliases are credited, which matters when a deployed system must name an entity before supporting an agricultural decision.</li>
+      <li data-icon="🔍"><strong>Related-taxon confusion is the largest sampled error category</strong> &mdash; in a track-stratified sample of 75 Gemini 3 Pro Preview outputs scored as incorrect under alias-aware Acc, 63% name a related but incorrect taxon, risking advice for the wrong organism.</li>
+      <li data-icon="📊"><strong>Globally obscure entities are named least reliably</strong> &mdash; entities with at most 100 monthly Wikipedia pageviews are answered correctly by 3.40 models on average, compared with 7.57 models above 10,000 views. Pageviews are a proxy for web visibility, not a causal estimate of training frequency; low global visibility can coexist with high local agricultural importance.</li>
+      <li data-icon="📷"><strong>Corroborating field views improve practical recognition</strong> &mdash; from one to five field images, open-ended accuracy rises by up to 19.5 points (39.9% to 59.4%). A single field view is harder than a curated image, but three views overtake the same-entity curated baseline for both evaluated models.</li>
+      <li data-icon="🛠️"><strong>Tools recover different hard-case failures</strong> &mdash; cropping raises Claude Haiku 4.5 accuracy from 4.7% to 10.4% by exposing diagnostic detail, while web retrieval raises GPT-5 Mini from 7.7% to 13.1% by supplying external knowledge.</li>
     </ul>
   </section>
 
@@ -1364,32 +1366,32 @@
   <!-- Applications -->
   <section class="reveal">
     <div class="section-label">Impact</div>
-    <h2>Potential Applications</h2>
-    <p>AgriTaxon is designed to support a broad range of research directions across the multimodal AI and agricultural informatics communities.</p>
+    <h2>Implications for Precision and Smart Farming</h2>
+    <p>AgriTaxon studies the recognition step that precedes downstream agricultural decisions and highlights where practical systems need additional visual evidence or external knowledge.</p>
     <div class="applications">
       <div class="app-card">
-        <h4>Open-Ended Visual Recognition</h4>
-        <p>A testbed for models that must produce organism or breed names rather than selecting from a fixed label set.</p>
+        <h4>Agricultural Decision Support</h4>
+        <p>Evaluate whether a system can name the organism or breed before recommending control, management, or monitoring actions.</p>
       </div>
       <div class="app-card">
-        <h4>Long-Tail Understanding</h4>
-        <p>Wikipedia pageviews support analysis of the association between web visibility and recognition of rare agricultural entities.</p>
+        <h4>Locally Important Entities</h4>
+        <p>Study why entities with low global web visibility may remain unreliable even when they matter greatly in a local production system.</p>
       </div>
       <div class="app-card">
-        <h4>Retrieval-Augmented Generation</h4>
-        <p>Authority-grounded labels (FAO, EPPO, Wikidata QIDs) provide natural retrieval anchors for augmenting LMMs.</p>
+        <h4>Structured Knowledge Retrieval</h4>
+        <p>Use FAO, EPPO, and Wikidata identifiers as traceable anchors for retrieving names, aliases, and biological relationships.</p>
       </div>
       <div class="app-card">
-        <h4>Agentic Reasoning</h4>
-        <p>Cropping and web retrieval target complementary visual-detail and external-knowledge bottlenecks.</p>
+        <h4>Tool-Augmented Recognition</h4>
+        <p>Combine cropping for diagnostic visual detail with web retrieval when parametric knowledge is insufficient.</p>
       </div>
       <div class="app-card">
-        <h4>Agricultural AI Deployment</h4>
-        <p>Pest surveillance, quarantine enforcement, crop variety verification, and livestock breed identification.</p>
+        <h4>Field and Quarantine Workflows</h4>
+        <p>Support pest surveillance, quarantine inspection, crop verification, biodiversity monitoring, and livestock breed management.</p>
       </div>
       <div class="app-card">
-        <h4>Fine-Grained Classification</h4>
-        <p>Semantically hard negatives and cross-domain coverage make a challenging FGVC benchmark.</p>
+        <h4>Multi-View Field Recognition</h4>
+        <p>Test how several independent observations reduce ambiguity caused by viewpoint, occlusion, lighting, and life stage.</p>
       </div>
     </div>
   </section>

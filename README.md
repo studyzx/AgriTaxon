@@ -1,6 +1,6 @@
 # AgriTaxon
 
-**AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with large multimodal models**
+**AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models**
 
 Xin Zeng, Benfeng Xu, Qian Chen, Jialin Kuai, Wentao Zhang, Liguo Lang, Shancheng Fang, Huarui Wu
 
@@ -8,7 +8,9 @@ Xin Zeng, Benfeng Xu, Qian Chen, Jialin Kuai, Wentao Zhang, Liguo Lang, Shanchen
   <img src="docs/teaser.jpg" width="100%" alt="AgriTaxon overview">
 </p>
 
-Open-ended taxonomic naming is a foundational capability for intelligent agricultural decision-making. It requires a model to generate a standardized name for an organism or breed in an image without relying on a predefined label set. **AgriTaxon** is a knowledge-grounded and AI-ready benchmark suite for evaluating this capability in large multimodal models (LMMs).
+Naming the organism in an image is the entry point to many precision- and smart-farming decisions, from pesticide selection and quarantine inspection to crop verification and breed management. A wrong name can send the downstream decision to the wrong organism. **AgriTaxon** evaluates whether multimodal foundation models can produce an agricultural entity name without relying on a predefined label set.
+
+We call this task **open-ended taxonomic naming**, using the term operationally to cover recognized organism names and, for the Livestock track, recognized breed names. It requires both visual discrimination and access to scientific names, common names, aliases, and biological relationships.
 
 Each core sample pairs an image with machine-readable identifiers, a canonical name, collected aliases, a domain label, and an executable evaluation protocol. Wikidata connects the samples to FAO Ecocrop, FAO DAD-IS, or the EPPO Global Database.
 
@@ -18,7 +20,7 @@ Each core sample pairs an image with machine-readable identifiers, a canonical n
 |---|---|---:|---:|
 | **AgriTaxon Core** | Broad agricultural entity naming | 7,432 | 7,432 |
 | **AgriTaxon-Hard** | Performance-conditioned diagnostic stress test | 1,052 | 1,052 |
-| **AgriTaxon-Wild** | In-the-wild multi-image evaluation | 2,969 | 14,845 |
+| **AgriTaxon-Wild** | Field-condition evaluation | 2,969 | 14,845 |
 
 The core benchmark spans four agricultural domains:
 
@@ -44,7 +46,7 @@ Open-ended outputs are scored using strict exact match (OE-EM) and alias-aware a
 
 For the core benchmark, MC accuracy, OE-EM, and OE-Acc summary scores are unweighted macro-averages across the four tracks. Each track therefore contributes equally regardless of its number of samples.
 
-Among the 14 evaluated LMMs, the best macro-averaged scores are 83.0% for multiple-choice accuracy, 44.2% for OE-EM, and 51.2% for OE-Acc. AgriTaxon-Wild shows that multiple field views improve both candidate selection and naming, while a substantial seeing-without-naming gap remains.
+Among the 14 evaluated models, the best macro-averaged scores are 83.0% for multiple-choice accuracy, 44.2% for OE-EM, and 51.2% for OE-Acc. AgriTaxon-Wild shows that multiple corroborating field views improve both candidate selection and naming, while a substantial seeing-without-naming gap remains. On AgriTaxon-Hard, cropping raises Claude Haiku 4.5 accuracy from 4.7% to 10.4%, and web retrieval raises GPT-5 Mini accuracy from 7.7% to 13.1%.
 
 ## Dataset
 
@@ -57,14 +59,14 @@ pip install huggingface_hub
 huggingface-cli download Xin1818/AgriTaxon --repo-type dataset --local-dir AgriTaxon
 ```
 
-## Research Directions
+## Implications for Precision and Smart Farming
 
-- **Open-ended visual recognition** — producing agricultural entity names rather than selecting from a fixed label set.
-- **Long-tail entity understanding** — studying the association between recognition and web visibility using Wikipedia pageviews.
-- **Multi-image field recognition** — aggregating several independent iNaturalist observations of the same entity.
-- **Retrieval-augmented recognition** — using FAO, EPPO, and Wikidata identifiers as retrieval anchors.
-- **Tool-augmented reasoning** — diagnosing whether failures arise from insufficient visual detail or missing external knowledge.
-- **Agricultural AI** — pest surveillance, quarantine inspection, crop verification, and livestock breed identification.
+- **Agricultural decision support** — testing the recognition step that precedes pesticide selection, breed management, quarantine, monitoring, and yield-related decisions.
+- **Long-tail reliability** — studying why globally obscure but locally important entities are named least reliably.
+- **Multi-image field recognition** — aggregating independent field observations to reduce ambiguity from viewpoint, occlusion, lighting, and life stage.
+- **Structured retrieval** — using FAO, EPPO, and Wikidata identifiers as traceable knowledge anchors.
+- **Tool-augmented recognition** — using cropping for missing visual detail and web search for missing external knowledge.
+- **Operational agricultural AI** — supporting pest surveillance, quarantine inspection, crop verification, biodiversity monitoring, and livestock breed identification.
 
 ## Supplementary Material
 
