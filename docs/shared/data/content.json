@@ -1,0 +1,426 @@
+{
+ "_note": "Text and numbers of the resubmitted manuscript (CEA, October 2026). Every number here is quoted from cea/paper/main-cea.tex; do not invent others.",
+ "title": "AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models",
+ "short_title": "AgriTaxon",
+ "subtitle": "Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models",
+ "status": "Under review",
+ "authors": [
+  {
+   "name": "Xin Zeng",
+   "aff": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "name": "Benfeng Xu",
+   "aff": [
+    4
+   ]
+  },
+  {
+   "name": "Qian Chen",
+   "aff": [
+    5
+   ]
+  },
+  {
+   "name": "Jialin Kuai",
+   "aff": [
+    6
+   ]
+  },
+  {
+   "name": "Wentao Zhang",
+   "aff": [
+    7
+   ]
+  },
+  {
+   "name": "Liguo Lang",
+   "aff": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "name": "Shancheng Fang",
+   "aff": [
+    7
+   ]
+  },
+  {
+   "name": "Huarui Wu",
+   "aff": [
+    1,
+    2,
+    3
+   ],
+   "corresponding": true
+  }
+ ],
+ "affiliations": {
+  "1": "National Engineering Research Center for Information Technology in Agriculture, Beijing",
+  "2": "Information Technology Research Center, Beijing Academy of Agriculture and Forestry Sciences, Beijing",
+  "3": "Key Laboratory of Digital Village Technology, Ministry of Agriculture and Rural Affairs, Beijing",
+  "4": "University of Science and Technology of China, Hefei",
+  "5": "Institute of Computing Technology, Chinese Academy of Sciences, Beijing",
+  "6": "Vegetable Research Institute, Gansu Academy of Agricultural Sciences, Lanzhou",
+  "7": "Shenzhen University, Shenzhen"
+ },
+ "links": {
+  "dataset": "https://huggingface.co/datasets/Xin1818/AgriTaxon",
+  "code": "https://github.com/studyzx/AgriTaxon",
+  "paper": null,
+  "contact": "mailto:zengx@nercita.org.cn"
+ },
+ "thesis": "Multimodal foundation models choose the right name far more often than they can state it. We call this the seeing-without-naming gap.",
+ "why_naming": [
+  "Naming the organism in an image is the entry point to many agricultural decisions, from pesticide selection to breed management.",
+  "Multimodal foundation models are increasingly used as generative assistants: a farmer photographs a plant or an insect and asks what it is, and the model must answer with a name. In such use no list of candidate names is supplied, so open-ended naming, not choosing among options, is the task that matches practice.",
+  "AgriTaxon therefore measures how much agricultural visual knowledge a model holds. Naming is the first threshold for applying these models in agriculture, since advice on managing a crop, breed, pest, or weed depends on first knowing what it is."
+ ],
+ "abstract": "Naming the organism in an image is the entry point to many agricultural decisions, from pesticide selection to breed management. Multimodal foundation models are increasingly used as generative assistants for such tasks, yet it remains unclear whether they can name an agricultural entity without being given candidate names. We introduce AgriTaxon, a knowledge-grounded benchmark of 6,049 entities across Crops (1,960), Livestock (172), Pests (2,415), and Weeds (1,502), each linked through Wikidata to FAO Ecocrop, FAO DAD-IS, or the EPPO Global Database and labeled at species level or finer. Every entity is evaluated in two settings, choosing its name among four options and naming it without options; an open-weight LLM judge credits aliases and agrees with human annotation on 97.8% of the predictions it judges. Two extended settings build on the same entities: AgriTaxon-Hard, the 510 entities that nearly all models fail, and AgriTaxon-Wild, which adds 14,130 iNaturalist field images. Across 17 models, the best reach 85.8% multiple-choice accuracy but only 47.3% open-ended accuracy, and this seeing-without-naming gap remains after aliases are credited. Popular entities, measured by Wikipedia pageviews, are named by more than six times as many models as rarely viewed ones, so obscure but locally important entities are named least reliably. Several field images raise open-ended accuracy by up to 20.8 points over a single field image, and on AgriTaxon-Hard, web retrieval and image cropping raise accuracy from 4.6% to 23.2% and from 7.2% to 15.2%. AgriTaxon thus measures what closed-set evaluation hides.",
+ "highlights": [
+  "AgriTaxon: 6,049 knowledge-grounded entities across crops, livestock, pests, weeds",
+  "Seventeen multimodal models pick the right name far more often than they produce it",
+  "Best models: 85.8% multiple-choice accuracy vs. 47.3% open-ended naming accuracy",
+  "Popular entities are named by over six times as many models as rare ones",
+  "Field images and web retrieval narrow the gap; retrieval lifts Hard 4.6% to 23.2%"
+ ],
+ "headline_numbers": {
+  "entities": 6049,
+  "tracks": 4,
+  "models": 17,
+  "hard_entities": 510,
+  "wild_entities": 2826,
+  "wild_images": 14130,
+  "best_mc": 85.8,
+  "best_oe_acc": 47.3,
+  "best_model": "Gemini 3 Pro",
+  "gap_range_oe_acc": [
+   36.8,
+   60.2
+  ],
+  "gap_range_oe_em": [
+   45.8,
+   66.2
+  ],
+  "alias_credit_range": [
+   3.7,
+   14.5
+  ],
+  "judge_agreement": 97.8,
+  "em_agreement": 92.8,
+  "judge_kappa": 0.84,
+  "judge_validation_predictions": 579,
+  "predictions_failing_em": 72997
+ },
+ "tracks": [
+  {
+   "id": "crop",
+   "name": "Crops",
+   "entities": 1960,
+   "knowledge_base": "FAO Ecocrop",
+   "wikidata_property": "P4753",
+   "label_level": "species or finer"
+  },
+  {
+   "id": "livestock",
+   "name": "Livestock",
+   "entities": 172,
+   "knowledge_base": "FAO DAD-IS",
+   "wikidata_property": "P3380",
+   "label_level": "breed (usually)"
+  },
+  {
+   "id": "pest",
+   "name": "Pests",
+   "entities": 2415,
+   "knowledge_base": "EPPO Global Database",
+   "wikidata_property": "P3031",
+   "label_level": "species or finer"
+  },
+  {
+   "id": "weed",
+   "name": "Weeds",
+   "entities": 1502,
+   "knowledge_base": "EPPO Global Database",
+   "wikidata_property": "P3031",
+   "label_level": "species or finer"
+  }
+ ],
+ "settings": {
+  "main": {
+   "name": "AgriTaxon-Main",
+   "entities": 6049,
+   "images": "6,049 Wiki images",
+   "selection": "Linked to FAO or EPPO; species level or finer"
+  },
+  "hard": {
+   "name": "AgriTaxon-Hard",
+   "entities": 510,
+   "images": "510 Wiki images",
+   "selection": "At most 2 of 14 models correct in multiple choice"
+  },
+  "wild": {
+   "name": "AgriTaxon-Wild",
+   "entities": 2826,
+   "images": "14,130 field images",
+   "selection": "At least 5 iNaturalist field images"
+  }
+ },
+ "protocol": {
+  "selection": "Multiple-choice selection (MC): the model chooses the label among four options (A-D), the label and three distractors. The distractors are the three labels nearest to the answer by text embedding (Qwen3-Embedding). An answer is correct only when the returned option letter matches the label.",
+  "naming": "Open-ended naming (OE): the model states the name of the entity without options.",
+  "metrics": {
+   "MC accuracy": "Share of items where the chosen option is the label.",
+   "OE-EM": "Share of predictions that match the label exactly after normalization; a reproducible lower bound.",
+   "OE-Acc": "Exact match, or a prediction the LLM judge accepts as an alias of the label (common name, synonym, spelling variant). The judge is an open-weight model (Qwen3.8-Flash-Next) run with greedy decoding."
+  },
+  "aggregation": "Summary scores are unweighted means over the four tracks, so each track counts equally."
+ },
+ "judge_validation": "On a stratified sample of 579 predictions that fail exact match, weighted to all 72,997 such predictions of the 15 models evaluated when the judge was validated, the judge agrees with human annotation on 97.8% (Cohen's kappa 0.84), against 92.8% for exact match. Correcting each model's OE-Acc for the judge's estimated errors changes it by -0.4 to +2.2 points, and the ranking is unchanged.",
+ "findings": [
+  {
+   "title": "Models select far more names than they can state",
+   "text": "Given four options, the best models reach 85.8% MC accuracy; asked for the name, the best model reaches 47.3% OE-Acc. For every model, OE-Acc is 36.8 to 60.2 points below MC accuracy. Crediting aliases adds only 3.7 to 14.5 points over exact match, so the gap does not come from unrecognized aliases."
+  },
+  {
+   "title": "Open-source models trail by more in naming",
+   "text": "Among open-source models, DeepSeek-V4.1-Flash reaches the highest MC accuracy (78.6%) and Kimi-K2.5 the highest OE-Acc (32.0%), 7.2 and 15.3 points below the best proprietary scores."
+  },
+  {
+   "title": "Which track is hardest depends on the setting",
+   "text": "In multiple choice, Livestock is the easiest track for every model and Pest the hardest for 11 of 17. In naming, Weed or Crop has the highest OE-EM for 16 models and Pest the lowest for 12."
+  },
+  {
+   "title": "Most naming errors confuse related taxa",
+   "text": "In a sample of 60 errors of Gemini 3 Pro, 70% name a related but wrong taxon of the same family, often the same genus."
+  },
+  {
+   "title": "The gap is concentrated in the long tail",
+   "text": "Entities with at most 100 monthly Wikipedia views are named by 1.82 of 17 models on average, against 12.08 above 10,000 views, more than six times as many. 2,270 entities (38%) are in the least viewed bin, 61% of them pests, and no model names 54.1% of them."
+  },
+  {
+   "title": "AgriTaxon-Wild: more field images, better naming",
+   "text": "On AgriTaxon-Wild, one field image is less informative than the Wiki image, but three or five overtake it. From one to five field images, OE-Acc rises by 20.8 points for doubao-seed-2-0-lite (40.3 to 61.1) and 13.6 for qwen3.5-35b-a3b."
+  },
+  {
+   "title": "Tools recover hard entities",
+   "text": "On AgriTaxon-Hard, web retrieval raises GPT-5 Mini from 4.6% to 23.2% MC accuracy, and image cropping raises Claude Haiku 4.5 from 7.2% to 15.2%."
+  }
+ ],
+ "wild_results": {
+  "caption": "AgriTaxon-Wild results (%) on the 2,826 aligned entities, unweighted mean over the four tracks. Wiki image: the same entities with their single Wiki image; K: number of field images.",
+  "rows": [
+   {
+    "model": "doubao-seed-2-0-lite",
+    "images": "Wiki image",
+    "mc": 81.0,
+    "oe_em": 37.9,
+    "oe_acc": 48.4
+   },
+   {
+    "model": "doubao-seed-2-0-lite",
+    "images": "K=1",
+    "mc": 80.6,
+    "oe_em": 31.0,
+    "oe_acc": 40.3
+   },
+   {
+    "model": "doubao-seed-2-0-lite",
+    "images": "K=3",
+    "mc": 88.1,
+    "oe_em": 47.0,
+    "oe_acc": 56.3
+   },
+   {
+    "model": "doubao-seed-2-0-lite",
+    "images": "K=5",
+    "mc": 89.4,
+    "oe_em": 49.7,
+    "oe_acc": 61.1
+   },
+   {
+    "model": "qwen3.5-35b-a3b",
+    "images": "Wiki image",
+    "mc": 75.5,
+    "oe_em": 7.1,
+    "oe_acc": 23.1
+   },
+   {
+    "model": "qwen3.5-35b-a3b",
+    "images": "K=1",
+    "mc": 66.2,
+    "oe_em": 7.2,
+    "oe_acc": 15.2
+   },
+   {
+    "model": "qwen3.5-35b-a3b",
+    "images": "K=3",
+    "mc": 75.5,
+    "oe_em": 16.0,
+    "oe_acc": 25.6
+   },
+   {
+    "model": "qwen3.5-35b-a3b",
+    "images": "K=5",
+    "mc": 76.7,
+    "oe_em": 18.5,
+    "oe_acc": 28.8
+   }
+  ]
+ },
+ "tool_results": {
+  "caption": "MC accuracy (%) on the 501 AgriTaxon-Hard entities covered by the tool runs.",
+  "rows": [
+   {
+    "method": "GPT-5 Mini",
+    "mc": 4.6
+   },
+   {
+    "method": "GPT-5 Mini w/ web retrieval",
+    "mc": 23.2
+   },
+   {
+    "method": "Claude Haiku 4.5",
+    "mc": 7.2
+   },
+   {
+    "method": "Claude Haiku 4.5 w/ image cropping",
+    "mc": 15.2
+   }
+  ],
+  "notes": "Image cropping: the model can call a deterministic image_crop operator up to twice per item, each extracting a 448x448 region it specifies. Web retrieval: web_search and read_webpage, about 17 tool calls per item; no curated agricultural database is supplied."
+ },
+ "popularity": {
+  "caption": "Mean number of the 17 models that select the correct name (MC) and that name the entity, aliases credited (OE-Acc), by monthly Wikipedia pageviews and by Wiki image resolution (megapixels), over all 6,049 entities.",
+  "by_pageviews": [
+   {
+    "bin": "≤100",
+    "n": 2270,
+    "selecting": 10.6,
+    "naming": 1.82
+   },
+   {
+    "bin": "101–1K",
+    "n": 2214,
+    "selecting": 12.11,
+    "naming": 3.62
+   },
+   {
+    "bin": "1K–10K",
+    "n": 1257,
+    "selecting": 14.0,
+    "naming": 7.43
+   },
+   {
+    "bin": ">10K",
+    "n": 308,
+    "selecting": 15.48,
+    "naming": 12.08
+   }
+  ],
+  "by_resolution_mp": [
+   {
+    "bin": "<0.5",
+    "n": 1199,
+    "selecting": 11.42,
+    "naming": 3.28
+   },
+   {
+    "bin": "0.5–1",
+    "n": 714,
+    "selecting": 12.12,
+    "naming": 3.8
+   },
+   {
+    "bin": "1–2",
+    "n": 884,
+    "selecting": 12.07,
+    "naming": 3.95
+   },
+   {
+    "bin": "2–4",
+    "n": 1052,
+    "selecting": 12.3,
+    "naming": 4.45
+   },
+   {
+    "bin": ">4",
+    "n": 2200,
+    "selecting": 12.4,
+    "naming": 4.73
+   }
+  ],
+  "resolution_note": "Resolution is nearly unrelated to popularity (Spearman rho = 0.08). A sharper image helps naming, but much less than popularity."
+ },
+ "errors": {
+  "caption": "The five types of naming errors in a sample of 60 errors of Gemini 3 Pro on AgriTaxon.",
+  "rows": [
+   {
+    "type": "Taxonomic confusion",
+    "share": 70,
+    "image": "img/error_cases/taxonomic_confusion.jpg",
+    "track": "Crop",
+    "label": "Stylosanthes capitata",
+    "prediction": "Stylosanthes humilis",
+    "rationale": "Same genus within Fabaceae. The model recognizes the correct genus from the pod morphology but confuses species-level features (capitulum density, beak shape)."
+   },
+   {
+    "type": "Unrelated prediction",
+    "share": 12,
+    "image": "img/error_cases/unrelated_prediction.jpg",
+    "track": "Crop",
+    "label": "Gleditsia triacanthos",
+    "prediction": "Black walnut",
+    "rationale": "Cross-family error: Fabaceae vs. Juglandaceae. Both are deciduous North American trees, but they belong to different families and are morphologically distinct."
+   },
+   {
+    "type": "No answer",
+    "share": 8,
+    "image": "img/error_cases/no_answer.jpg",
+    "track": "Pest",
+    "label": "Cydia toreuta",
+    "prediction": "(none)",
+    "rationale": "The model fails to produce any name. Cydia toreuta is an obscure tortricid moth."
+   },
+   {
+    "type": "Parsing error",
+    "share": 8,
+    "image": "img/error_cases/parsing_error.jpg",
+    "track": "Crop",
+    "label": "Licuala ramsayi",
+    "prediction": "\"answer\"",
+    "rationale": "The response is truncated or malformed, outputting the literal word \"answer\" instead of a species name."
+   },
+   {
+    "type": "Granularity mismatch",
+    "share": 2,
+    "image": "img/error_cases/granularity_mismatch.jpg",
+    "track": "Livestock",
+    "label": "Swiss Warmblood",
+    "prediction": "Horse",
+    "rationale": "The model identifies the animal as a horse but does not name the breed, producing a broader name where the breed is required."
+   }
+  ]
+ },
+ "construction": [
+  "Wikidata links each entity to its FAO Ecocrop, FAO DAD-IS, or EPPO record and to its Wiki image (Wikimedia Commons).",
+  "EPPO entries are sorted into pests and weeds; pathogens, host plants and other entries are excluded.",
+  "Every label is at species level or finer (for livestock, usually a breed); genus- and family-level entities are removed, so a correct answer is always a name the image can support.",
+  "Wiki images with a shorter edge below 224 px are removed and those above the size limit are downscaled."
+ ],
+ "limitations": "AgriTaxon focuses on naming an entity from its Wiki image. Natural extensions: more livestock breeds and pest species in AgriTaxon-Wild and images collected on farms; local and vernacular names in other languages, which the Wikidata links make possible; and the decisions that depend on the name, such as host crops, quarantine status, or control options, using the linked FAO and EPPO records.",
+ "license": {
+  "annotations": "CC BY 4.0",
+  "wiki_images": "Wikimedia Commons, original licenses (mostly CC BY / CC BY-SA)",
+  "wild_images": "iNaturalist, per-photo licenses (mostly CC BY-NC); see wild/attributions.jsonl",
+  "code": "MIT"
+ },
+ "bibtex": "@misc{zeng2026agritaxon,\n  title  = {AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models},\n  author = {Zeng, Xin and Xu, Benfeng and Chen, Qian and Kuai, Jialin and Zhang, Wentao and Lang, Liguo and Fang, Shancheng and Wu, Huarui},\n  year   = {2026},\n  note   = {Under review},\n  howpublished = {\\url{https://huggingface.co/datasets/Xin1818/AgriTaxon}}\n}",
+ "submit": "To add a model to the leaderboard, send its predictions on AgriTaxon to zengx@nercita.org.cn."
+}

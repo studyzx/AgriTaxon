@@ -1,0 +1,7224 @@
+{
+ "note": "Real AgriTaxon items with the real predictions of the 17 models. oe_ok = exact match or accepted as an alias by the LLM judge (OE-Acc). oe is the prediction cleaned for display (answer-format brackets and markup removed, long answers shortened; empty = no answer). group: seeing_without_naming (>=11 select, <=3 name), named_by_most (>=11 name), named_by_none (0 name, <=6 select).",
+ "models": [
+  "gemini-3-pro-preview",
+  "doubao-seed-2-0-pro",
+  "doubao-seed-2-0-lite",
+  "gemini-3-flash-preview",
+  "gpt-5",
+  "gpt-5-mini",
+  "claude-haiku-4-5",
+  "kimi-k2.5",
+  "qwen3.8-flash-next",
+  "qwen3.5-397b-a17b",
+  "qwen3-vl-235b-a22b",
+  "glm-4.6v",
+  "glm-4.6v-flashx",
+  "qwen3-vl-30b-a3b",
+  "qwen3.5-35b-a3b",
+  "deepseek-v4.1-flash",
+  "gpt-6-luna"
+ ],
+ "items": [
+  {
+   "qid": "Q3240154",
+   "track": "crop",
+   "label": "Ocimum americanum",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q3240154.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Ocimum_americanum",
+   "wikidata": "https://www.wikidata.org/wiki/Q3240154",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "2363",
+    "url": null
+   },
+   "monthly_pageviews": 719,
+   "options": {
+    "A": "Cuminum cyminum",
+    "B": "Ocimum americanum",
+    "C": "Ocimum tenuiflorum",
+    "D": "Anthoxanthum odoratum"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 13,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ocimum basilicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ocimum basilicum (sweet basil)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Ocimum basilicum (common basil / sweet basil)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Basil",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "basil",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Ocimum basilicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Basil (Sweet Basil / Ocimum basilicum)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ocimum basilicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Basil",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ocimum basilicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ocimum basilicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Ocimum basilicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ocimum basilicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ocimum basilicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Basil",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ocimum basilicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Coffee (Coffea arabica)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q997242",
+   "track": "crop",
+   "label": "Petasites albus",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q997242.jpg",
+   "image_size": [
+    720,
+    538
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Petasites_albus",
+   "wikidata": "https://www.wikidata.org/wiki/Q997242",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "75000",
+    "url": null
+   },
+   "monthly_pageviews": 338,
+   "options": {
+    "A": "Petasites hybridus",
+    "B": "Petasites albus",
+    "C": "Melilotus albus",
+    "D": "Lupinus albus"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 13,
+   "models_naming": 3,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Petasites japonicus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Petasites albus (White Butterbur)",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Petasites albus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Giant butterbur",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Petasites japonicus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Petasites japonicus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Amaranth",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Petasites japonicus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "butterbur",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Petasites albus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Petasites hybridus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Brassica oleracea",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Crambe maritima",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sedum telephium (or Hylotelephium telephium). I will use the most common scientific name. Hylotelephium…",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Hylotelephium telephium",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Buckwheat",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q2709149",
+   "track": "crop",
+   "label": "Eucalyptus elata",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q2709149.jpg",
+   "image_size": [
+    540,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Eucalyptus_elata",
+   "wikidata": "https://www.wikidata.org/wiki/Q2709149",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "5853",
+    "url": null
+   },
+   "monthly_pageviews": 103,
+   "options": {
+    "A": "Eucalyptus agglomerata",
+    "B": "Eucalyptus calophylla",
+    "C": "Eucalyptus albens",
+    "D": "Eucalyptus elata"
+   },
+   "answer": "D",
+   "hard": false,
+   "models_selecting": 13,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus globulus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus globulus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus camaldulensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus camaldulensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus camaldulensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Eucalyptus",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q158468",
+   "track": "crop",
+   "label": "Pimenta dioica",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q158468.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Pimenta_dioica",
+   "wikidata": "https://www.wikidata.org/wiki/Q158468",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "1689",
+    "url": null
+   },
+   "monthly_pageviews": 1824,
+   "options": {
+    "A": "Pimenta dioica",
+    "B": "Pimenta racemosa",
+    "C": "Galium verum",
+    "D": "Berchemia discolor"
+   },
+   "answer": "A",
+   "hard": false,
+   "models_selecting": 13,
+   "models_naming": 1,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erythroxylum coca",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Annona muricata (soursop/graviola)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Annona muricata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Khat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Syzygium aromaticum (clove)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": null,
+     "mc_ok": false,
+     "oe": "Yard Long Bean",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Citrus maxima",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Piper betle",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Garcinia mangostana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Piper betle",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Psidium guajava",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Artocarpus heterophyllus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Coffea arabica",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Clove",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Citrus hystrix",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Spinach",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q1639734",
+   "track": "crop",
+   "label": "Tepary bean",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q1639734.jpg",
+   "image_size": [
+    720,
+    479
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Phaseolus_acutifolius",
+   "wikidata": "https://www.wikidata.org/wiki/Q1639734",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "2516",
+    "url": null
+   },
+   "monthly_pageviews": 2078,
+   "options": {
+    "A": "soybean",
+    "B": "black-eyed pea",
+    "C": "Bambara groundnut",
+    "D": "Tepary bean"
+   },
+   "answer": "D",
+   "hard": false,
+   "models_selecting": 11,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Phaseolus lunatus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Vigna angularis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Phaseolus vulgaris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Mucuna pruriens",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "adzuki bean",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Phaseolus vulgaris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Lentil (Lens culinaris)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Phaseolus vulgaris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Phaseolus vulgaris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Phaseolus vulgaris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Vigna unguiculata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Phaseolus vulgaris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Phaseolus vulgaris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Phaseolus vulgaris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Mung bean",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Common bean (Phaseolus vulgaris)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q2001737",
+   "track": "crop",
+   "label": "Mesua ferrea",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q2001737.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Mesua_ferrea",
+   "wikidata": "https://www.wikidata.org/wiki/Q2001737",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "7736",
+    "url": null
+   },
+   "monthly_pageviews": 2973,
+   "options": {
+    "A": "Ehrharta villosa",
+    "B": "Entada abyssinica",
+    "C": "Mesua ferrea",
+    "D": "Agathis dammara"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 1,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Mesua ferrea",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Garcinia mangostana (purple mangosteen)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Garcinia mangostana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "mangosteen",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Lecythis pisonis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Medlar (Mespilus germanica)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Mangosteen",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Sapodilla",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Garcinia mangostana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Garcinia mangostana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "mangosteen",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Annona muricata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Canarium strictum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Mammea americana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Mango (Mangifera indica)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q26354",
+   "track": "crop",
+   "label": "Hedera helix",
+   "group": "named_by_most",
+   "image": "img/examples/Q26354.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Hedera_helix",
+   "wikidata": "https://www.wikidata.org/wiki/Q26354",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "6625",
+    "url": null
+   },
+   "monthly_pageviews": 13493,
+   "options": {
+    "A": "Entada abyssinica",
+    "B": "Lotus tenuis",
+    "C": "Gluta travancorica",
+    "D": "Hedera helix"
+   },
+   "answer": "D",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 15,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix (English ivy / common ivy)",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Common ivy",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Fennel",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "English Ivy",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Hedera helix",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Jatropha curcas",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q161093",
+   "track": "crop",
+   "label": "Catharanthus roseus",
+   "group": "named_by_most",
+   "image": "img/examples/Q161093.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Catharanthus_roseus",
+   "wikidata": "https://www.wikidata.org/wiki/Q161093",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "652",
+    "url": null
+   },
+   "monthly_pageviews": 16625,
+   "options": {
+    "A": "Althaea rosea",
+    "B": "Catharanthus roseus",
+    "C": "Artemisia vulgaris",
+    "D": "Broussonetia papyrifera"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 17,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus (Madagascar periwinkle)",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Madagascar periwinkle",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Madagascar Periwinkle (or Catharanthus roseus). I'll stick to the common name \"Madagascar Periwinkle\" or…",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Catharanthus roseus",
+     "oe_em": true,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q161568",
+   "track": "crop",
+   "label": "Ammophila arenaria",
+   "group": "named_by_most",
+   "image": "img/examples/Q161568.jpg",
+   "image_size": [
+    720,
+    538
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Ammophila_arenaria",
+   "wikidata": "https://www.wikidata.org/wiki/Q161568",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "3131",
+    "url": null
+   },
+   "monthly_pageviews": 746,
+   "options": {
+    "A": "Acanthus mollis",
+    "B": "Ammophila arenaria",
+    "C": "Cetraria islandica",
+    "D": "Ammophila breviligulata"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 17,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria (Marram grass)",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Marram grass",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Marram Grass",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Marram grass",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ammophila arenaria",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Marram grass",
+     "oe_em": false,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q94643",
+   "track": "crop",
+   "label": "Musa balbisiana",
+   "group": "named_by_none",
+   "image": "img/examples/Q94643.jpg",
+   "image_size": [
+    540,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Musa_balbisiana",
+   "wikidata": "https://www.wikidata.org/wiki/Q94643",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "2507",
+    "url": null
+   },
+   "monthly_pageviews": 3782,
+   "options": {
+    "A": "Musa balbisiana",
+    "B": "Musa",
+    "C": "Musa acuminata",
+    "D": "Musa textilis"
+   },
+   "answer": "A",
+   "hard": true,
+   "models_selecting": 3,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Banana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Ensete ventricosum (Enset / False Banana)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Banana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Banana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "banana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Banana (Musa spp.)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Banana (Musa acuminata)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "banana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Banana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Banana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Musa acuminata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Musa",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Musa (banana)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "banana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "banana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Banana",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q311515",
+   "track": "crop",
+   "label": "Gossypium barbadense",
+   "group": "named_by_none",
+   "image": "img/examples/Q311515.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Gossypium_barbadense",
+   "wikidata": "https://www.wikidata.org/wiki/Q311515",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "1158",
+    "url": null
+   },
+   "monthly_pageviews": 5266,
+   "options": {
+    "A": "Gossypium arboreum",
+    "B": "Gossypium barbadense",
+    "C": "Gossypium herbaceum",
+    "D": "Gossypium hirsutum"
+   },
+   "answer": "B",
+   "hard": true,
+   "models_selecting": 3,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Gossypium",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Gossypium hirsutum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Cotton (Gossypium)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Gossypium hirsutum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Gossypium hirsutum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "cotton",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Cotton",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q4818078",
+   "track": "crop",
+   "label": "Attalea cohune",
+   "group": "named_by_none",
+   "image": "img/examples/Q4818078.jpg",
+   "image_size": [
+    465,
+    700
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Attalea_cohune",
+   "wikidata": "https://www.wikidata.org/wiki/Q4818078",
+   "knowledge_base": {
+    "name": "FAO Ecocrop",
+    "id": "3560",
+    "url": null
+   },
+   "monthly_pageviews": 232,
+   "options": {
+    "A": "Attalea funifera",
+    "B": "Attalea cohune",
+    "C": "Agathis dammara",
+    "D": "Agathis australis"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 7,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Cocos nucifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Cocos nucifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "coconut",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sago palm",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Caryota urens",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Areca catechu",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Cocos nucifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Coconut",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Coconut",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Cocos nucifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Cocos nucifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Cocos nucifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Cocos nucifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Cocos nucifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Coconut palm",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Cocos nucifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Date palm (Phoenix dactylifera)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q1043718",
+   "track": "livestock",
+   "label": "Toggenburg",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q1043718.jpg",
+   "image_size": [
+    720,
+    480
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Toggenburger",
+   "wikidata": "https://www.wikidata.org/wiki/Q1043718",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Goat:Toggenburg",
+    "url": null
+   },
+   "monthly_pageviews": 1104,
+   "options": {
+    "A": "Breda",
+    "B": "Toggenburg",
+    "C": "Trakehner",
+    "D": "Hamburg"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 16,
+   "models_naming": 2,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Toggenburg goat",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Toggenburg goat",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Domestic goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q588252",
+   "track": "livestock",
+   "label": "Boulonnais",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q588252.jpg",
+   "image_size": [
+    720,
+    522
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Boulonnais_horse",
+   "wikidata": "https://www.wikidata.org/wiki/Q588252",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Horse : Boulonnais",
+    "url": null
+   },
+   "monthly_pageviews": 985,
+   "options": {
+    "A": "Fauve de Bourgogne",
+    "B": "Boulonnais",
+    "C": "Ouessant",
+    "D": "Rambouillet"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 2,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Boulonnais",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Shire Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "American Cream Draft",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Shire horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Shire horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Shire horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Shire Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Shire horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Shire horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Shire Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Boulonnais",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q843585",
+   "track": "livestock",
+   "label": "Trakehner",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q843585.jpg",
+   "image_size": [
+    720,
+    634
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Trakehner",
+   "wikidata": "https://www.wikidata.org/wiki/Q843585",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Horse:Trakehner",
+    "url": null
+   },
+   "monthly_pageviews": 2142,
+   "options": {
+    "A": "Kraienköppe",
+    "B": "Passeirer Gebirgsziege",
+    "C": "Toggenburg",
+    "D": "Trakehner"
+   },
+   "answer": "D",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Kabarda",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Thoroughbred",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Thoroughbred",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Kustanai horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Horse",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q2603979",
+   "track": "livestock",
+   "label": "Awassi",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q2603979.jpg",
+   "image_size": [
+    640,
+    531
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Awassi",
+   "wikidata": "https://www.wikidata.org/wiki/Q2603979",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Sheep:Awassi",
+    "url": null
+   },
+   "monthly_pageviews": 1685,
+   "options": {
+    "A": "Assaf",
+    "B": "Ankole-Watusi",
+    "C": "Zerasca",
+    "D": "Awassi"
+   },
+   "answer": "D",
+   "hard": false,
+   "models_selecting": 14,
+   "models_naming": 2,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Awassi",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Domestic sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Awassi sheep",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Domestic sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Jacob sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Racka",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Ovis aries",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Manx Loaghtan",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q33380",
+   "track": "livestock",
+   "label": "Sebastopol Goose",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q33380.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Sebastopol_goose",
+   "wikidata": "https://www.wikidata.org/wiki/Q33380",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Goose (domestic):Sebastopol",
+    "url": null
+   },
+   "monthly_pageviews": 2537,
+   "options": {
+    "A": "Zerasca",
+    "B": "Sebastopol Goose",
+    "C": "Chincoteague pony",
+    "D": "Belmont Red"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 3,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Frillback pigeon",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Frillback Pigeon",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Frillback pigeon",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sebastopol goose",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sebastopol goose",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Frizzle chicken",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Silkie",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Frillback pigeon",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Silkie",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Silkie",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Silkie",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Silkie",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Polish chicken",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Silkie",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sebastopol goose",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q1712211",
+   "track": "livestock",
+   "label": "Jezersko–Solčava sheep",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q1712211.jpg",
+   "image_size": [
+    482,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Jezersko%E2%80%93Sol%C4%8Dava",
+   "wikidata": "https://www.wikidata.org/wiki/Q1712211",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Sheep:Seeländer",
+    "url": null
+   },
+   "monthly_pageviews": 130,
+   "options": {
+    "A": "Vosges cattle",
+    "B": "Jezersko–Solčava sheep",
+    "C": "Dall sheep",
+    "D": "Balwen Welsh Mountain sheep"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 13,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Brillenschaf",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Awassi sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Dorper sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Brillenschaf",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Chios sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": null,
+     "mc_ok": false,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Dorper",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Mule",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Valais Blacknose sheep",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q132922",
+   "track": "livestock",
+   "label": "Camelus bactrianus",
+   "group": "named_by_most",
+   "image": "img/examples/Q132922.jpg",
+   "image_size": [
+    720,
+    571
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Bactrian_camel",
+   "wikidata": "https://www.wikidata.org/wiki/Q132922",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Bactrian Camel",
+    "url": null
+   },
+   "monthly_pageviews": 22968,
+   "options": {
+    "A": "Camelus dromedarius",
+    "B": "Vosges cattle",
+    "C": "Camelus bactrianus",
+    "D": "Equus africanus asinus"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 16,
+   "models_naming": 17,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Bactrian Camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Camelus bactrianus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bactrian camel",
+     "oe_em": false,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q742292",
+   "track": "livestock",
+   "label": "domestic duck",
+   "group": "named_by_most",
+   "image": "img/examples/Q742292.jpg",
+   "image_size": [
+    720,
+    578
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Domestic_duck",
+   "wikidata": "https://www.wikidata.org/wiki/Q742292",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Duck (domestic):Domestic Duck (eng.)",
+    "url": null
+   },
+   "monthly_pageviews": 7285,
+   "options": {
+    "A": "domestic duck",
+    "B": "partridge",
+    "C": "Common Ostrich",
+    "D": "Wild water buffalo"
+   },
+   "answer": "A",
+   "hard": false,
+   "models_selecting": 16,
+   "models_naming": 13,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "American Pekin",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin Duck",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin duck",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin duck",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin duck",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin duck",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin Duck",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "kimi-k2.5": {
+     "mc": null,
+     "mc_ok": false,
+     "oe": "Crested Duck",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "duck",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin duck",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin duck",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "duck",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "duck",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "duck",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pekin duck",
+     "oe_em": false,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q327058",
+   "track": "livestock",
+   "label": "Kabarda horse",
+   "group": "named_by_most",
+   "image": "img/examples/Q327058.jpg",
+   "image_size": [
+    720,
+    632
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Kabarda_horse",
+   "wikidata": "https://www.wikidata.org/wiki/Q327058",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Horse:Kabarda",
+    "url": null
+   },
+   "monthly_pageviews": 519,
+   "options": {
+    "A": "Chincoteague pony",
+    "B": "Rhinelander horse",
+    "C": "Kabarda horse",
+    "D": "Criollo horse"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 16,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabarda",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardian horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardian horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardin horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardian horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardian horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardian horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardin horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardin",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardian horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardin",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardin horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardin horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardian horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "horse",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardian horse",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Kabardian horse",
+     "oe_em": false,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q3306660",
+   "track": "livestock",
+   "label": "Mertolenga",
+   "group": "named_by_none",
+   "image": "img/examples/Q3306660.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Mertolenga",
+   "wikidata": "https://www.wikidata.org/wiki/Q3306660",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Cattle:Mertolenga (port.)",
+    "url": null
+   },
+   "monthly_pageviews": 142,
+   "options": {
+    "A": "Pantaneiro",
+    "B": "Maremmana",
+    "C": "Mertolenga",
+    "D": "Kraienköppe"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 5,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Marismeña",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Marismeña",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Hereford",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "cattle",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Shorthorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "cattle",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Texas Longhorn",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q3625147",
+   "track": "livestock",
+   "label": "Sardinian donkey",
+   "group": "named_by_none",
+   "image": "img/examples/Q3625147.jpg",
+   "image_size": [
+    720,
+    513
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Sardinian_donkey",
+   "wikidata": "https://www.wikidata.org/wiki/Q3625147",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Ass:Asino Sardo (it.)",
+    "url": null
+   },
+   "monthly_pageviews": 268,
+   "options": {
+    "A": "Cotentin Donkey",
+    "B": "Shetland pony",
+    "C": "Andalusian horse",
+    "D": "Sardinian donkey"
+   },
+   "answer": "D",
+   "hard": false,
+   "models_selecting": 5,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Miniature Donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Donkey",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Goat",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q7565729",
+   "track": "livestock",
+   "label": "South African Meat Merino",
+   "group": "named_by_none",
+   "image": "img/examples/Q7565729.jpg",
+   "image_size": [
+    720,
+    446
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/South_African_Meat_Merino",
+   "wikidata": "https://www.wikidata.org/wiki/Q7565729",
+   "knowledge_base": {
+    "name": "FAO DAD-IS",
+    "id": "Sheep:South African Mutton Merino",
+    "url": null
+   },
+   "monthly_pageviews": 232,
+   "options": {
+    "A": "Ponwar cattle",
+    "B": "South African Meat Merino",
+    "C": "Australian Milking Zebu",
+    "D": "Poll Merino"
+   },
+   "answer": "B",
+   "hard": true,
+   "models_selecting": 2,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Poll Dorset",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Dorset sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Texel sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": null,
+     "mc_ok": false,
+     "oe": "White Suffolk",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "sheep",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Sheep",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q10464985",
+   "track": "pest",
+   "label": "Cyrtacanthacris aeruginosa",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q10464985.jpg",
+   "image_size": [
+    539,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Cyrtacanthacris_aeruginosa",
+   "wikidata": "https://www.wikidata.org/wiki/Q10464985",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "CYRHAE",
+    "url": "https://gd.eppo.int/taxon/CYRHAE"
+   },
+   "monthly_pageviews": 23,
+   "options": {
+    "A": "Planococcus citri",
+    "B": "Campylomma",
+    "C": "Dactylopius coccus",
+    "D": "Cyrtacanthacris aeruginosa"
+   },
+   "answer": "D",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Oxya chinensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Schistocerca americana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Melanoplus bivittatus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Schistocerca americana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Oxya hyla",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Acrididae (grasshopper)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Grasshopper (Acrididae family)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Locusta migratoria",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Schistocerca americana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Locusta migratoria",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Melanoplus differentialis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Grasshopper",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Melanoplus differentialis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "grasshopper",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Oxya chinensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Katydid (long-horned grasshopper)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q16993485",
+   "track": "pest",
+   "label": "Walshia miscecolorella",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q16993485.jpg",
+   "image_size": [
+    720,
+    405
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Walshia_miscecolorella",
+   "wikidata": "https://www.wikidata.org/wiki/Q16993485",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "WALSMI",
+    "url": "https://gd.eppo.int/taxon/WALSMI"
+   },
+   "monthly_pageviews": 13,
+   "options": {
+    "A": "Pachypsylla",
+    "B": "Walshia miscecolorella",
+    "C": "Veronicella",
+    "D": "Hydraecia micacea"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 16,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Recurvaria nanella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Spilonota ocellana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Oegoconia quadripuncta",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Indian meal moth",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Acrobasis nuxvorella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Plodia interpunctella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Noctuidae (moth pest - likely a cutworm or armyworm species)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Plodia interpunctella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ephestia cautella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Plodia interpunctella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ectomyelois ceratoniae",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Ephestia kuehniella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Plodia interpunctella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sitotroga cerealella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Cydia pomonella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Phthorimaea operculella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Diamondback moth (Plutella xylostella)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q13765677",
+   "track": "pest",
+   "label": "Lineodes integra",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q13765677.jpg",
+   "image_size": [
+    550,
+    447
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Lineodes_integra",
+   "wikidata": "https://www.wikidata.org/wiki/Q13765677",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "LNEOIN",
+    "url": "https://gd.eppo.int/taxon/LNEOIN"
+   },
+   "monthly_pageviews": 38,
+   "options": {
+    "A": "Lineodes integra",
+    "B": "Ixodes ricinus",
+    "C": "Agrotis puta",
+    "D": "Agrotis orthogonia"
+   },
+   "answer": "A",
+   "hard": false,
+   "models_selecting": 16,
+   "models_naming": 2,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Plutella xylostella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Lineodes integra",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Lineodes integra",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Leucinodes orbonalis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Hellula undalis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pyralid (snout) moth — family Pyralidae",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Praying Mantis (Mantis religiosa)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Lobesia botrana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cnaphalocrocis medinalis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Emmelina monodactyla",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cnaphalocrocis medinalis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Plume Moth",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Spodoptera frugiperda",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Plodia interpunctella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Palpita vitrealis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Maruca vitrata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Grasshopper",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q2625352",
+   "track": "pest",
+   "label": "Medythia suturalis",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q2625352.jpg",
+   "image_size": [
+    720,
+    423
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Medythia_suturalis",
+   "wikidata": "https://www.wikidata.org/wiki/Q2625352",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "MEDYSU",
+    "url": "https://gd.eppo.int/taxon/MEDYSU"
+   },
+   "monthly_pageviews": 13.0,
+   "options": {
+    "A": "Cnaphalocrocis medinalis",
+    "B": "Medythia suturalis",
+    "C": "Acantholyda",
+    "D": "Penthaleus"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 16,
+   "models_naming": 1,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Medythia nigrobilineata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Medythia suturalis",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Xanthogaleruca luteola",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Monolepta hieroglyphica",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Zygogramma exclamationis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Lema daturaphila (two-lined potato beetle)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Phyllotreta striolata (Striped Flea Beetle)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Cerotoma trifurcata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Cerotoma trifurcata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Diabrotica balteata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Monolepta bifasciata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Cerotoma trifurcata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Acalymma vittatum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Zygogramma suturalis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Diabrotica balteata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Colorado potato beetle",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q55651528",
+   "track": "pest",
+   "label": "Banasa dimidiata",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q55651528.jpg",
+   "image_size": [
+    576,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Banasa_dimidiata",
+   "wikidata": "https://www.wikidata.org/wiki/Q55651528",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "BANADI",
+    "url": "https://gd.eppo.int/taxon/BANADI"
+   },
+   "monthly_pageviews": 111,
+   "options": {
+    "A": "Tandonia rustica",
+    "B": "Cassida nebulosa",
+    "C": "Banasa dimidiata",
+    "D": "Banasa"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 16,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Acanthosoma crassicaudum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Acanthosoma haemorrhoidale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Piezodorus guildinii",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Acanthosoma haemorrhoidale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Acanthosoma haemorrhoidale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Nezara viridula",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Brown Marmorated Stink Bug",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Thyanta pallidovirens",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Banasa herbida",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Chinavia hilaris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Nezara viridula",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Nezara viridula",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Nezara viridula",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Nezara viridula",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Tibraca limbativentris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Rhynchocoris humeralis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Southern green stink bug (Nezara viridula)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q1314649",
+   "track": "pest",
+   "label": "Graphiphora augur",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q1314649.jpg",
+   "image_size": [
+    720,
+    473
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Graphiphora_augur",
+   "wikidata": "https://www.wikidata.org/wiki/Q1314649",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "GRAHAU",
+    "url": "https://gd.eppo.int/taxon/GRAHAU"
+   },
+   "monthly_pageviews": 39,
+   "options": {
+    "A": "Calliphora augur",
+    "B": "Xyphosia",
+    "C": "Aphalara",
+    "D": "Graphiphora augur"
+   },
+   "answer": "D",
+   "hard": false,
+   "models_selecting": 16,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis segetum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis segetum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis ipsilon",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis segetum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis segetum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis ipsilon (Black cutworm)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis ipsilon",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis segetum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis segetum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis ipsilon",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis segetum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis segetum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis ipsilon",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Spodoptera frugiperda",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Black Cutworm",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Agrotis segetum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Cockroach",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q6145",
+   "track": "pest",
+   "label": "Western European hedgehog",
+   "group": "named_by_most",
+   "image": "img/examples/Q6145.jpg",
+   "image_size": [
+    720,
+    557
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/European_hedgehog",
+   "wikidata": "https://www.wikidata.org/wiki/Q6145",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "ERNAEU",
+    "url": "https://gd.eppo.int/taxon/ERNAEU"
+   },
+   "monthly_pageviews": 6944,
+   "options": {
+    "A": "Western European hedgehog",
+    "B": "European hamster",
+    "C": "European Rabbit",
+    "D": "Platypus"
+   },
+   "answer": "A",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 13,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus (European hedgehog)",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus (common hedgehog)",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "European hedgehog",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "European hedgehog (Erinaceus europaeus)",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Not applicable - Outside scope (mammal, not an arthropod pest)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Hedgehog",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Erinaceus europaeus",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Hedgehog",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q940337",
+   "track": "pest",
+   "label": "Cimex lectularius",
+   "group": "named_by_most",
+   "image": "img/examples/Q940337.jpg",
+   "image_size": [
+    720,
+    505
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Cimex_lectularius",
+   "wikidata": "https://www.wikidata.org/wiki/Q940337",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "CIMXLE",
+    "url": "https://gd.eppo.int/taxon/CIMXLE"
+   },
+   "monthly_pageviews": 9785,
+   "options": {
+    "A": "Lygus pratensis",
+    "B": "Cimex",
+    "C": "Cimex lectularius",
+    "D": "Cimex hemipterus"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 16,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius (common bed bug)",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius (common bed bug)",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bed bug",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "bed bug",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cimex lectularius",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bed bug (Cimex lectularius)",
+     "oe_em": false,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q8332",
+   "track": "pest",
+   "label": "red fox",
+   "group": "named_by_most",
+   "image": "img/examples/Q8332.jpg",
+   "image_size": [
+    479,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Red_fox",
+   "wikidata": "https://www.wikidata.org/wiki/Q8332",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "VULPVU",
+    "url": "https://gd.eppo.int/taxon/VULPVU"
+   },
+   "monthly_pageviews": 50124,
+   "options": {
+    "A": "Sus scrofa",
+    "B": "red fox",
+    "C": "Grey Dagger",
+    "D": "Darna"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 13,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes (Red Fox)",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes (red fox)",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Red fox",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes (Red fox)",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "OUT OF SCOPE - NOT AN AGRICULTURAL PEST (per defined criteria)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "NONE",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Not applicable",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Vulpes vulpes",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Red fox (Vulpes vulpes)",
+     "oe_em": true,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q7573591",
+   "track": "pest",
+   "label": "Sparganothis pettitana",
+   "group": "named_by_none",
+   "image": "img/examples/Q7573591.jpg",
+   "image_size": [
+    720,
+    483
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Sparganothis_pettitana",
+   "wikidata": "https://www.wikidata.org/wiki/Q7573591",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "SPARPE",
+    "url": "https://gd.eppo.int/taxon/SPARPE"
+   },
+   "monthly_pageviews": 14.5,
+   "options": {
+    "A": "Sparganothis reticulatana",
+    "B": "Sparganothis pettitana",
+    "C": "Sparganothis directana",
+    "D": "Penthaleus"
+   },
+   "answer": "B",
+   "hard": true,
+   "models_selecting": 4,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Aphelia paleana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Acleris gloverana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Aphelia paleana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Croesia curvalana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Ostrinia nubilalis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Light brown apple moth (Epiphyas postvittana)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Scirpophaga incertulas (Yellow Stem Borer)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Cacoecimorpha pronubana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Archips argyrospila",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Acleris forsskaleana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Adoxophyes orana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Anarsia lineatella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Spodoptera frugiperda",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Phyllocnistis citrella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Sparganothis sulfureana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Scirpophaga incertulas",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q7238638",
+   "track": "pest",
+   "label": "Acleris schalleriana",
+   "group": "named_by_none",
+   "image": "img/examples/Q7238638.jpg",
+   "image_size": [
+    700,
+    468
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Acleris_schalleriana",
+   "wikidata": "https://www.wikidata.org/wiki/Q7238638",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "ACALSC",
+    "url": "https://gd.eppo.int/taxon/ACALSC"
+   },
+   "monthly_pageviews": 27,
+   "options": {
+    "A": "Acleris ferrugana",
+    "B": "Acleris gloverana",
+    "C": "Acleris schalleriana",
+    "D": "Acleris sparsana"
+   },
+   "answer": "C",
+   "hard": true,
+   "models_selecting": 2,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Clepsis spectrana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Epiphyas postvittana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Epiphyas postvittana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Epiphyas postvittana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Epiphyas postvittana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Epiphyas postvittana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Plutella xylostella (Diamondback Moth)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Epiphyas postvittana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Cnephasia stephensiana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Cnephasia incertana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Adoxophyes orana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Adoxophyes orana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Crambus agitatellus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "oriental fruit moth",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Lobesia botrana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Achyra rantalis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Striped rice stem borer (Chilo suppressalis)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q13582613",
+   "track": "pest",
+   "label": "Reticulitermes tibialis",
+   "group": "named_by_none",
+   "image": "img/examples/Q13582613.jpg",
+   "image_size": [
+    720,
+    609
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Reticulitermes_tibialis",
+   "wikidata": "https://www.wikidata.org/wiki/Q13582613",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "RETITI",
+    "url": "https://gd.eppo.int/taxon/RETITI"
+   },
+   "monthly_pageviews": 58,
+   "options": {
+    "A": "Reticulitermes lucifugus",
+    "B": "Reticulitermes",
+    "C": "Reticulitermes speratus",
+    "D": "Reticulitermes tibialis"
+   },
+   "answer": "D",
+   "hard": false,
+   "models_selecting": 3,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Reticulitermes flavipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "termite (infraorder Isoptera, order Blattodea)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "Termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": true,
+     "oe": "termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Termite",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Aphid",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q15296272",
+   "track": "weed",
+   "label": "Damasonium minus",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q15296272.jpg",
+   "image_size": [
+    720,
+    469
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Damasonium_minus",
+   "wikidata": "https://www.wikidata.org/wiki/Q15296272",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "DAMMI",
+    "url": "https://gd.eppo.int/taxon/DAMMI"
+   },
+   "monthly_pageviews": 20,
+   "options": {
+    "A": "Didymosphenia geminata",
+    "B": "Psilotum nudum",
+    "C": "Damasonium minus",
+    "D": "Desmostachya bipinnata"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 15,
+   "models_naming": 2,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Damasonium alisma",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Damasonium minus (starfruit weed)",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Damasonium minus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Sherardia arvensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Galium aparine",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Erodium cicutarium",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Scandix pecten-veneris",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Bidens pilosa",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Erodium cicutarium",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Galium aparine",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Euphorbia prostrata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Torilis arvensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cyperus esculentus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Galium aparine",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Sida spinosa",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Mollugo verticillata (carpetweed)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q1633872",
+   "track": "weed",
+   "label": "Symphytum asperum",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q1633872.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Symphytum_asperum",
+   "wikidata": "https://www.wikidata.org/wiki/Q1633872",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "SYMAS",
+    "url": "https://gd.eppo.int/taxon/SYMAS"
+   },
+   "monthly_pageviews": 182,
+   "options": {
+    "A": "Acrostichum aureum",
+    "B": "Symphytum asperum",
+    "C": "Xanthium spinosum",
+    "D": "Myriophyllum aquaticum"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum x uplandicum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Russian comfrey (Symphytum x uplandicum)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Symphytum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Common comfrey (Symphytum officinale)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q3281704",
+   "track": "weed",
+   "label": "Clematis orientalis",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q3281704.jpg",
+   "image_size": [
+    413,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Clematis_orientalis",
+   "wikidata": "https://www.wikidata.org/wiki/Q3281704",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "CLVOR",
+    "url": "https://gd.eppo.int/taxon/CLVOR"
+   },
+   "monthly_pageviews": 200,
+   "options": {
+    "A": "Clematis terniflora",
+    "B": "Clematis flammula",
+    "C": "Clematis orientalis",
+    "D": "Cleome spinosa"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 12,
+   "models_naming": 2,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis orientalis",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis tangutica",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis tangutica",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis tangutica",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis tangutica",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis vitalba",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Scabiosa atropurpurea",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis tangutica",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis viticella",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis vitalba",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis tangutica",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis vitalba",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Clematis vitalba",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Clematis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Clematis vitalba",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clematis orientalis",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Clematis vitalba",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q6104555",
+   "track": "weed",
+   "label": "Reichardia tingitana",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q6104555.jpg",
+   "image_size": [
+    720,
+    540
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Reichardia_tingitana",
+   "wikidata": "https://www.wikidata.org/wiki/Q6104555",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "REITI",
+    "url": "https://gd.eppo.int/taxon/REITI"
+   },
+   "monthly_pageviews": 83,
+   "options": {
+    "A": "Roldana petasitis",
+    "B": "Reichardia tingitana",
+    "C": "Tithonia",
+    "D": "Cayratia japonica"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 15,
+   "models_naming": 2,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Reichardia tingitana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Reichardia tingitana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Arctotheca calendula",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Tolpis barbata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Calendula arvensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Glebionis segetum (corn marigold)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Gazania",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Tragopogon dubius",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Arctotheca calendula",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Grindelia squarrosa",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Taraxacum erythrospermum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Taraxacum officinale",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Hieracium aurantiacum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Grindelia squarrosa",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Arctotheca calendula",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Capeweed (Arctotheca calendula)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q3595171",
+   "track": "weed",
+   "label": "Calophyllum antillanum",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q3595171.jpg",
+   "image_size": [
+    720,
+    478
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Calophyllum_antillanum",
+   "wikidata": "https://www.wikidata.org/wiki/Q3595171",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "CMUAN",
+    "url": "https://gd.eppo.int/taxon/CMUAN"
+   },
+   "monthly_pageviews": 229,
+   "options": {
+    "A": "Alternanthera pungens",
+    "B": "Alternanthera philoxeroides",
+    "C": "Calophyllum antillanum",
+    "D": "Myriophyllum alterniflorum"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Calophyllum inophyllum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Calophyllum inophyllum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Calophyllum inophyllum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Calophyllum inophyllum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clusia rosea",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Ficus microcarpa",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Solanum dulcamara",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Calophyllum inophyllum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Calophyllum inophyllum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Calophyllum inophyllum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Calophyllum inophyllum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Terminalia catappa",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Cassia occidentalis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Rhizophora mangle",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Clidemia hirta",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Calophyllum inophyllum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Coffee (Coffea arabica)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q4217123",
+   "track": "weed",
+   "label": "Pluchea indica",
+   "group": "seeing_without_naming",
+   "image": "img/examples/Q4217123.jpg",
+   "image_size": [
+    720,
+    539
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Pluchea_indica",
+   "wikidata": "https://www.wikidata.org/wiki/Q4217123",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "PLUIN",
+    "url": "https://gd.eppo.int/taxon/PLUIN"
+   },
+   "monthly_pageviews": 670,
+   "options": {
+    "A": "Pluchea indica",
+    "B": "Pluchea carolinensis",
+    "C": "Pluchea sericea",
+    "D": "Pluchea odorata"
+   },
+   "answer": "A",
+   "hard": false,
+   "models_selecting": 13,
+   "models_naming": 3,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pluchea indica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pluchea carolinensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Pluchea indica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Pluchea carolinensis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Lantana camara",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Euphorbia paralias",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Carpobrotus edulis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Lepidium latifolium",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Baccharis halimifolia",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Chromolaena odorata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Ageratina adenophora",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Bidens alba",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Solanum nigrum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Carpobrotus edulis",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Senecio angulatus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Baccharis halimifolia",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Indian fleabane (Pluchea indica)",
+     "oe_em": false,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q4117733",
+   "track": "weed",
+   "label": "Cyperus bulbosus",
+   "group": "named_by_most",
+   "image": "img/examples/Q4117733.jpg",
+   "image_size": [
+    529,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Cyperus_bulbosus",
+   "wikidata": "https://www.wikidata.org/wiki/Q4117733",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "CYPBU",
+    "url": "https://gd.eppo.int/taxon/CYPBU"
+   },
+   "monthly_pageviews": 130,
+   "options": {
+    "A": "Cyperus bulbosus",
+    "B": "Cyperus strigosus",
+    "C": "Cyperus compressus",
+    "D": "Cyperus aromaticus"
+   },
+   "answer": "A",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 15,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "kimi-k2.5": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bueosus",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "A",
+     "mc_ok": true,
+     "oe": "Cyperus bulbosus Vahl",
+     "oe_em": true,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q157522",
+   "track": "weed",
+   "label": "Juniperus virginiana",
+   "group": "named_by_most",
+   "image": "img/examples/Q157522.jpg",
+   "image_size": [
+    482,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Juniperus_virginiana",
+   "wikidata": "https://www.wikidata.org/wiki/Q157522",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "IUPVI",
+    "url": "https://gd.eppo.int/taxon/IUPVI"
+   },
+   "monthly_pageviews": 9037,
+   "options": {
+    "A": "Fraxinus griffithii",
+    "B": "Juniperus virginiana",
+    "C": "Acalypha virginica",
+    "D": "Juniperus ashei"
+   },
+   "answer": "B",
+   "hard": false,
+   "models_selecting": 16,
+   "models_naming": 15,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana (Eastern redcedar)",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Eastern redcedar (Juniperus virginiana)",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Quercus robur (Pedunculate Oak) or Quercus petraea (Sessile Oak)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana (Eastern Red Cedar). I will use the scientific name as the canonical name",
+     "oe_em": false,
+     "oe_ok": true
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": true,
+     "oe": "Juniperus virginiana",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "D",
+     "mc_ok": false,
+     "oe": "Eastern redcedar (Juniperus virginiana)",
+     "oe_em": false,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q1945905",
+   "track": "weed",
+   "label": "Zantedeschia aethiopica",
+   "group": "named_by_most",
+   "image": "img/examples/Q1945905.jpg",
+   "image_size": [
+    479,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Zantedeschia_aethiopica",
+   "wikidata": "https://www.wikidata.org/wiki/Q1945905",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "ZNTAE",
+    "url": "https://gd.eppo.int/taxon/ZNTAE"
+   },
+   "monthly_pageviews": 5644,
+   "options": {
+    "A": "Tradescantia",
+    "B": "Tradescantia fluminensis",
+    "C": "Zantedeschia aethiopica",
+    "D": "Tradescantia cerinthoides"
+   },
+   "answer": "C",
+   "hard": false,
+   "models_selecting": 17,
+   "models_naming": 17,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Zantedeschia aethiopica",
+     "oe_em": true,
+     "oe_ok": true
+    }
+   }
+  },
+  {
+   "qid": "Q15525444",
+   "track": "weed",
+   "label": "Pueraria thomsonii",
+   "group": "named_by_none",
+   "image": "img/examples/Q15525444.jpg",
+   "image_size": [
+    720,
+    444
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Kudzu",
+   "wikidata": "https://www.wikidata.org/wiki/Q15525444",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "PUETH",
+    "url": "https://gd.eppo.int/taxon/PUETH"
+   },
+   "monthly_pageviews": 27618,
+   "options": {
+    "A": "Pueraria",
+    "B": "Pueraria montana",
+    "C": "Pueraria montana var. lobata",
+    "D": "Pueraria thomsonii"
+   },
+   "answer": "D",
+   "hard": true,
+   "models_selecting": 0,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Pueraria montana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Kudzu (Pueraria montana var. lobata)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "kudzu (Pueraria montana var. lobata)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Kudzu",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Pueraria montana (kudzu)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Pueraria montana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Hedera helix",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Pueraria montana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "kudzu",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Pueraria montana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Pueraria montana var. lobata",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Pueraria montana",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Hedera helix",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "kudzu",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Dioscorea bulbifera",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "C",
+     "mc_ok": false,
+     "oe": "Japanese knotweed (Reynoutria japonica)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q3009554",
+   "track": "weed",
+   "label": "Eichhornia azurea",
+   "group": "named_by_none",
+   "image": "img/examples/Q3009554.jpg",
+   "image_size": [
+    540,
+    720
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Pontederia_azurea",
+   "wikidata": "https://www.wikidata.org/wiki/Q3009554",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "EICAZ",
+    "url": "https://gd.eppo.int/taxon/EICAZ"
+   },
+   "monthly_pageviews": 165,
+   "options": {
+    "A": "Eichhornia",
+    "B": "Elodea",
+    "C": "Eichhornia azurea",
+    "D": "Hydrilla"
+   },
+   "answer": "C",
+   "hard": true,
+   "models_selecting": 3,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes (syn. Pontederia crassipes, common name: common water hyacinth)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Water hyacinth",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Pontederia cordata (Pickerelweed / Pickerel Rush)",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "C",
+     "mc_ok": true,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Water hyacinth",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Eichhornia crassipes",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Water hyacinth (Eichhornia crassipes)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  },
+  {
+   "qid": "Q15532787",
+   "track": "weed",
+   "label": "Solanum acerifolium",
+   "group": "named_by_none",
+   "image": "img/examples/Q15532787.jpg",
+   "image_size": [
+    720,
+    480
+   ],
+   "wikipedia": "https://en.wikipedia.org/wiki/Solanum_acerifolium",
+   "wikidata": "https://www.wikidata.org/wiki/Q15532787",
+   "knowledge_base": {
+    "name": "EPPO Global Database",
+    "id": "SOLAF",
+    "url": "https://gd.eppo.int/taxon/SOLAF"
+   },
+   "monthly_pageviews": 47,
+   "options": {
+    "A": "Solanum lyratum",
+    "B": "Solanum aculeatissimum",
+    "C": "Solanum acerifolium",
+    "D": "Solanum elaeagnifolium"
+   },
+   "answer": "C",
+   "hard": true,
+   "models_selecting": 0,
+   "models_naming": 0,
+   "predictions": {
+    "gemini-3-pro-preview": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum viarum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-pro": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum viarum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "doubao-seed-2-0-lite": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum carolinense",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gemini-3-flash-preview": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum viarum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum viarum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-5-mini": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Solanum viarum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "claude-haiku-4-5": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Solanum nigrum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "kimi-k2.5": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum carolinense",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.8-flash-next": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum viarum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-397b-a17b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum aculeatissimum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-235b-a22b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum viarum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum torvum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "glm-4.6v-flashx": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum surattense",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3-vl-30b-a3b": {
+     "mc": "A",
+     "mc_ok": false,
+     "oe": "Solanum sarrachoides",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "qwen3.5-35b-a3b": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum seaforthianum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "deepseek-v4.1-flash": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Solanum viarum",
+     "oe_em": false,
+     "oe_ok": false
+    },
+    "gpt-6-luna": {
+     "mc": "B",
+     "mc_ok": false,
+     "oe": "Bittersweet nightshade (Solanum dulcamara)",
+     "oe_em": false,
+     "oe_ok": false
+    }
+   }
+  }
+ ]
+}

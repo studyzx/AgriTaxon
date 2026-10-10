@@ -1,0 +1,161 @@
+{
+ "note": "AgriTaxon-Wild examples: field images from iNaturalist under the listed licenses; credit each photo as given in 'attribution'.",
+ "items": [
+  {
+   "qid": "Q158468",
+   "track": "crop",
+   "label": "Pimenta dioica",
+   "wikipedia": "https://en.wikipedia.org/wiki/Pimenta_dioica",
+   "wiki_image": "img/wild/Q158468_wiki.jpg",
+   "field_images": [
+    {
+     "image": "img/wild/Q158468_365846805_667978685.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) joaquin334, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/365846805"
+    },
+    {
+     "image": "img/wild/Q158468_365521772_667362056.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Ignacio Torres-García, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/365521772"
+    },
+    {
+     "image": "img/wild/Q158468_358874161_654726444.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) H. Klandorf, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/358874161"
+    },
+    {
+     "image": "img/wild/Q158468_354584707_646821784.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Melecio Chable, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/354584707"
+    },
+    {
+     "image": "img/wild/Q158468_354085806_646002816.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Julien Carley-Windeler, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/354085806"
+    }
+   ]
+  },
+  {
+   "qid": "Q132922",
+   "track": "livestock",
+   "label": "Camelus bactrianus",
+   "wikipedia": "https://en.wikipedia.org/wiki/Bactrian_camel",
+   "wiki_image": "img/wild/Q132922_wiki.jpg",
+   "field_images": [
+    {
+     "image": "img/wild/Q132922_367716024_671553061.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Берик Пангереев, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/367716024"
+    },
+    {
+     "image": "img/wild/Q132922_366979134_670146803.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Mackenzie Goldthwait, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/366979134"
+    },
+    {
+     "image": "img/wild/Q132922_364600607_665613565.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) 棕熊, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/364600607"
+    },
+    {
+     "image": "img/wild/Q132922_357491431_652040234.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Amaël Borzée, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/357491431"
+    },
+    {
+     "image": "img/wild/Q132922_360299143_657429601.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Beta Wildlife, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/360299143"
+    }
+   ]
+  },
+  {
+   "qid": "Q10464985",
+   "track": "pest",
+   "label": "Cyrtacanthacris aeruginosa",
+   "wikipedia": "https://en.wikipedia.org/wiki/Cyrtacanthacris_aeruginosa",
+   "wiki_image": "img/wild/Q10464985_wiki.jpg",
+   "field_images": [
+    {
+     "image": "img/wild/Q10464985_362771165_662141452.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Daniel Alempijevic, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/362771165"
+    },
+    {
+     "image": "img/wild/Q10464985_358204493_653423101.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) altagray, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/358204493"
+    },
+    {
+     "image": "img/wild/Q10464985_355283393_647992904.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) angela_openshaw, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/355283393"
+    },
+    {
+     "image": "img/wild/Q10464985_347889429_634383865.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) GLENN STOCKIL, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/347889429"
+    },
+    {
+     "image": "img/wild/Q10464985_346207865_631046438.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) ormr, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/346207865"
+    }
+   ]
+  },
+  {
+   "qid": "Q15296272",
+   "track": "weed",
+   "label": "Damasonium minus",
+   "wikipedia": "https://en.wikipedia.org/wiki/Damasonium_minus",
+   "wiki_image": "img/wild/Q15296272_wiki.jpg",
+   "field_images": [
+    {
+     "image": "img/wild/Q15296272_365006019_666379884.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) gabibridge, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/365006019"
+    },
+    {
+     "image": "img/wild/Q15296272_355140611_647779752.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Martin Bennett, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/355140611"
+    },
+    {
+     "image": "img/wild/Q15296272_105595400_177208018.jpg",
+     "license": "cc-by-nc-sa",
+     "attribution": "(c) Reiner Richter, some rights reserved (CC BY-NC-SA)",
+     "observation": "https://www.inaturalist.org/observations/105595400"
+    },
+    {
+     "image": "img/wild/Q15296272_359092754_655138711.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) Bruce McLennan, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/359092754"
+    },
+    {
+     "image": "img/wild/Q15296272_348829466_636273420.jpg",
+     "license": "cc-by-nc",
+     "attribution": "(c) cjmp, some rights reserved (CC BY-NC)",
+     "observation": "https://www.inaturalist.org/observations/348829466"
+    }
+   ]
+  }
+ ]
+}

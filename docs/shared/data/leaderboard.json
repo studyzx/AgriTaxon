@@ -1,0 +1,464 @@
+{
+ "source": "cea/paper/main-cea.tex, Table tab:main_results",
+ "rows": [
+  {
+   "model": "gemini-3-pro-preview",
+   "provider": "Google",
+   "logo": "gemini.png",
+   "open_weights": false,
+   "group": "proprietary",
+   "release": "2025.11",
+   "mc": {
+    "crop": 83.8,
+    "livestock": 95.9,
+    "pest": 79.7,
+    "weed": 83.7,
+    "all": 85.8
+   },
+   "oe_em": {
+    "crop": 40.8,
+    "livestock": 38.4,
+    "pest": 26.3,
+    "weed": 49.4,
+    "all": 38.7
+   },
+   "oe_acc": 47.3,
+   "hard_mc": 13.7,
+   "gap": 38.5,
+   "best": [
+    "mc_livestock",
+    "mc_pest",
+    "mc_all",
+    "oe_em_crop",
+    "oe_em_livestock",
+    "oe_em_all",
+    "oe_acc"
+   ]
+  },
+  {
+   "model": "doubao-seed-2-0-pro",
+   "provider": "ByteDance Seed",
+   "logo": "seed-logo.png",
+   "open_weights": false,
+   "group": "proprietary",
+   "release": "2026.02",
+   "mc": {
+    "crop": 81.3,
+    "livestock": 88.4,
+    "pest": 78.5,
+    "weed": 82.0,
+    "all": 82.6
+   },
+   "oe_em": {
+    "crop": 36.1,
+    "livestock": 27.3,
+    "pest": 32.7,
+    "weed": 50.9,
+    "all": 36.8
+   },
+   "oe_acc": 45.8,
+   "hard_mc": 10.8,
+   "gap": 36.8,
+   "best": [
+    "oe_em_pest",
+    "oe_em_weed"
+   ]
+  },
+  {
+   "model": "doubao-seed-2-0-lite",
+   "provider": "ByteDance Seed",
+   "logo": "seed-logo.png",
+   "open_weights": false,
+   "group": "proprietary",
+   "release": "2026.02",
+   "mc": {
+    "crop": 78.1,
+    "livestock": 87.2,
+    "pest": 77.4,
+    "weed": 80.3,
+    "all": 80.8
+   },
+   "oe_em": {
+    "crop": 29.9,
+    "livestock": 28.5,
+    "pest": 25.8,
+    "weed": 45.3,
+    "all": 32.4
+   },
+   "oe_acc": 40.5,
+   "hard_mc": 10.8,
+   "gap": 40.3,
+   "best": []
+  },
+  {
+   "model": "gemini-3-flash-preview",
+   "provider": "Google",
+   "logo": "gemini.png",
+   "open_weights": false,
+   "group": "proprietary",
+   "release": "2025.12",
+   "mc": {
+    "crop": 84.8,
+    "livestock": 94.8,
+    "pest": 79.1,
+    "weed": 84.6,
+    "all": 85.8
+   },
+   "oe_em": {
+    "crop": 11.9,
+    "livestock": 20.9,
+    "pest": 20.2,
+    "weed": 46.9,
+    "all": 25.0
+   },
+   "oe_acc": 39.5,
+   "hard_mc": 11.4,
+   "gap": 46.3,
+   "best": [
+    "mc_crop",
+    "mc_weed",
+    "mc_all"
+   ]
+  },
+  {
+   "model": "gpt-5",
+   "provider": "OpenAI",
+   "logo": "openai.png",
+   "open_weights": false,
+   "group": "proprietary",
+   "release": "2025.08",
+   "mc": {
+    "crop": 79.2,
+    "livestock": 94.2,
+    "pest": 74.5,
+    "weed": 77.9,
+    "all": 81.4
+   },
+   "oe_em": {
+    "crop": 22.6,
+    "livestock": 22.1,
+    "pest": 14.5,
+    "weed": 32.9,
+    "all": 23.0
+   },
+   "oe_acc": 31.6,
+   "hard_mc": 12.9,
+   "gap": 49.8,
+   "best": []
+  },
+  {
+   "model": "gpt-5-mini",
+   "provider": "OpenAI",
+   "logo": "openai.png",
+   "open_weights": false,
+   "group": "proprietary",
+   "release": "2025.08",
+   "mc": {
+    "crop": 71.7,
+    "livestock": 87.8,
+    "pest": 65.4,
+    "weed": 68.0,
+    "all": 73.2
+   },
+   "oe_em": {
+    "crop": 23.2,
+    "livestock": 17.4,
+    "pest": 6.5,
+    "weed": 20.2,
+    "all": 16.8
+   },
+   "oe_acc": 22.2,
+   "hard_mc": 4.7,
+   "gap": 51.0,
+   "best": []
+  },
+  {
+   "model": "gpt-6-luna",
+   "provider": "OpenAI",
+   "logo": "openai.png",
+   "open_weights": false,
+   "group": "proprietary",
+   "release": "2026.09",
+   "mc": {
+    "crop": 68.6,
+    "livestock": 85.5,
+    "pest": 67.4,
+    "weed": 70.8,
+    "all": 73.1
+   },
+   "oe_em": {
+    "crop": 7.1,
+    "livestock": 8.1,
+    "pest": 3.6,
+    "weed": 8.9,
+    "all": 6.9
+   },
+   "oe_acc": 12.9,
+   "hard_mc": null,
+   "gap": 60.2,
+   "best": []
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "provider": "Anthropic",
+   "logo": "anthropic.png",
+   "open_weights": false,
+   "group": "proprietary",
+   "release": "2025.10",
+   "mc": {
+    "crop": 58.1,
+    "livestock": 75.0,
+    "pest": 58.5,
+    "weed": 61.0,
+    "all": 63.1
+   },
+   "oe_em": {
+    "crop": 6.9,
+    "livestock": 7.0,
+    "pest": 2.1,
+    "weed": 6.1,
+    "all": 5.5
+   },
+   "oe_acc": 9.2,
+   "hard_mc": 7.6,
+   "gap": 53.9,
+   "best": []
+  },
+  {
+   "model": "kimi-k2.5",
+   "provider": "Moonshot AI",
+   "logo": "Kimi-logo-2025.png",
+   "open_weights": true,
+   "group": "open",
+   "release": "2026.01",
+   "mc": {
+    "crop": 75.2,
+    "livestock": 85.5,
+    "pest": 72.6,
+    "weed": 73.3,
+    "all": 76.6
+   },
+   "oe_em": {
+    "crop": 23.9,
+    "livestock": 18.6,
+    "pest": 17.0,
+    "weed": 35.0,
+    "all": 23.6
+   },
+   "oe_acc": 32.0,
+   "hard_mc": 3.7,
+   "gap": 44.6,
+   "best": []
+  },
+  {
+   "model": "qwen3.8-flash-next",
+   "provider": "Qwen",
+   "logo": "Qwen-Ai-Logo-PNG-Vector.png",
+   "open_weights": true,
+   "group": "open",
+   "release": "2026.08",
+   "mc": {
+    "crop": 75.3,
+    "livestock": 83.7,
+    "pest": 70.6,
+    "weed": 75.8,
+    "all": 76.4
+   },
+   "oe_em": {
+    "crop": 19.9,
+    "livestock": 10.5,
+    "pest": 14.1,
+    "weed": 31.0,
+    "all": 18.9
+   },
+   "oe_acc": 25.8,
+   "hard_mc": null,
+   "gap": 50.6,
+   "best": []
+  },
+  {
+   "model": "deepseek-v4.1-flash",
+   "provider": "DeepSeek",
+   "logo": "deepseek.png",
+   "open_weights": true,
+   "group": "open",
+   "release": "2026.09",
+   "mc": {
+    "crop": 76.1,
+    "livestock": 87.2,
+    "pest": 74.5,
+    "weed": 76.8,
+    "all": 78.6
+   },
+   "oe_em": {
+    "crop": 23.0,
+    "livestock": 9.9,
+    "pest": 13.5,
+    "weed": 28.0,
+    "all": 18.6
+   },
+   "oe_acc": 23.3,
+   "hard_mc": null,
+   "gap": 55.3,
+   "best": []
+  },
+  {
+   "model": "qwen3.5-397b-a17b",
+   "provider": "Qwen",
+   "logo": "Qwen-Ai-Logo-PNG-Vector.png",
+   "open_weights": true,
+   "group": "open",
+   "release": "2026.02",
+   "mc": {
+    "crop": 70.6,
+    "livestock": 84.9,
+    "pest": 70.5,
+    "weed": 70.2,
+    "all": 74.0
+   },
+   "oe_em": {
+    "crop": 21.6,
+    "livestock": 13.4,
+    "pest": 9.5,
+    "weed": 20.9,
+    "all": 16.3
+   },
+   "oe_acc": 21.3,
+   "hard_mc": 14.1,
+   "gap": 52.7,
+   "best": [
+    "hard_mc"
+   ]
+  },
+  {
+   "model": "qwen3-vl-235b-a22b",
+   "provider": "Qwen",
+   "logo": "Qwen-Ai-Logo-PNG-Vector.png",
+   "open_weights": true,
+   "group": "open",
+   "release": "2025.09",
+   "mc": {
+    "crop": 66.6,
+    "livestock": 80.8,
+    "pest": 68.8,
+    "weed": 66.7,
+    "all": 70.7
+   },
+   "oe_em": {
+    "crop": 19.2,
+    "livestock": 9.3,
+    "pest": 10.7,
+    "weed": 21.4,
+    "all": 15.1
+   },
+   "oe_acc": 20.2,
+   "hard_mc": 3.5,
+   "gap": 50.5,
+   "best": []
+  },
+  {
+   "model": "glm-4.6v",
+   "provider": "Z.ai",
+   "logo": "zai.png",
+   "open_weights": true,
+   "group": "open",
+   "release": "2025.12",
+   "mc": {
+    "crop": 66.6,
+    "livestock": 76.2,
+    "pest": 59.9,
+    "weed": 60.8,
+    "all": 65.9
+   },
+   "oe_em": {
+    "crop": 18.8,
+    "livestock": 6.4,
+    "pest": 6.2,
+    "weed": 17.9,
+    "all": 12.3
+   },
+   "oe_acc": 17.1,
+   "hard_mc": 2.2,
+   "gap": 48.8,
+   "best": []
+  },
+  {
+   "model": "glm-4.6v-flashx",
+   "provider": "Z.ai",
+   "logo": "zai.png",
+   "open_weights": true,
+   "group": "open",
+   "release": "2025.12",
+   "mc": {
+    "crop": 59.1,
+    "livestock": 70.3,
+    "pest": 59.3,
+    "weed": 57.9,
+    "all": 61.7
+   },
+   "oe_em": {
+    "crop": 15.7,
+    "livestock": 6.4,
+    "pest": 3.6,
+    "weed": 8.8,
+    "all": 8.6
+   },
+   "oe_acc": 12.5,
+   "hard_mc": 5.9,
+   "gap": 49.2,
+   "best": []
+  },
+  {
+   "model": "qwen3-vl-30b-a3b",
+   "provider": "Qwen",
+   "logo": "Qwen-Ai-Logo-PNG-Vector.png",
+   "open_weights": true,
+   "group": "open",
+   "release": "2025.10",
+   "mc": {
+    "crop": 59.1,
+    "livestock": 70.3,
+    "pest": 61.4,
+    "weed": 58.1,
+    "all": 62.3
+   },
+   "oe_em": {
+    "crop": 10.2,
+    "livestock": 5.8,
+    "pest": 2.8,
+    "weed": 9.2,
+    "all": 7.0
+   },
+   "oe_acc": 11.7,
+   "hard_mc": 3.1,
+   "gap": 50.6,
+   "best": []
+  },
+  {
+   "model": "qwen3.5-35b-a3b",
+   "provider": "Qwen",
+   "logo": "Qwen-Ai-Logo-PNG-Vector.png",
+   "open_weights": true,
+   "group": "open",
+   "release": "2026.02",
+   "mc": {
+    "crop": 67.1,
+    "livestock": 80.2,
+    "pest": 67.2,
+    "weed": 65.4,
+    "all": 70.0
+   },
+   "oe_em": {
+    "crop": 5.8,
+    "livestock": 2.9,
+    "pest": 1.8,
+    "weed": 10.3,
+    "all": 5.2
+   },
+   "oe_acc": 10.6,
+   "hard_mc": 7.8,
+   "gap": 59.4,
+   "best": []
+  }
+ ]
+}
