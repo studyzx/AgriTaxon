@@ -365,10 +365,10 @@
     "type": "Taxonomic confusion",
     "share": 70,
     "image": "img/error_cases/taxonomic_confusion.jpg",
-    "track": "Crop",
-    "label": "Stylosanthes capitata",
-    "prediction": "Stylosanthes humilis",
-    "rationale": "Same genus within Fabaceae. The model recognizes the correct genus from the pod morphology but confuses species-level features (capitulum density, beak shape)."
+    "track": "Pest",
+    "label": "Eastern tent caterpillar",
+    "prediction": "Malacosoma neustria",
+    "rationale": "Same genus, Malacosoma. The model infers the genus from the communal silk tent but names the Eurasian lackey moth instead of the North American M. americanum."
    },
    {
     "type": "Unrelated prediction",
