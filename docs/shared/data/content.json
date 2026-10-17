@@ -82,13 +82,13 @@
   "Multimodal foundation models are increasingly used as generative assistants: a farmer photographs a plant or an insect and asks what it is, and the model must answer with a name. In such use no list of candidate names is supplied, so open-ended naming, not choosing among options, is the task that matches practice.",
   "AgriTaxon therefore measures how much agricultural visual knowledge a model holds. Naming is the first threshold for applying these models in agriculture, since advice on managing a crop, breed, pest, or weed depends on first knowing what it is."
  ],
- "abstract": "Naming the organism in an image is the entry point to many agricultural decisions, from pesticide selection to breed management. Multimodal foundation models are increasingly used as generative assistants for such tasks, yet it remains unclear whether they can name an agricultural entity without being given candidate names. We introduce AgriTaxon, a knowledge-grounded benchmark of 6,049 entities across Crops (1,960), Livestock (172), Pests (2,415), and Weeds (1,502), each linked through Wikidata to FAO Ecocrop, FAO DAD-IS, or the EPPO Global Database and labeled at species level or finer. Every entity is evaluated in two settings, choosing its name among four options and naming it without options; an open-weight LLM judge credits aliases and agrees with human annotation on 97.8% of the predictions it judges. Two extended settings build on the same entities: AgriTaxon-Hard, the 510 entities that nearly all models fail, and AgriTaxon-Wild, which adds 14,130 iNaturalist field images. Across 17 models, the best reach 85.8% multiple-choice accuracy but only 47.3% open-ended accuracy, and this seeing-without-naming gap remains after aliases are credited. Popular entities, measured by Wikipedia pageviews, are named by more than six times as many models as rarely viewed ones, so obscure but locally important entities are named least reliably. Several field images raise open-ended accuracy by up to 20.8 points over a single field image, and on AgriTaxon-Hard, web retrieval and image cropping raise accuracy from 4.6% to 23.2% and from 7.2% to 15.2%. AgriTaxon thus measures what closed-set evaluation hides.",
+ "abstract": "Naming the organism in an image is the entry point to many agricultural decisions, from pesticide selection to breed management. Multimodal foundation models hold ever broader world knowledge, yet agriculture remains among their least evaluated domains. Its visual knowledge is fine-grained and long-tailed, with many regional species and breeds. We introduce AgriTaxon, a benchmark built from agricultural knowledge bases. Starting from the crops, breeds, pests, and weeds catalogued by FAO Ecocrop, FAO DAD-IS, and EPPO, it keeps 6,049 entities after filtering for image quality and entity validity. Each entity is linked through Wikidata, labeled at species level or finer, and evaluated in two settings: choosing its name among four options, and naming it without options. An LLM judge, validated against expert annotation, credits aliases. We comprehensively evaluate 17 proprietary and open-source models from eight providers. The best reach 85.8% multiple-choice accuracy but only 47.3% open-ended accuracy, and this seeing-without-naming gap remains after aliases are credited. The gap is harder to close for rare entities and field images. AgriTaxon-Hard isolates 510 entities that nearly all models fail. In AgriTaxon-Wild, one field image is about eight points less accurate for naming than the curated image, and only several images recover the loss. Naming accuracy rises with entity popularity and image resolution. A simple agentic loop with web retrieval already raises accuracy on AgriTaxon-Hard from 4.6% to 23.2%, making tool use a promising direction. Naming, which closed-set evaluation hides, thus remains the first threshold for applying foundation models in agriculture.",
  "highlights": [
   "AgriTaxon: 6,049 knowledge-grounded entities across crops, livestock, pests, weeds",
   "Seventeen multimodal models pick the right name far more often than they produce it",
   "Best models: 85.8% multiple-choice accuracy vs. 47.3% open-ended naming accuracy",
   "Popular entities are named by over six times as many models as rare ones",
-  "Field images and web retrieval narrow the gap; retrieval lifts Hard 4.6% to 23.2%"
+  "One field image lowers naming accuracy; web retrieval lifts Hard from 4.6% to 23.2%"
  ],
  "headline_numbers": {
   "entities": 6049,
@@ -182,7 +182,7 @@
   },
   "aggregation": "Summary scores are unweighted means over the four tracks, so each track counts equally."
  },
- "judge_validation": "On a stratified sample of 579 predictions that fail exact match, weighted to all 72,997 such predictions of the 15 models evaluated when the judge was validated, the judge agrees with human annotation on 97.8% (Cohen's kappa 0.84), against 92.8% for exact match. Correcting each model's OE-Acc for the judge's estimated errors changes it by -0.4 to +2.2 points, and the ranking is unchanged.",
+ "judge_validation": "On a stratified sample of 579 predictions that fail exact match, weighted to all 72,997 such predictions of the 15 models evaluated when the judge was validated, the judge agrees with expert annotation on 97.8% (Cohen's kappa 0.84), against 92.8% for exact match. Correcting each model's OE-Acc for the judge's estimated errors changes it by -0.4 to +2.2 points, and the ranking is unchanged.",
  "findings": [
   {
    "title": "Models select far more names than they can state",
@@ -210,7 +210,7 @@
   },
   {
    "title": "Tools recover hard entities",
-   "text": "On AgriTaxon-Hard, web retrieval raises GPT-5 Mini from 4.6% to 23.2% MC accuracy, and image cropping raises Claude Haiku 4.5 from 7.2% to 15.2%."
+   "text": "On AgriTaxon-Hard, in a simple agentic loop, web retrieval raises GPT-5 Mini from 4.6% to 23.2% MC accuracy, and image cropping raises Claude Haiku 4.5 from 7.2% to 15.2%, making tool use a promising direction."
   }
  ],
  "wild_results": {
@@ -377,7 +377,7 @@
     "track": "Crop",
     "label": "Gleditsia triacanthos",
     "prediction": "Black walnut",
-    "rationale": "Cross-family error: Fabaceae vs. Juglandaceae. Both are deciduous North American trees, but they belong to different families and are morphologically distinct."
+    "rationale": "Cross-family error: Fabaceae vs. Juglandaceae. Both are deciduous North American trees, but they are morphologically distinct."
    },
    {
     "type": "No answer",
@@ -414,7 +414,7 @@
   "Every label is at species level or finer (for livestock, usually a breed); genus- and family-level entities are removed, so a correct answer is always a name the image can support.",
   "Wiki images with a shorter edge below 224 px are removed and those above the size limit are downscaled."
  ],
- "limitations": "AgriTaxon focuses on naming an entity from its Wiki image. Natural extensions: more livestock breeds and pest species in AgriTaxon-Wild and images collected on farms; local and vernacular names in other languages, which the Wikidata links make possible; and the decisions that depend on the name, such as host crops, quarantine status, or control options, using the linked FAO and EPPO records.",
+ "limitations": "AgriTaxon focuses on naming an entity from its Wiki image, the step that begins any decision about a specific organism. Natural extensions: wider coverage, with more species and breeds (especially livestock breeds and pests) and images collected on farms; local and vernacular names in other languages, which the Wikidata links make possible; the decisions that depend on the name, such as host crops, quarantine status, or control options, using the linked FAO and EPPO records; and tools beyond the simple loop tested here, such as stronger agents, retrieval from the FAO and EPPO records, and tool use in open-ended naming.",
  "license": {
   "annotations": "CC BY 4.0",
   "wiki_images": "Wikimedia Commons, original licenses (mostly CC BY / CC BY-SA)",
