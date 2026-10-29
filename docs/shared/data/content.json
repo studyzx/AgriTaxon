@@ -26,15 +26,15 @@
    ]
   },
   {
-   "name": "Jialin Kuai",
+   "name": "Qiang Wu",
    "aff": [
-    6
+    4
    ]
   },
   {
    "name": "Wentao Zhang",
    "aff": [
-    7
+    6
    ]
   },
   {
@@ -48,7 +48,7 @@
   {
    "name": "Shancheng Fang",
    "aff": [
-    7
+    6
    ]
   },
   {
@@ -67,8 +67,7 @@
   "3": "Key Laboratory of Digital Village Technology, Ministry of Agriculture and Rural Affairs, Beijing",
   "4": "University of Science and Technology of China, Hefei",
   "5": "Institute of Computing Technology, Chinese Academy of Sciences, Beijing",
-  "6": "Vegetable Research Institute, Gansu Academy of Agricultural Sciences, Lanzhou",
-  "7": "Shenzhen University, Shenzhen"
+  "6": "Shenzhen University, Shenzhen"
  },
  "links": {
   "dataset": "https://huggingface.co/datasets/Xin1818/AgriTaxon",
@@ -421,6 +420,6 @@
   "wild_images": "iNaturalist, per-photo licenses (mostly CC BY-NC); see wild/attributions.jsonl",
   "code": "MIT"
  },
- "bibtex": "@misc{zeng2026agritaxon,\n  title  = {AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models},\n  author = {Zeng, Xin and Xu, Benfeng and Chen, Qian and Kuai, Jialin and Zhang, Wentao and Lang, Liguo and Fang, Shancheng and Wu, Huarui},\n  year   = {2026},\n  note   = {Under review},\n  howpublished = {\\url{https://huggingface.co/datasets/Xin1818/AgriTaxon}}\n}",
+ "bibtex": "@misc{zeng2026agritaxon,\n  title  = {AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models},\n  author = {Zeng, Xin and Xu, Benfeng and Chen, Qian and Wu, Qiang and Zhang, Wentao and Lang, Liguo and Fang, Shancheng and Wu, Huarui},\n  year   = {2026},\n  note   = {Under review},\n  howpublished = {\\url{https://huggingface.co/datasets/Xin1818/AgriTaxon}}\n}",
  "submit": "To add a model to the leaderboard, send its predictions on AgriTaxon to zengx@nercita.org.cn."
 }

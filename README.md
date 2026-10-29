@@ -2,7 +2,7 @@
 
 **AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models**
 
-Xin Zeng, Benfeng Xu, Qian Chen, Jialin Kuai, Wentao Zhang, Liguo Lang, Shancheng Fang, Huarui Wu
+Xin Zeng, Benfeng Xu, Qian Chen, Qiang Wu, Wentao Zhang, Liguo Lang, Shancheng Fang, Huarui Wu
 
 [🌐 Project page](https://studyzx.github.io/AgriTaxon/) · [🤗 Dataset](https://huggingface.co/datasets/Xin1818/AgriTaxon)
 
@@ -81,7 +81,7 @@ Users must consult the per-image license and attribution metadata distributed wi
 ```bibtex
 @misc{zeng2026agritaxon,
   title  = {AgriTaxon: Knowledge-grounded benchmarking of open-ended agricultural entity naming with multimodal foundation models},
-  author = {Zeng, Xin and Xu, Benfeng and Chen, Qian and Kuai, Jialin and Zhang, Wentao and Lang, Liguo and Fang, Shancheng and Wu, Huarui},
+  author = {Zeng, Xin and Xu, Benfeng and Chen, Qian and Wu, Qiang and Zhang, Wentao and Lang, Liguo and Fang, Shancheng and Wu, Huarui},
   year   = {2026},
   note   = {Under review},
   howpublished = {\url{https://huggingface.co/datasets/Xin1818/AgriTaxon}}
